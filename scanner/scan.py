@@ -387,16 +387,16 @@ def jooble_key(cc):
 
 
 def fetch_jooble():
-    """Returns (jobs, complete). Pages through every result so missing roles can be detected."""
+    """Returns (jobs, {country: complete}). Pages through every result so missing roles can be detected."""
     cfg = CONFIG["jooble"]
     countries = [cc for cc in CONFIG["countries"] if jooble_key(cc)]
     if not countries:
         log("Jooble: no API keys set, skipping")
         return None, False
-    out, complete = [], True
+    out, done = [], {}
     log(f"  Jooble keys found for: {', '.join(countries)}")
     for cc in countries:
-        key = jooble_key(cc)
+        key, complete = jooble_key(cc), True
         hosts = [cfg.get("hosts", {}).get(cc), "jooble.org"]
         host = next(h for h in hosts if h)
         for q in cfg["queries"]:
@@ -418,7 +418,7 @@ def fetch_jooble():
                 for r in jobs:
                     job = make_job("Jooble", r.get("id"), r.get("title"), r.get("company"), r.get("link"),
                                    r.get("location"), r.get("updated"), r.get("snippet"),
-                                   default_country=cc, contract_hint=r.get("type"), origin="jooble")
+                                   default_country=cc, contract_hint=r.get("type"), origin=f"jooble:{cc}")
                     if job:
                         out.append(job)
                 if not jobs or fetched >= int(data.get("totalCount") or 0):
@@ -428,7 +428,10 @@ def fetch_jooble():
                     break
                 page += 1
                 time.sleep(0.5)
-    return out, complete
+        done[cc] = complete
+        if not complete:
+            log(f"  Jooble {cc}: incomplete (key may not be valid for this country)")
+    return out, done
 
 
 # ------------------------------------------------------------- Careerjet
@@ -461,6 +464,9 @@ def fetch_careerjet():
                 data = http_json("GET", "https://search.api.careerjet.net/v4/query", auth=(key, ""), params={
                     "locale_code": locales[0], "keywords": q, "page": page, "page_size": 100, "sort": "date",
                     "user_ip": public_ip(), "user_agent": SESSION.headers["User-Agent"]})
+                if data is None and not out and cc == CONFIG["countries"][0] and q == cfg["queries"][0] and page == 1:
+                    log("  Careerjet rejected the first request (key or IP not authorised), skipping")
+                    return None, False
                 if data is None and page == 1 and len(locales) > 1:
                     locales.pop(0)   # e.g. nl_BE not supported, fall back to fr_BE
                     continue
@@ -580,6 +586,11 @@ def load_store():
     for k, v in (("jobs", []), ("last_runs", {}), ("source_stats", {})):
         s.setdefault(k, v)
     for j in s["jobs"]:  # upgrade records from older versions
+        if "jooble" in j.get("origins", []):
+            new = f"jooble:{j['country']}"
+            j["origins"] = [new if o == "jooble" else o for o in j["origins"]]
+            if "jooble" in j.get("miss", {}):
+                j["miss"][new] = j["miss"].pop("jooble")
         j.setdefault("status", "open")
         j.setdefault("origins", ["adzuna" if "Adzuna" in j.get("sources", []) else "jooble"])
         j.setdefault("miss", {})
@@ -758,7 +769,12 @@ def main():
         if res is None:
             continue
         fresh.extend(res)
-        if complete:
+        if isinstance(complete, dict):   # per-country completeness (Jooble)
+            for cc, ok in complete.items():
+                if ok:
+                    sweeps[f"{cfg_key}:{cc}"] = {j["key"] for j in res if j["country"] == cc}
+            complete = all(complete.values()) if complete else False
+        elif complete:
             sweeps[cfg_key] = {j["key"] for j in res}
         record(name, res, complete)
 
