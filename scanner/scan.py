@@ -29,6 +29,7 @@ DATA_PATH = ROOT / "data" / "jobs.json"
 NOW = datetime.now(timezone.utc)
 FORCE_ALL = os.getenv("FORCE_ALL", "").lower() in ("1", "true", "yes")
 
+DIAG = {"http": [], "rejected": {}}
 SESSION = requests.Session()
 SESSION.headers["User-Agent"] = "D365-Radar/1.0 (job monitor)"
 
@@ -73,6 +74,12 @@ def strip_html(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
+def _diag(url, kw, status, n=None, note=""):
+    q = (kw.get("params") or {}).get("what_phrase") or (kw.get("json") or {}).get("keywords") or ""
+    DIAG["http"].append({"url": url.split("?")[0].replace(os.getenv("JOOBLE_API_KEY") or "\0", "KEY"),
+                         "query": q, "status": status, "results": n, "note": note[:160]})
+
+
 def http_json(method, url, **kw):
     for attempt in range(3):
         try:
@@ -82,10 +89,15 @@ def http_json(method, url, **kw):
                 continue
             if r.status_code >= 400:
                 log(f"  ! HTTP {r.status_code} on {url.split('?')[0]}")
+                _diag(url, kw, r.status_code, note=r.text)
                 return None
-            return r.json()
+            data = r.json()
+            n = len(data.get("results", data.get("jobs", data.get("offers", []))) if isinstance(data, dict) else data)
+            _diag(url, kw, r.status_code, n)
+            return data
         except (requests.RequestException, ValueError) as e:
             log(f"  ! {type(e).__name__} on {url.split('?')[0]}")
+            _diag(url, kw, "error", note=type(e).__name__)
             time.sleep(2)
     return None
 
@@ -211,6 +223,14 @@ def norm_key(company, title, country):
     return f"{c}|{t}|{country}"
 
 
+def _reject(reason, sample):
+    r = DIAG["rejected"].setdefault(reason, {"count": 0, "samples": []})
+    r["count"] += 1
+    if len(r["samples"]) < 5:
+        r["samples"].append(sample[:120])
+    return None
+
+
 def make_job(source, source_id, title, company, url, location, posted, description,
              country_code=None, default_country=None, contract_hint=None, direct=False):
     title = strip_html(title)
@@ -224,11 +244,11 @@ def make_job(source, source_id, title, company, url, location, posted, descripti
     family = role_family(title)
     # Description-only matches must at least look like a D365-type role (drops "Office Manager at a D365 partner")
     if not in_title and not (in_desc and family != "Other"):
-        return None
+        return _reject("not D365", title)
 
     country = detect_country(location, country_code, default_country)
     if country not in CONFIG["countries"]:
-        return None
+        return _reject(f"country {country}", f"{title} ({location})")
 
     posted_dt = parse_date(posted)
     if posted_dt and posted_dt > NOW + timedelta(hours=2):
@@ -481,6 +501,7 @@ def main():
     new = merge(store, fresh)
     store["generated_at"] = iso(NOW)
     store["stale_after_days"] = CONFIG.get("stale_after_days", 3)
+    store["diagnostics"] = {"at": iso(NOW), "raw_fetched": len(fresh), **DIAG}
     DATA_PATH.parent.mkdir(exist_ok=True)
     DATA_PATH.write_text(json.dumps(store, ensure_ascii=False, indent=1), encoding="utf-8")
     log(f"Done: {len(new)} new, {len(store['jobs'])} tracked")

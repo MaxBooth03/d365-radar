@@ -44,7 +44,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DASHBOARD_URL: ${{ vars.DASHBOARD_URL }}
-          FORCE_ALL: ${{ github.event.inputs.force_all }}
+          FORCE_ALL: ${{ github.event_name == 'push' || github.event.inputs.force_all == 'true' }}
         run: python scanner/scan.py
 
       - name: Save results
