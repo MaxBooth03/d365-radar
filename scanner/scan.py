@@ -404,7 +404,7 @@ def fetch_jooble():
             while True:
                 # country sites search the whole country; the main site needs the country name
                 loc = cfg["locations"].get(cc, "") if host == "jooble.org" else ""
-                body = {"keywords": q, "location": loc, "page": str(page)}
+                body = {"keywords": q, "location": loc, "page": str(page), "ResultOnPage": cfg.get("per_page", 100)}
                 data = http_json("POST", f"https://{host}/api/{key}", json=body)
                 if data is None and host != "jooble.org" and page == 1:
                     host = "jooble.org"   # some keys only work on the main endpoint
@@ -415,6 +415,8 @@ def fetch_jooble():
                     break
                 jobs = data.get("jobs") or []
                 fetched += len(jobs)
+                if page == 1:
+                    DIAG.setdefault("jooble_totals", {})[f"{cc} {q}"] = data.get("totalCount")
                 for r in jobs:
                     job = make_job("Jooble", r.get("id"), r.get("title"), r.get("company"), r.get("link"),
                                    r.get("location"), r.get("updated"), r.get("snippet"),
