@@ -283,7 +283,7 @@ def due(store, name, every_hours):
 
 
 def fetch_adzuna():
-    aid, akey = os.getenv("ADZUNA_APP_ID"), os.getenv("ADZUNA_APP_KEY")
+    aid, akey = (os.getenv("ADZUNA_APP_ID") or "").strip(), (os.getenv("ADZUNA_APP_KEY") or "").strip()
     if not (aid and akey):
         log("Adzuna: no API keys set, skipping")
         return None
@@ -306,7 +306,7 @@ def fetch_adzuna():
 
 
 def fetch_jooble():
-    key = os.getenv("JOOBLE_API_KEY")
+    key = (os.getenv("JOOBLE_API_KEY") or "").strip()
     if not key:
         log("Jooble: no API key set, skipping")
         return None
