@@ -1,1 +1,14 @@
-{"generated_at": null, "last_runs": {}, "source_stats": {}, "jobs": []}
+{
+ "generated_at": "2026-10-29T09:21:45Z",
+ "last_runs": {
+  "Adzuna": "2026-10-29T09:21:45Z"
+ },
+ "source_stats": {
+  "Adzuna": {
+   "matched": 0,
+   "at": "2026-10-29T09:21:45Z"
+  }
+ },
+ "jobs": [],
+ "stale_after_days": 3
+}
