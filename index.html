@@ -140,7 +140,7 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
     <select id="country"><option value="all">NL + BE</option><option value="NL">Netherlands</option><option value="BE">Belgium</option></select>
     <select id="product"><option value="all">All products</option><option>F&amp;O</option><option>CE</option><option>BC</option><option>Power Platform</option><option>D365 general</option></select>
     <select id="type"><option value="all">Perm + contract</option><option>Perm</option><option>Contract</option><option>Unspecified</option></select>
-    <select id="win"><option value="1">Last 24 hours</option><option value="3">Last 3 days</option><option value="7">Last 7 days</option><option value="30">Last 30 days</option><option value="90" selected>Last 3 months</option></select>
+    <select id="win"><option value="1">Last 24 hours</option><option value="3">Last 3 days</option><option value="7">Last 7 days</option><option value="30">Last 30 days</option><option value="90" selected>Last 3 months</option><option value="9999">Everything</option></select>
     <label class="toggle"><input type="checkbox" id="hideAg" checked> Hide agencies</label>
     <label class="toggle"><input type="checkbox" id="showClosed"> Show taken down</label>
     <span class="count" id="count"></span>
@@ -176,7 +176,7 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
              test: j => j.status !== 'closed' && !(mark(j) && mark(j).s === 'hidden')},
     new:    {label: 'New', hint: 'Posted in the last 24 hours, or found since your last visit.',
              test: j => j.status !== 'closed' && !(mark(j) && mark(j).s === 'hidden') && (now - when(j) < D || Date.parse(j.first_seen) > lastVisit)},
-    chase:  {label: 'To chase', hint: `Still live after ${CHASE_DAYS}+ days and not contacted yet. A client still hiring after three weeks usually needs help.`,
+    chase:  {label: 'To chase', hint: `Still live after ${CHASE_DAYS}+ days and not contacted yet, however long ago it was posted. A client still hiring after three weeks usually needs help.`,
              test: j => j.status !== 'closed' && !mark(j) && now - when(j) >= CHASE_DAYS * D},
     mine:   {label: 'My leads', hint: 'Roles you marked Contacted or Follow up, including any since taken down. Marks are saved in this browser.',
              test: j => mark(j) && mark(j).s !== 'hidden'},
@@ -207,13 +207,12 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
   function renderViews(){
     const b = base(), win = Number($('win').value) * D;
     $('views').innerHTML = Object.entries(VIEWS).map(([k, v]) => {
-      const n = b.filter(j => v.test(j) && (k === 'mine' || now - when(j) <= win)).length;
+      const n = b.filter(j => v.test(j) && (k === 'mine' || k === 'chase' || now - when(j) <= win)).length;
       return `<button class="view${k === view ? ' on' : ''}" data-v="${k}">${v.label}<b>${n}</b></button>`;
     }).join('');
     $('hint').textContent = (VIEWS[view] || VIEWS.all).hint;
     $('views').querySelectorAll('[data-v]').forEach(b => b.onclick = () => {
       view = b.dataset.v; store.set('radar_view', view);
-      if (view === 'chase' && Number($('win').value) < 30) $('win').value = '90';
       render(); });
   }
 
@@ -227,7 +226,7 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
       (c === 'all' || j.country === c) &&
       (p === 'all' || (j.products||[]).includes(p)) &&
       (ty === 'all' || j.contract === ty) &&
-      (view === 'mine' || now - when(j) <= win) &&
+      (view === 'mine' || view === 'chase' || now - when(j) <= win) &&
       (!q || `${j.company} ${j.title} ${j.location} ${j.role}`.toLowerCase().includes(q))
     ).sort((a,b) => {
       const v = { posted: [when(a), when(b)], company: [a.company.toLowerCase(), b.company.toLowerCase()],

@@ -641,7 +641,9 @@ def prune(store):
     kept = []
     for j in store["jobs"]:
         born = parse_date(j.get("posted_at")) or parse_date(j["first_seen"])
-        if NOW - born > max_age + timedelta(days=1):
+        # Old roles still live on an employer's own careers feed are kept: they are hard-to-fill leads.
+        live_direct = j["status"] == "open" and any(o.startswith("ats:") for o in j.get("origins", []))
+        if NOW - born > max_age + timedelta(days=1) and not live_direct:
             continue
         if j["status"] == "closed" and NOW - parse_date(j["closed_at"]) > keep_closed:
             continue
