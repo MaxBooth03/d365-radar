@@ -8,11 +8,24 @@ Everything runs on free tiers: GitHub Actions does the scanning, and GitHub Page
 
 | Source | What it covers | How often |
 |---|---|---|
-| Adzuna API | Aggregates hundreds of NL and BE job boards | Every 4 hours (free tier: 2,500 calls/month) |
-| Jooble API (optional) | A second aggregator for extra coverage | Every 4 hours |
+| Adzuna API | Aggregates hundreds of NL and BE job boards | Full 3-month sweep once a day, plus a quick check for brand-new roles every 6 hours |
+| Jooble API (optional) | A second aggregator for extra coverage | Every 6 hours |
 | Company career pages | Recruitee, Greenhouse, Lever and Workable feeds of the companies you add | Every 30 minutes |
 
-Each run removes duplicates (the same role found on three boards shows once, and the direct careers link wins), tags the role, and saves everything to `data/jobs.json`. The dashboard reads that file.
+Each run:
+
+- removes duplicates (the same role found on three boards shows once, and the direct careers link wins)
+- tags each role by product, role type and contract or perm
+- saves everything to `data/jobs.json`, which the dashboard reads
+
+**Roles that are taken down are removed automatically.** Each full sweep re-checks every role from the last 3 months against what is still live.
+
+- A role that is missing from its source gets marked "Possibly closed".
+- If it is still missing on the next sweep, it is marked "Taken down" and hidden.
+- If a check fails part-way, nothing is removed, so an outage can never wipe your list.
+- Tick "Show taken down" to see recently closed roles and how long they were live.
+
+**Adzuna free-tier budget:** the scanner tracks its own usage and stays under 2,400 calls a month and 240 a day, so it can never go over the free limit.
 
 ## Setup (about 15 minutes)
 
@@ -74,7 +87,9 @@ All tuning happens in `config.json`:
 
 - search queries
 - agency list (add competitors here)
-- how long roles are kept
+- the lookback window (default 90 days)
+- how many missed sweeps it takes to close a role
+- how long closed roles stay visible
 - whether Power Platform-only roles count
 
 ## Privacy note

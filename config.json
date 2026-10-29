@@ -4,12 +4,17 @@
     "BE"
   ],
   "include_power_platform": true,
-  "retention_days": 45,
-  "stale_after_days": 3,
+  "close_after_missed_sweeps": 2,
+  "closed_keep_days": 30,
   "adzuna": {
     "enabled": true,
-    "every_hours": 4,
-    "max_days_old": 7,
+    "lookback_days": 90,
+    "sweep_every_hours": 24,
+    "incremental_every_hours": 6,
+    "incremental_days": 3,
+    "max_pages": 20,
+    "monthly_budget": 2400,
+    "daily_budget": 240,
     "queries": [
       "dynamics 365",
       "d365",
@@ -20,7 +25,7 @@
   },
   "jooble": {
     "enabled": true,
-    "every_hours": 4,
+    "every_hours": 6,
     "endpoint": "https://jooble.org/api/",
     "locations": {
       "NL": "Netherlands",

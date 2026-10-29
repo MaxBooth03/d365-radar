@@ -37,7 +37,7 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
 .btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:7px 12px;font:inherit;font-size:13px;cursor:pointer}
 .btn:hover{border-color:var(--accent);color:var(--accent)}
 .banner{background:var(--warn-soft);color:var(--warn);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:13px}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr) 1.6fr;gap:12px;margin-bottom:16px;align-items:start}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr) 1.6fr;gap:12px;margin-bottom:16px;align-items:start}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
 .k-label{color:var(--muted);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.04em}
 .k-val{font-size:28px;font-weight:700;margin-top:4px;font-variant-numeric:tabular-nums}
@@ -79,7 +79,10 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
 .empty{padding:48px 16px;text-align:center;color:var(--muted)}
 .mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px}
 .lbl{display:none}
-@media (max-width:980px){ .kpis{grid-template-columns:repeat(2,1fr)} .kpis .top{grid-column:1/-1} }
+@media (max-width:1100px){ .kpis{grid-template-columns:repeat(3,1fr)} .kpis .top{grid-column:1/-1} }
+@media (max-width:560px){ .kpis{grid-template-columns:repeat(2,1fr)} }
+.row.closed{opacity:.62}
+.row.closed .lead a{text-decoration:line-through}
 @media (max-width:820px){
   .head{display:none}
   .row{grid-template-columns:1fr auto;gap:4px 12px}
@@ -108,10 +111,11 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
 
   <section class="kpis">
     <div class="card"><div class="k-label">New today</div><div class="k-val" id="k1">0</div></div>
-    <div class="card"><div class="k-label">Last 7 days</div><div class="k-val" id="k2">0</div></div>
+    <div class="card"><div class="k-label">Open, last 7 days</div><div class="k-val" id="k2">0</div></div>
     <div class="card"><div class="k-label">Contract share</div><div class="k-val" id="k3">0%</div></div>
-    <div class="card"><div class="k-label">Since your last visit</div><div class="k-val" id="k4">0</div></div>
-    <div class="card top"><div class="k-label">Most active hirers, 30 days (click to filter)</div><ol id="top"></ol></div>
+    <div class="card"><div class="k-label">Since last visit</div><div class="k-val" id="k4">0</div></div>
+    <div class="card"><div class="k-label">Taken down, 7 days</div><div class="k-val" id="k5">0</div></div>
+    <div class="card top"><div class="k-label">Most active hirers, 90 days (click to filter)</div><ol id="top"></ol></div>
   </section>
 
   <div class="filters">
@@ -119,9 +123,10 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
     <select id="country"><option value="all">NL + BE</option><option value="NL">Netherlands</option><option value="BE">Belgium</option></select>
     <select id="product"><option value="all">All products</option><option>F&amp;O</option><option>CE</option><option>BC</option><option>Power Platform</option><option>D365 general</option></select>
     <select id="type"><option value="all">Perm + contract</option><option>Perm</option><option>Contract</option><option>Unspecified</option></select>
-    <select id="win"><option value="1">Last 24 hours</option><option value="3">Last 3 days</option><option value="7" selected>Last 7 days</option><option value="30">Last 30 days</option><option value="9999">Everything</option></select>
+    <select id="win"><option value="1">Last 24 hours</option><option value="3">Last 3 days</option><option value="7">Last 7 days</option><option value="30">Last 30 days</option><option value="90" selected>Last 3 months</option></select>
     <label class="toggle"><input type="checkbox" id="hideAg" checked> Hide agencies</label>
     <label class="toggle"><input type="checkbox" id="newOnly"> New since last visit</label>
+    <label class="toggle"><input type="checkbox" id="showClosed"> Show taken down</label>
     <span class="count" id="count"></span>
   </div>
 
@@ -142,7 +147,7 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
     const t = dark ? 'light' : 'dark'; document.documentElement.dataset.theme = t; store.set('radar_theme', t);
   };
 
-  let jobs = [], staleDays = 3, sortKey = 'posted', sortDir = -1, companyFilter = null;
+  let jobs = [], missNeed = 2, sortKey = 'posted', sortDir = -1, companyFilter = null;
   const lastVisit = Number(store.get('radar_last_visit') || 0);
   const now = Date.now(), H = 3600e3, D = 24*H;
 
@@ -154,8 +159,10 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
 
   function filtered(){
     const q = $('q').value.trim().toLowerCase(), c = $('country').value, p = $('product').value,
-          ty = $('type').value, win = Number($('win').value) * D, hideAg = $('hideAg').checked, newOnly = $('newOnly').checked;
+          ty = $('type').value, win = Number($('win').value) * D, hideAg = $('hideAg').checked, newOnly = $('newOnly').checked,
+          showClosed = $('showClosed').checked;
     return jobs.filter(j =>
+      (showClosed || j.status !== 'closed') &&
       (c === 'all' || j.country === c) &&
       (p === 'all' || (j.products||[]).includes(p)) &&
       (ty === 'all' || j.contract === ty) &&
@@ -173,7 +180,9 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
   }
 
   function kpis(){
-    const direct = jobs.filter(j => !j.agency);
+    const all = jobs.filter(j => !j.agency);
+    const direct = all.filter(j => j.status !== 'closed');
+    $('k5').textContent = all.filter(j => j.status === 'closed' && now - Date.parse(j.closed_at) < 7*D).length;
     $('k1').textContent = direct.filter(j => now - when(j) < D).length;
     const wk = direct.filter(j => now - when(j) < 7*D);
     $('k2').textContent = wk.length;
@@ -181,13 +190,13 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
     $('k3').innerHTML = known.length ? Math.round(100 * known.filter(j => j.contract === 'Contract').length / known.length) + '%<small>of ' + known.length + '</small>' : 'n/a';
     $('k4').textContent = lastVisit ? direct.filter(j => Date.parse(j.first_seen) > lastVisit).length : direct.length;
     const counts = {};
-    direct.filter(j => now - when(j) < 30*D).forEach(j => counts[j.company] = (counts[j.company]||0) + 1);
+    direct.filter(j => now - when(j) < 90*D).forEach(j => counts[j.company] = (counts[j.company]||0) + 1);
     const top = Object.entries(counts).sort((a,b) => b[1]-a[1]).slice(0,5);
     $('top').innerHTML = top.length ? top.map(([c,n]) =>
       `<li data-c="${esc(c)}"><span>${esc(c)}</span><span>${n} role${n>1?'s':''}</span></li>`).join('')
       : '<li class="muted">No data yet</li>';
     $('top').querySelectorAll('li[data-c]').forEach(li => li.onclick = () => {
-      companyFilter = companyFilter === li.dataset.c ? null : li.dataset.c; $('win').value = '30'; render(); });
+      companyFilter = companyFilter === li.dataset.c ? null : li.dataset.c; $('win').value = '90'; render(); });
   }
 
   function render(){
@@ -202,13 +211,15 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
     if (!rows.length) h += `<div class="empty">No roles match these filters. Try a wider time window.</div>`;
     for (const j of rows) {
       const t = when(j), isNew = now - t < D;
-      const stale = j.last_seen && now - Date.parse(j.last_seen) > staleDays * D;
-      h += `<div class="row">
+      const closed = j.status === 'closed';
+      const stale = !closed && Object.values(j.miss || {}).some(m => m > 0);
+      const live = closed ? Math.round((Date.parse(j.closed_at) - t) / D) : null;
+      h += `<div class="row${closed ? ' closed' : ''}">
         <div class="posted"><b>${rel(t)}</b><small>${fmt(t)}${j.posted_at ? '' : ' (found)'}</small></div>
         <div class="company"><span class="lbl">Company</span>${esc(j.company)}
           ${j.agency ? '<div><span class="tag ag">Agency</span></div>' : ''}</div>
         <div class="lead"><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a>
-          ${isNew ? ' <span class="tag new">NEW</span>' : ''}${stale ? ' <span class="tag stale">Possibly closed</span>' : ''}
+          ${isNew && !closed ? ' <span class="tag new">NEW</span>' : ''}${stale ? ' <span class="tag stale">Possibly closed</span>' : ''}${closed ? ` <span class="tag stale">Taken down ${fmt(Date.parse(j.closed_at))}${live >= 0 ? `, live ${live}d` : ''}</span>` : ''}${j.relisted && !closed ? ' <span class="tag ag">Re-listed</span>' : ''}
           <div class="chips">${(j.products||[]).map(p => `<span class="chip p">${esc(p)}</span>`).join('')}<span class="chip">${esc(j.role)}</span></div></div>
         <div class="muted"><span class="lbl">Location</span>${esc(j.location)} · ${esc(j.country)}</div>
         <div class="type-${esc(j.contract)}"><span class="lbl">Type</span>${esc(j.contract)}</div>
@@ -222,7 +233,7 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
   }
 
   $('csv').onclick = () => {
-    const cols = ['posted_at','first_seen','company','title','location','country','products','role','contract','agency','sources','url'];
+    const cols = ['posted_at','first_seen','status','closed_at','company','title','location','country','products','role','contract','agency','sources','url'];
     const cell = v => '"' + String(Array.isArray(v) ? v.join('; ') : (v ?? '')).replace(/"/g,'""') + '"';
     const csv = [cols.join(',')].concat(filtered().map(j => cols.map(c => cell(j[c])).join(','))).join('\n');
     const a = document.createElement('a');
@@ -230,7 +241,7 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
     a.download = `d365-radar-${new Date().toISOString().slice(0,10)}.csv`; a.click();
   };
 
-  ['q','country','product','type','win','hideAg','newOnly'].forEach(id => $(id).addEventListener('input', render));
+  ['q','country','product','type','win','hideAg','newOnly','showClosed'].forEach(id => $(id).addEventListener('input', render));
 
   function demo(){
     const mk = (hAgo, company, title, location, country, products, role, contract, sources, extra={}) => {
@@ -249,7 +260,8 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
       mk(76,'Wide World Importers','Project Manager D365 Implementation','Rotterdam','NL',['D365 general'],'Project / Delivery','Contract',['Adzuna','Jooble']),
       mk(100,'Litware','Business Central Consultant','Hasselt','BE',['BC'],'Functional Consultant','Perm',['Adzuna']),
       mk(130,'Contoso','D365 F&O Developer (X++)','Utrecht','NL',['F&O'],'Developer','Perm',['Careers page']),
-      mk(160,'Proseware','Dynamics 365 Field Service Consultant','Den Bosch','NL',['CE'],'Functional Consultant','Contract',['Adzuna'],{last_seen:new Date(now-5*D).toISOString()}),
+      mk(160,'Proseware','Dynamics 365 Field Service Consultant','Den Bosch','NL',['CE'],'Functional Consultant','Contract',['Adzuna'],{miss:{adzuna:1}}),
+      mk(400,'Litware','D365 F&O Solution Architect','Leuven','BE',['F&O'],'Architect','Perm',['Adzuna'],{status:'closed',closed_at:new Date(now-2*D).toISOString()}),
     ]};
   }
 
@@ -266,7 +278,7 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
       }
     } catch(e) { data = demo(); isDemo = true; }
     if (isDemo) { $('banner').hidden = false; $('banner').textContent = 'Demo data with fictional companies. Your live roles appear here once the scanner has run on GitHub.'; }
-    jobs = data.jobs || []; staleDays = data.stale_after_days || 3;
+    jobs = data.jobs || []; missNeed = data.close_after_missed_sweeps || 2;
     if (data.generated_at) $('sub').textContent = `Dynamics 365 roles across the Netherlands and Belgium · last scan ${rel(Date.parse(data.generated_at))}`;
     kpis(); render();
     if (!isDemo) store.set('radar_last_visit', String(now));

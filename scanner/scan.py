@@ -232,7 +232,7 @@ def _reject(reason, sample):
 
 
 def make_job(source, source_id, title, company, url, location, posted, description,
-             country_code=None, default_country=None, contract_hint=None, direct=False):
+             country_code=None, default_country=None, contract_hint=None, direct=False, origin=None):
     title = strip_html(title)
     company = strip_html(company) or "Unknown"
     desc = strip_html(description)
@@ -271,39 +271,93 @@ def make_job(source, source_id, title, company, url, location, posted, descripti
         "agency": is_agency(company),
         "direct": direct,
         "sources": [source],
+        "origins": [origin or source],
         "snippet": desc[:300],
     }
 
 
-# ----------------------------------------------------------------- sources
-def due(store, name, every_hours):
-    if FORCE_ALL:
-        return True
-    last = parse_date(store.get("last_runs", {}).get(name))
-    return not last or NOW - last >= timedelta(hours=every_hours) - timedelta(minutes=10)
+# ------------------------------------------------------------ API budget
+ADZ = CONFIG["adzuna"]
 
 
-def fetch_adzuna():
-    aid, akey = (os.getenv("ADZUNA_APP_ID") or "").strip(), (os.getenv("ADZUNA_APP_KEY") or "").strip()
-    if not (aid and akey):
-        log("Adzuna: no API keys set, skipping")
-        return None
-    cfg, out = CONFIG["adzuna"], []
-    for cc in CONFIG["countries"]:
-        for q in cfg["queries"]:
-            data = http_json("GET", f"https://api.adzuna.com/v1/api/jobs/{cc.lower()}/search/1", params={
-                "app_id": aid, "app_key": akey, "what_phrase": q, "results_per_page": 50,
-                "sort_by": "date", "max_days_old": cfg.get("max_days_old", 7),
-                "content-type": "application/json"})
-            for j in (data or {}).get("results", []):
-                job = make_job(
-                    "Adzuna", j.get("id"), j.get("title"), (j.get("company") or {}).get("display_name"),
-                    j.get("redirect_url"), (j.get("location") or {}).get("display_name"), j.get("created"),
-                    j.get("description"), country_code=cc, contract_hint=j.get("contract_type"))
-                if job:
-                    out.append(job)
-            time.sleep(2.6)  # stay under 25 calls/minute
+def usage(store):
+    u = store.setdefault("api_usage", {})
+    month, day = NOW.strftime("%Y-%m"), NOW.strftime("%Y-%m-%d")
+    if u.get("month") != month:
+        u.update(month=month, month_calls=0)
+    if u.get("day") != day:
+        u.update(day=day, day_calls=0)
+    return u
+
+
+def adzuna_budget_ok(store, n=1):
+    u = usage(store)
+    return (u["month_calls"] + n <= ADZ.get("monthly_budget", 2400)
+            and u["day_calls"] + n <= ADZ.get("daily_budget", 240))
+
+
+def adzuna_on_pace(store):
+    """Incremental checks only run if this month's usage is on track for the budget."""
+    u = usage(store)
+    days_in_month = ((NOW.replace(day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)).day
+    allowed = ADZ.get("monthly_budget", 2400) * NOW.day / days_in_month + 60
+    return u["month_calls"] <= allowed
+
+
+def adzuna_call(store, cc, page, query, days):
+    if not adzuna_budget_ok(store):
+        log("  ! Adzuna budget reached, stopping early")
+        return None, False
+    u = usage(store)
+    u["month_calls"] += 1
+    u["day_calls"] += 1
+    time.sleep(2.6)  # stay under 25 calls/minute
+    data = http_json("GET", f"https://api.adzuna.com/v1/api/jobs/{cc.lower()}/search/{page}", params={
+        "app_id": (os.getenv("ADZUNA_APP_ID") or "").strip(), "app_key": (os.getenv("ADZUNA_APP_KEY") or "").strip(),
+        "what_phrase": query, "results_per_page": 50, "sort_by": "date", "max_days_old": days,
+        "content-type": "application/json"})
+    return data, data is not None
+
+
+def adzuna_jobs(data, cc):
+    out = []
+    for j in (data or {}).get("results", []):
+        job = make_job(
+            "Adzuna", j.get("id"), j.get("title"), (j.get("company") or {}).get("display_name"),
+            j.get("redirect_url"), (j.get("location") or {}).get("display_name"), j.get("created"),
+            j.get("description"), country_code=cc, contract_hint=j.get("contract_type"), origin="adzuna")
+        if job:
+            out.append(job)
     return out
+
+
+def fetch_adzuna(store, full):
+    """full=True: every page of the last N days (lets us detect removed roles).
+    full=False: newest page only, for fast pickup of new roles between sweeps."""
+    if not (os.getenv("ADZUNA_APP_ID") and os.getenv("ADZUNA_APP_KEY")):
+        log("Adzuna: no API keys set, skipping")
+        return None, False
+    days = ADZ.get("lookback_days", 90) if full else ADZ.get("incremental_days", 3)
+    out, complete, calls_before = [], True, usage(store)["month_calls"]
+    for cc in CONFIG["countries"]:
+        for q in ADZ["queries"]:
+            page = 1
+            while True:
+                data, ok = adzuna_call(store, cc, page, q, days)
+                if not ok:
+                    complete = False
+                    break
+                out += adzuna_jobs(data, cc)
+                total, got = int(data.get("count") or 0), len(data.get("results") or [])
+                if not full or got < 50 or page * 50 >= total:
+                    break
+                if page >= ADZ.get("max_pages", 20):
+                    complete = False  # too many results to verify; don't close anything
+                    break
+                page += 1
+    log(f"  Adzuna {'full sweep' if full else 'new-role check'}: {usage(store)['month_calls'] - calls_before} calls, "
+        f"{usage(store)['month_calls']} used this month")
+    return out, complete
 
 
 def fetch_jooble():
@@ -319,7 +373,7 @@ def fetch_jooble():
             for j in (data or {}).get("jobs", []):
                 job = make_job("Jooble", j.get("id"), j.get("title"), j.get("company"), j.get("link"),
                                j.get("location"), j.get("updated"), j.get("snippet"),
-                               default_country=cc, contract_hint=j.get("type"))
+                               default_country=cc, contract_hint=j.get("type"), origin="jooble")
                 if job:
                     out.append(job)
             time.sleep(1)
@@ -327,9 +381,12 @@ def fetch_jooble():
 
 
 def fetch_ats(t):
+    """Returns (jobs, ok). A careers feed lists every open role, so each successful fetch is a full sweep."""
     typ, slug = t.get("type", "").lower(), t.get("slug", "")
     comp, dflt = t.get("company") or slug, t.get("default_country")
-    out = []
+    origin = f"ats:{typ}:{slug}"
+    out, data = [], None
+    kw = dict(default_country=dflt, direct=True, origin=origin)
     if typ == "recruitee":
         data = http_json("GET", f"https://{slug}.recruitee.com/api/offers/")
         for j in (data or {}).get("offers", []):
@@ -337,14 +394,14 @@ def fetch_ats(t):
                 "Careers page", j.get("id"), j.get("title"), j.get("company_name") or comp, j.get("careers_url"),
                 j.get("location") or j.get("city"), j.get("published_at") or j.get("created_at"),
                 f"{j.get('description', '')} {j.get('requirements', '')}", country_code=j.get("country_code"),
-                default_country=dflt, contract_hint=j.get("employment_type_code"), direct=True))
+                contract_hint=j.get("employment_type_code"), **kw))
     elif typ == "greenhouse":
         data = http_json("GET", f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs", params={"content": "true"})
         for j in (data or {}).get("jobs", []):
             out.append(make_job(
                 "Careers page", j.get("id"), j.get("title"), comp, j.get("absolute_url"),
                 (j.get("location") or {}).get("name"), j.get("first_published") or j.get("updated_at"),
-                j.get("content"), default_country=dflt, direct=True))
+                j.get("content"), **kw))
     elif typ == "lever":
         host = "api.eu.lever.co" if t.get("region") == "eu" else "api.lever.co"
         data = http_json("GET", f"https://{host}/v0/postings/{slug}", params={"mode": "json"})
@@ -352,8 +409,7 @@ def fetch_ats(t):
             cat = j.get("categories") or {}
             out.append(make_job(
                 "Careers page", j.get("id"), j.get("text"), comp, j.get("hostedUrl"), cat.get("location"),
-                j.get("createdAt"), j.get("descriptionPlain"), default_country=dflt,
-                contract_hint=cat.get("commitment"), direct=True))
+                j.get("createdAt"), j.get("descriptionPlain"), contract_hint=cat.get("commitment"), **kw))
     elif typ == "workable":
         data = http_json("GET", f"https://apply.workable.com/api/v1/widget/accounts/{slug}", params={"details": "true"})
         for j in (data or {}).get("jobs", []):
@@ -361,11 +417,10 @@ def fetch_ats(t):
                 "Careers page", j.get("shortcode"), j.get("title"), (data or {}).get("name") or comp,
                 j.get("url") or j.get("application_url"), f"{j.get('city', '')}, {j.get('country', '')}",
                 j.get("published_on") or j.get("created_at"), j.get("description"),
-                country_code=j.get("country"), default_country=dflt,
-                contract_hint=j.get("employment_type"), direct=True))
+                country_code=j.get("country"), contract_hint=j.get("employment_type"), **kw))
     else:
         log(f"  ! unknown ATS type '{typ}' for {comp}")
-    return [j for j in out if j]
+    return [j for j in out if j], data is not None
 
 
 def ats_targets():
@@ -380,28 +435,40 @@ def ats_targets():
 
 
 # ------------------------------------------------------------------ store
+SWEEPABLE = ("adzuna", "ats:")   # origins whose full listings we can re-check
+
+
 def load_store():
     try:
         s = json.loads(DATA_PATH.read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError):
         s = {}
-    s.setdefault("jobs", [])
-    s.setdefault("last_runs", {})
-    s.setdefault("source_stats", {})
+    for k, v in (("jobs", []), ("last_runs", {}), ("source_stats", {})):
+        s.setdefault(k, v)
+    for j in s["jobs"]:  # upgrade records from older versions
+        j.setdefault("status", "open")
+        j.setdefault("origins", ["adzuna" if "Adzuna" in j.get("sources", []) else "jooble"])
+        j.setdefault("miss", {})
     return s
 
 
 def merge(store, fresh):
     by_key = {j["key"]: j for j in store["jobs"]}
-    new = []
-    now = iso(NOW)
+    new, now = [], iso(NOW)
     for j in fresh:
         ex = by_key.get(j["key"])
         if ex:
+            if ex["status"] == "closed":          # re-listed
+                ex["status"], ex["closed_at"] = "open", None
+                ex["relisted"] = True
             ex["last_seen"] = now
             for s in j["sources"]:
                 if s not in ex["sources"]:
                     ex["sources"].append(s)
+            for o in j["origins"]:
+                if o not in ex["origins"]:
+                    ex["origins"].append(o)
+                ex["miss"][o] = 0
             if j["direct"] and not ex.get("direct"):
                 ex["url"], ex["direct"] = j["url"], True
             if j["posted_at"] and (not ex.get("posted_at") or j["posted_at"] < ex["posted_at"]):
@@ -409,15 +476,45 @@ def merge(store, fresh):
             if ex.get("contract") == "Unspecified" and j["contract"] != "Unspecified":
                 ex["contract"] = j["contract"]
         else:
-            j["first_seen"] = j["last_seen"] = now
+            j.update(first_seen=now, last_seen=now, status="open", miss={o: 0 for o in j["origins"]})
             by_key[j["key"]] = j
             new.append(j)
-
-    cutoff = NOW - timedelta(days=CONFIG.get("retention_days", 45))
-    jobs = [j for j in by_key.values() if parse_date(j["last_seen"]) >= cutoff]
-    jobs.sort(key=lambda j: j.get("posted_at") or j["first_seen"], reverse=True)
-    store["jobs"] = jobs
+    store["jobs"] = list(by_key.values())
     return new
+
+
+def apply_sweeps(store, sweeps):
+    """sweeps: {origin: set(keys seen in a complete listing)}. A role missing from a complete
+    listing gets a strike; after N strikes on every sweepable source it is marked closed."""
+    need = CONFIG.get("close_after_missed_sweeps", 2)
+    closed = 0
+    for j in store["jobs"]:
+        if j["status"] != "open":
+            continue
+        for origin, seen in sweeps.items():
+            if origin in j["origins"] and j["key"] not in seen:
+                j["miss"][origin] = j["miss"].get(origin, 0) + 1
+        checkable = [o for o in j["origins"] if o.startswith(SWEEPABLE)]
+        if checkable and all(j["miss"].get(o, 0) >= need for o in checkable):
+            j["status"], j["closed_at"] = "closed", iso(NOW)
+            closed += 1
+    return closed
+
+
+def prune(store):
+    """Drop roles older than the lookback window, and closed roles after a while."""
+    max_age = timedelta(days=ADZ.get("lookback_days", 90))
+    keep_closed = timedelta(days=CONFIG.get("closed_keep_days", 30))
+    kept = []
+    for j in store["jobs"]:
+        born = parse_date(j.get("posted_at")) or parse_date(j["first_seen"])
+        if NOW - born > max_age + timedelta(days=1):
+            continue
+        if j["status"] == "closed" and NOW - parse_date(j["closed_at"]) > keep_closed:
+            continue
+        kept.append(j)
+    kept.sort(key=lambda j: j.get("posted_at") or j["first_seen"], reverse=True)
+    store["jobs"] = kept
 
 
 # ----------------------------------------------------------------- alerts
@@ -470,42 +567,82 @@ def send_alerts(new_jobs):
 
 
 # ------------------------------------------------------------------- main
+def due(store, name, every_hours):
+    last = parse_date(store.get("last_runs", {}).get(name))
+    return not last or NOW - last >= timedelta(hours=every_hours) - timedelta(minutes=10)
+
+
 def main():
     store = load_store()
     first_run = not store["jobs"]
-    fresh = []
+    fresh, sweeps = [], {}
 
-    def run(name, fn, every_hours=None):
-        if every_hours and not due(store, name, every_hours):
-            log(f"{name}: not due yet (runs every {every_hours}h)")
-            return
-        log(f"{name}: scanning")
-        try:
-            res = fn()
-        except Exception as e:  # one broken source must never kill the run
-            log(f"  ! {name} failed: {type(e).__name__}: {e}")
-            return
-        if res is None:
-            return
-        fresh.extend(res)
+    def record(name, res, complete=None):
         store["last_runs"][name] = iso(NOW)
-        store["source_stats"][name] = {"matched": len(res), "at": iso(NOW)}
+        store["source_stats"][name] = {"matched": len(res), "at": iso(NOW),
+                                       **({"complete": complete} if complete is not None else {})}
         log(f"  {len(res)} relevant roles")
 
-    if CONFIG["adzuna"].get("enabled", True):
-        run("Adzuna", fetch_adzuna, CONFIG["adzuna"].get("every_hours", 4))
-    if CONFIG["jooble"].get("enabled", True):
-        run("Jooble", fetch_jooble, CONFIG["jooble"].get("every_hours", 4))
+    # Adzuna: one full sweep a day (backfill + removal check), quick new-role checks in between
+    if ADZ.get("enabled", True):
+        full_due = due(store, "Adzuna full sweep", ADZ.get("sweep_every_hours", 24))
+        inc_due = FORCE_ALL or due(store, "Adzuna new-role check", ADZ.get("incremental_every_hours", 6))
+        mode = "full" if full_due else ("new" if inc_due and adzuna_on_pace(store) else None)
+        if mode:
+            log(f"Adzuna: {'full 3-month sweep' if mode == 'full' else 'new-role check'}")
+            try:
+                res, complete = fetch_adzuna(store, mode == "full")
+            except Exception as e:  # one broken source must never kill the run
+                log(f"  ! Adzuna failed: {type(e).__name__}: {e}")
+                res, complete = None, False
+            if res is not None:
+                fresh.extend(res)
+                name = "Adzuna full sweep" if mode == "full" else "Adzuna new-role check"
+                if mode == "full" and complete:
+                    sweeps["adzuna"] = {j["key"] for j in res}
+                    record(name, res, True)
+                elif mode == "full":
+                    log("  sweep incomplete: no roles will be closed this time")
+                    record(name, res, False)  # still wait a day before the next sweep
+                else:
+                    record(name, res)
+        else:
+            log("Adzuna: not due yet")
+
+    if CONFIG["jooble"].get("enabled", True) and (FORCE_ALL or due(store, "Jooble", CONFIG["jooble"].get("every_hours", 6))):
+        log("Jooble: scanning")
+        try:
+            res = fetch_jooble()
+            if res is not None:
+                fresh.extend(res)
+                record("Jooble", res)
+        except Exception as e:
+            log(f"  ! Jooble failed: {type(e).__name__}: {e}")
+
     for t in ats_targets():
-        run(f"Careers: {t.get('company') or t['slug']}", lambda t=t: fetch_ats(t))
+        name = f"Careers: {t.get('company') or t['slug']}"
+        log(f"{name}: scanning")
+        try:
+            res, ok = fetch_ats(t)
+        except Exception as e:
+            log(f"  ! {name} failed: {type(e).__name__}: {e}")
+            continue
+        if ok:
+            fresh.extend(res)
+            sweeps[f"ats:{t.get('type', '').lower()}:{t['slug']}"] = {j["key"] for j in res}
+            record(name, res, True)
 
     new = merge(store, fresh)
+    closed = apply_sweeps(store, sweeps)
+    prune(store)
+
     store["generated_at"] = iso(NOW)
-    store["stale_after_days"] = CONFIG.get("stale_after_days", 3)
-    store["diagnostics"] = {"at": iso(NOW), "raw_fetched": len(fresh), **DIAG}
+    store["close_after_missed_sweeps"] = CONFIG.get("close_after_missed_sweeps", 2)
+    store["diagnostics"] = {"at": iso(NOW), "raw_fetched": len(fresh), "swept": sorted(sweeps), **DIAG}
     DATA_PATH.parent.mkdir(exist_ok=True)
     DATA_PATH.write_text(json.dumps(store, ensure_ascii=False, indent=1), encoding="utf-8")
-    log(f"Done: {len(new)} new, {len(store['jobs'])} tracked")
+    open_n = sum(j["status"] == "open" for j in store["jobs"])
+    log(f"Done: {len(new)} new, {closed} closed, {open_n} open roles tracked")
 
     if first_run:
         log("First run: skipping alerts so you are not flooded with the backlog")
