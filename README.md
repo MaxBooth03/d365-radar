@@ -9,7 +9,7 @@ Everything runs on free tiers: GitHub Actions does the scanning, and GitHub Page
 | Source | What it covers | How often |
 |---|---|---|
 | Adzuna API | Aggregates hundreds of NL and BE job boards | Full 3-month sweep twice a day, plus a quick check for brand-new roles every 6 hours |
-| Jooble API | A second aggregator, with separate NL and BE sites | Every 6 hours (needs the `JOOBLE_KEY_NL` and `JOOBLE_KEY_BE` secrets) |
+| Jooble API | A second aggregator, with separate NL and BE sites | Every 6 hours (needs the `JOOBLE_API_KEY` secret) |
 | Careerjet API | A third aggregator (careerjet.nl and careerjet.be) | Every 6 hours (needs the `CAREERJET_API_KEY` secret) |
 | Employer careers feeds | D365 partners, ISVs and employers in NL and BE that publish their jobs through Recruitee, Greenhouse, Lever, Workable, SmartRecruiters or Personio | Every 30 minutes |
 
@@ -97,9 +97,9 @@ To add an "Open dashboard" button to alerts, add a repository **variable** (not 
 Alerts skip agency postings and the first-run backlog.
 
 ### More coverage: Jooble and Careerjet keys
-- **Jooble** issues one key per country.
-  1. Request a key at https://nl.jooble.org/api/about and another at https://be.jooble.org/api/about.
-  2. Add them as the secrets `JOOBLE_KEY_NL` and `JOOBLE_KEY_BE`.
+- **Jooble**
+  1. Request a key at https://nl.jooble.org/api/about. One general key covers both NL and BE.
+  2. Add it as the secret `JOOBLE_API_KEY`.
 - **Careerjet**
   1. Register as a publisher at https://www.careerjet.nl/partners/register/as-publisher, using your dashboard URL as the website.
   2. Copy the API key from your publisher account.

@@ -382,7 +382,7 @@ def fetch_adzuna(store, full):
 
 
 def jooble_key(cc):
-    k = os.getenv(f"JOOBLE_KEY_{cc}") or (os.getenv("JOOBLE_API_KEY") if cc == "NL" else None)
+    k = os.getenv(f"JOOBLE_KEY_{cc}") or os.getenv("JOOBLE_API_KEY")   # one general key covers both countries
     return (k or "").strip()
 
 
