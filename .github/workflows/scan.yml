@@ -26,6 +26,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref_name }}   # latest list, even if this run waited behind another
 
       - uses: actions/setup-python@v6
         with:
@@ -56,6 +58,6 @@ jobs:
             echo "No changes"
           else
             git commit -m "Radar update $(date -u +'%Y-%m-%d %H:%M') UTC"
-            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git pull --rebase -X theirs origin "${GITHUB_REF_NAME}"   # on overlap, newest scan wins
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
