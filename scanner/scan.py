@@ -635,6 +635,8 @@ def main():
     new = merge(store, fresh)
     closed = apply_sweeps(store, sweeps)
     prune(store)
+    for j in store["jobs"]:  # pick up edits to the agency list for roles already tracked
+        j["agency"] = is_agency(j["company"])
 
     store["generated_at"] = iso(NOW)
     store["close_after_missed_sweeps"] = CONFIG.get("close_after_missed_sweeps", 2)
