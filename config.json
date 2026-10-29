@@ -36,14 +36,41 @@
   "jooble": {
     "enabled": true,
     "every_hours": 6,
-    "endpoint": "https://jooble.org/api/",
+    "max_pages": 10,
+    "hosts": {
+      "NL": "nl.jooble.org",
+      "BE": "be.jooble.org"
+    },
     "locations": {
       "NL": "Netherlands",
       "BE": "Belgium"
     },
     "queries": [
       "dynamics 365",
-      "business central"
+      "d365",
+      "business central",
+      "power platform",
+      "dynamics crm"
+    ]
+  },
+  "careerjet": {
+    "enabled": true,
+    "every_hours": 6,
+    "locales": {
+      "NL": [
+        "nl_NL"
+      ],
+      "BE": [
+        "nl_BE",
+        "fr_BE"
+      ]
+    },
+    "queries": [
+      "dynamics 365",
+      "d365",
+      "business central",
+      "power platform",
+      "dynamics crm"
     ]
   },
   "ats_targets": [

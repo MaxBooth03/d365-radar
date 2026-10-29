@@ -57,6 +57,13 @@ def parse_date(v):
         return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
     except ValueError:
         pass
+    try:  # RFC 2822, e.g. "Tue, 28 Oct 2026 08:00:00 GMT" (Careerjet)
+        from email.utils import parsedate_to_datetime
+        dt = parsedate_to_datetime(s)
+        if dt:
+            return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+    except (TypeError, ValueError, IndexError):
+        pass
     for fmt in ("%Y-%m-%d %H:%M:%S %Z", "%Y-%m-%d %H:%M:%S", "%Y-%m-%d", "%d-%m-%Y"):
         try:
             return datetime.strptime(s, fmt).replace(tzinfo=timezone.utc)
@@ -75,8 +82,16 @@ def strip_html(s):
 
 
 def _diag(url, kw, status, n=None, note=""):
-    q = (kw.get("params") or {}).get("what_phrase") or (kw.get("json") or {}).get("keywords") or ""
-    DIAG["http"].append({"url": url.split("?")[0].replace(os.getenv("JOOBLE_API_KEY") or "\0", "KEY"),
+    p = kw.get("params") or {}
+    q = p.get("what_phrase") or p.get("keywords") or (kw.get("json") or {}).get("keywords") or ""
+    if p.get("locale_code"):
+        q += f" [{p['locale_code']}]"
+    clean = url.split("?")[0]
+    for k in ("JOOBLE_API_KEY", "JOOBLE_KEY_NL", "JOOBLE_KEY_BE"):
+        v = (os.getenv(k) or "").strip()
+        if v:
+            clean = clean.replace(v, "KEY")
+    DIAG["http"].append({"url": clean,
                          "query": q, "status": status, "results": n, "note": note[:160]})
 
 
@@ -366,24 +381,107 @@ def fetch_adzuna(store, full):
     return out, complete
 
 
+def jooble_key(cc):
+    k = os.getenv(f"JOOBLE_KEY_{cc}") or (os.getenv("JOOBLE_API_KEY") if cc == "NL" else None)
+    return (k or "").strip()
+
+
 def fetch_jooble():
-    key = (os.getenv("JOOBLE_API_KEY") or "").strip()
-    if not key:
-        log("Jooble: no API key set, skipping")
-        return None
-    cfg, out = CONFIG["jooble"], []
-    for cc in CONFIG["countries"]:
+    """Returns (jobs, complete). Pages through every result so missing roles can be detected."""
+    cfg = CONFIG["jooble"]
+    countries = [cc for cc in CONFIG["countries"] if jooble_key(cc)]
+    if not countries:
+        log("Jooble: no API keys set, skipping")
+        return None, False
+    out, complete = [], True
+    for cc in countries:
+        key = jooble_key(cc)
+        hosts = [cfg.get("hosts", {}).get(cc), "jooble.org"]
+        host = next(h for h in hosts if h)
         for q in cfg["queries"]:
-            data = http_json("POST", cfg["endpoint"] + key,
-                             json={"keywords": q, "location": cfg["locations"].get(cc, ""), "page": "1"})
-            for j in (data or {}).get("jobs", []):
-                job = make_job("Jooble", j.get("id"), j.get("title"), j.get("company"), j.get("link"),
-                               j.get("location"), j.get("updated"), j.get("snippet"),
-                               default_country=cc, contract_hint=j.get("type"), origin="jooble")
-                if job:
-                    out.append(job)
-            time.sleep(1)
-    return out
+            page, fetched = 1, 0
+            while True:
+                # country sites search the whole country; the main site needs the country name
+                loc = cfg["locations"].get(cc, "") if host == "jooble.org" else ""
+                body = {"keywords": q, "location": loc, "page": str(page)}
+                data = http_json("POST", f"https://{host}/api/{key}", json=body)
+                if data is None and host != "jooble.org" and page == 1:
+                    host = "jooble.org"   # some keys only work on the main endpoint
+                    body["location"] = cfg["locations"].get(cc, "")
+                    data = http_json("POST", f"https://{host}/api/{key}", json=body)
+                if data is None:
+                    complete = False
+                    break
+                jobs = data.get("jobs") or []
+                fetched += len(jobs)
+                for r in jobs:
+                    job = make_job("Jooble", r.get("id"), r.get("title"), r.get("company"), r.get("link"),
+                                   r.get("location"), r.get("updated"), r.get("snippet"),
+                                   default_country=cc, contract_hint=r.get("type"), origin="jooble")
+                    if job:
+                        out.append(job)
+                if not jobs or fetched >= int(data.get("totalCount") or 0):
+                    break
+                if page >= cfg.get("max_pages", 10):
+                    complete = False
+                    break
+                page += 1
+                time.sleep(0.5)
+    return out, complete
+
+
+# ------------------------------------------------------------- Careerjet
+_PUBLIC_IP = None
+
+
+def public_ip():
+    """Careerjet requires the caller's IP; use the runner's public address."""
+    global _PUBLIC_IP
+    if _PUBLIC_IP is None:
+        try:
+            _PUBLIC_IP = SESSION.get("https://api.ipify.org", timeout=10).text.strip()
+        except requests.RequestException:
+            _PUBLIC_IP = "127.0.0.1"
+    return _PUBLIC_IP
+
+
+def fetch_careerjet():
+    """Returns (jobs, complete)."""
+    key = (os.getenv("CAREERJET_API_KEY") or "").strip()
+    if not key:
+        log("Careerjet: no API key set, skipping")
+        return None, False
+    cfg, out, complete = CONFIG["careerjet"], [], True
+    for cc in CONFIG["countries"]:
+        locales = list(cfg["locales"].get(cc, []))
+        for q in cfg["queries"]:
+            page = 1
+            while True:
+                data = http_json("GET", "https://search.api.careerjet.net/v4/query", auth=(key, ""), params={
+                    "locale_code": locales[0], "keywords": q, "page": page, "page_size": 100, "sort": "date",
+                    "user_ip": public_ip(), "user_agent": SESSION.headers["User-Agent"]})
+                if data is None and page == 1 and len(locales) > 1:
+                    locales.pop(0)   # e.g. nl_BE not supported, fall back to fr_BE
+                    continue
+                if data is None:
+                    complete = False
+                    break
+                if data.get("type") not in (None, "JOBS"):   # e.g. ambiguous location: nothing to page
+                    break
+                for r in data.get("jobs") or []:
+                    job = make_job("Careerjet", r.get("url"), r.get("title"), r.get("company"), r.get("url"),
+                                   r.get("locations"), r.get("date"), r.get("description"),
+                                   default_country=cc, origin="careerjet")
+                    if job:
+                        out.append(job)
+                if page >= int(data.get("pages") or 1):
+                    break
+                if page >= 10:
+                    complete = False
+                    break
+                page += 1
+                time.sleep(0.5)
+    return out, complete
 
 
 def fetch_ats(t):
@@ -402,7 +500,8 @@ def fetch_ats(t):
                 f"{j.get('description', '')} {j.get('requirements', '')}", country_code=j.get("country_code"),
                 contract_hint=j.get("employment_type_code"), **kw))
     elif typ == "greenhouse":
-        data = http_json("GET", f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs", params={"content": "true"})
+        host = "boards-api.eu.greenhouse.io" if t.get("region") == "eu" else "boards-api.greenhouse.io"
+        data = http_json("GET", f"https://{host}/v1/boards/{slug}/jobs", params={"content": "true"})
         for j in (data or {}).get("jobs", []):
             out.append(make_job(
                 "Careers page", j.get("id"), j.get("title"), comp, j.get("absolute_url"),
@@ -424,6 +523,34 @@ def fetch_ats(t):
                 j.get("url") or j.get("application_url"), f"{j.get('city', '')}, {j.get('country', '')}",
                 j.get("published_on") or j.get("created_at"), j.get("description"),
                 country_code=j.get("country"), contract_hint=j.get("employment_type"), **kw))
+    elif typ == "smartrecruiters":
+        data = http_json("GET", f"https://api.smartrecruiters.com/v1/companies/{slug}/postings", params={"limit": 100})
+        for j in (data or {}).get("content", []):
+            loc = j.get("location") or {}
+            out.append(make_job(
+                "Careers page", j.get("id"), j.get("name"), (j.get("company") or {}).get("name") or comp,
+                f"https://jobs.smartrecruiters.com/{slug}/{j.get('id')}", f"{loc.get('city', '')}, {loc.get('country', '')}",
+                j.get("releasedDate"), (j.get("function") or {}).get("label", ""),
+                country_code=(loc.get("country") or "").upper() or None,
+                contract_hint=(j.get("typeOfEmployment") or {}).get("label"), **kw))
+    elif typ == "personio":
+        import xml.etree.ElementTree as ET
+        tld = t.get("tld", "de")
+        try:
+            r = SESSION.get(f"https://{slug}.jobs.personio.{tld}/xml", timeout=25)
+            root = ET.fromstring(r.content) if r.status_code == 200 else None
+        except (requests.RequestException, ET.ParseError):
+            root = None
+        _diag(f"https://{slug}.jobs.personio.{tld}/xml", {}, 200 if root is not None else "error",
+              len(root.findall("position")) if root is not None else None)
+        data = root
+        for pos in (root.findall("position") if root is not None else []):
+            txt = lambda tag: (pos.findtext(tag) or "").strip()
+            desc = " ".join((d.findtext("value") or "") for d in pos.iter("jobDescription"))
+            out.append(make_job(
+                "Careers page", txt("id"), txt("name"), txt("subcompany") or comp,
+                f"https://{slug}.jobs.personio.{tld}/job/{txt('id')}", txt("office"), txt("createdAt"), desc,
+                contract_hint=txt("employmentType"), **kw))
     else:
         log(f"  ! unknown ATS type '{typ}' for {comp}")
     return [j for j in out if j], data is not None
@@ -441,7 +568,7 @@ def ats_targets():
 
 
 # ------------------------------------------------------------------ store
-SWEEPABLE = ("adzuna", "ats:")   # origins whose full listings we can re-check
+SWEEPABLE = ("adzuna", "ats:", "jooble", "careerjet")   # origins whose full listings we can re-check
 
 
 def load_store():
@@ -615,15 +742,22 @@ def main():
         else:
             log("Adzuna: not due yet")
 
-    if CONFIG["jooble"].get("enabled", True) and (FORCE_ALL or due(store, "Jooble", CONFIG["jooble"].get("every_hours", 6))):
-        log("Jooble: scanning")
+    for name, fn, cfg_key in (("Jooble", fetch_jooble, "jooble"), ("Careerjet", fetch_careerjet, "careerjet")):
+        cfg = CONFIG.get(cfg_key, {})
+        if not cfg.get("enabled", True) or not (FORCE_ALL or due(store, name, cfg.get("every_hours", 6))):
+            continue
+        log(f"{name}: scanning")
         try:
-            res = fetch_jooble()
-            if res is not None:
-                fresh.extend(res)
-                record("Jooble", res)
-        except Exception as e:
-            log(f"  ! Jooble failed: {type(e).__name__}: {e}")
+            res, complete = fn()
+        except Exception as e:  # one broken source must never kill the run
+            log(f"  ! {name} failed: {type(e).__name__}: {e}")
+            continue
+        if res is None:
+            continue
+        fresh.extend(res)
+        if complete:
+            sweeps[cfg_key] = {j["key"] for j in res}
+        record(name, res, complete)
 
     for t in ats_targets():
         name = f"Careers: {t.get('company') or t['slug']}"
