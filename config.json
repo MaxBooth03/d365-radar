@@ -75,12 +75,70 @@
   },
   "ats_targets": [
     {
-      "enabled": false,
+      "type": "greenhouse",
+      "slug": "hsogroupbv",
+      "company": "HSO"
+    },
+    {
+      "type": "greenhouse",
+      "slug": "4psnl",
+      "company": "4PS",
+      "default_country": "NL"
+    },
+    {
       "type": "recruitee",
-      "slug": "examplecompany",
-      "company": "Example Company (replace me)",
-      "default_country": "NL",
-      "_help": "type is recruitee | greenhouse | lever | workable. slug is the bit in their careers URL, e.g. examplecompany.recruitee.com. For Lever EU add \"region\": \"eu\". Set enabled to true."
+      "slug": "xylos",
+      "company": "Xylos",
+      "default_country": "BE"
+    },
+    {
+      "type": "recruitee",
+      "slug": "wortell",
+      "company": "Wortell"
+    },
+    {
+      "type": "recruitee",
+      "slug": "conclusion",
+      "company": "Conclusion",
+      "default_country": "NL"
+    },
+    {
+      "type": "recruitee",
+      "slug": "centric",
+      "company": "Centric",
+      "default_country": "NL"
+    },
+    {
+      "type": "recruitee",
+      "slug": "emergo",
+      "company": "E-mergo",
+      "default_country": "NL"
+    },
+    {
+      "type": "recruitee",
+      "slug": "bakertilly",
+      "company": "Baker Tilly",
+      "default_country": "NL"
+    },
+    {
+      "type": "personio",
+      "slug": "macaw",
+      "company": "Macaw"
+    },
+    {
+      "type": "smartrecruiters",
+      "slug": "sanacommerce",
+      "company": "Sana Commerce"
+    },
+    {
+      "type": "smartrecruiters",
+      "slug": "everience",
+      "company": "Everience"
+    },
+    {
+      "type": "smartrecruiters",
+      "slug": "redcare-pharmacy",
+      "company": "Redcare Pharmacy"
     }
   ],
   "agency_keywords": [
