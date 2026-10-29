@@ -1,0 +1,713 @@
+{
+ "candidates": 125,
+ "hits": [
+  {
+   "candidate": "HSO",
+   "ats": "greenhouse",
+   "slug": "hsogroupbv",
+   "jobs": 147,
+   "d365_jobs": 126,
+   "benelux_jobs": 45,
+   "d365_samples": [
+    "AI Platform engineer",
+    "ANZ Solution Architect - Managed Services",
+    " Azure Cloud Developer",
+    "Azure DevOps Engineer",
+    "Azure Integration Developer (Contract)"
+   ],
+   "samples": [
+    "AI Platform engineer",
+    "Alliance Manager",
+    "ANZ Senior Machine Learning Engineer | Expression of Interest",
+    "ANZ Solution Architect - Managed Services"
+   ],
+   "locations": [
+    "Amsterdam, Netherlands",
+    "Antwerp, Antwerp, Belgium",
+    "Bundesweit",
+    "Canada",
+    "Denmark Remote",
+    "Deutschlandweit"
+   ]
+  },
+  {
+   "candidate": "Hitachi Solutions",
+   "ats": "smartrecruiters",
+   "slug": "hitachisolutions",
+   "jobs": 59,
+   "d365_jobs": 16,
+   "benelux_jobs": 0,
+   "d365_samples": [
+    "D365 SCM Functional Lead Consultant",
+    "Microsoft Biz Apps Senior Technical Consultant (Power Platform and Dynamics CE)",
+    "D365 FO Functional Finance Consultant",
+    "D365 SCM Functional - Manufacturing",
+    "Microsoft Biz Apps Technical Lead (Power Platform and Dynamics CE)"
+   ],
+   "samples": [
+    "D365 SCM Functional Lead Consultant",
+    "Service Delivery Manager with French and English ",
+    "Recruitment Coordinator",
+    "Microsoft Biz Apps Senior Technical Consultant (Power Platform and Dynamics CE)"
+   ],
+   "locations": [
+    "Bangalore North in",
+    "Bangalore South in",
+    "Chennai in",
+    "Chicago us",
+    "Greenville us",
+    "Hyderabad in"
+   ],
+   "company": "Hitachi Solutions",
+   "total": 59
+  },
+  {
+   "candidate": "4PS",
+   "ats": "greenhouse",
+   "slug": "4psnl",
+   "jobs": 20,
+   "d365_jobs": 14,
+   "benelux_jobs": 3,
+   "d365_samples": [
+    "Architect",
+    "Architect ",
+    "Assistent Controller  ",
+    "Cloud Platform Architect ",
+    "Finance consultant Bouw"
+   ],
+   "samples": [
+    "Afstudeerstage: Financieel consultant GWW",
+    "Architect",
+    "Architect ",
+    "Assistent Controller  "
+   ],
+   "locations": [
+    "Ede",
+    "Ede ",
+    "Ede, Gelderland - Hyrbid",
+    "Ede, Nederland",
+    "Ede, Nederland - Hybride",
+    "Randstad, Netherlands (Remote)"
+   ]
+  },
+  {
+   "candidate": "Grant Thornton",
+   "ats": "recruitee",
+   "slug": "grantthornton",
+   "jobs": 57,
+   "d365_jobs": 4,
+   "benelux_jobs": 0,
+   "d365_samples": [
+    "Collaborateur Comptable Fournisseurs – Italien Courant - Lyon (H/F)",
+    "Responsable Run & Delivery Applicatif - Centre d'Excellence - Neuilly (H/F)",
+    "Manager - IA - Neuilly (H/F)",
+    "Comptable Fournisseurs Confirmé - Lyon (H/F)"
+   ],
+   "samples": [
+    "Consultant Senior RGPD - Data Privacy - Healthcare & Life Science - Neuilly (H/F)",
+    "Consultant Senior AI Governance & Compliance - Neuilly (F/H)",
+    "Juriste Stagiaire - Direction Technique Audit - Neuilly (H/F)",
+    "Collaborateur Comptable Fournisseurs – Italien Courant - Lyon (H/F)"
+   ],
+   "locations": [
+    "Aix-en-Provence, Provence-Alpes-Côte d'Azur, France France",
+    "Balma, Occitanie, France France",
+    "Lyon, Grand Est, France France",
+    "Marseille, Provence-Alpes-Côte d'Azur, France France",
+    "Neuilly-sur-Seine, Île-de-France, France France",
+    "Nice, Provence-Alpes-Côte d'Azur, France France"
+   ],
+   "company": "Grant Thornton"
+  },
+  {
+   "candidate": "Xylos",
+   "ats": "recruitee",
+   "slug": "xylos",
+   "jobs": 8,
+   "d365_jobs": 4,
+   "benelux_jobs": 8,
+   "d365_samples": [
+    "Service Desk Engineer Delen Private Bank",
+    "Digital Coach mét expertise in Office 365 en Copilot",
+    "Microsoft 365 & Copilot Consultant",
+    "Microsoft Power BI Trainer/Coach"
+   ],
+   "samples": [
+    "Service Desk Engineer Delen Private Bank",
+    "Solution Sales Professional - Learning",
+    "Digital Coach mét expertise in Office 365 en Copilot",
+    "Microsoft 365 & Copilot Consultant"
+   ],
+   "locations": [
+    "Antwerpen - Brussel - Gent, Vlaams Gewest, België België",
+    "Antwerpen, Vlaams Gewest, België België"
+   ],
+   "company": "Xylos"
+  },
+  {
+   "candidate": "Redcare Pharmacy",
+   "ats": "smartrecruiters",
+   "slug": "redcare-pharmacy",
+   "jobs": 100,
+   "d365_jobs": 2,
+   "benelux_jobs": 36,
+   "d365_samples": [
+    "Senior ERP Engineer – Microsoft Dynamics 365 Warehouse Management (WMS) (m/f/d)",
+    "Senior ERP Engineer – Microsoft Dynamics 365 Warehouse Management (WMS) (m/f/d)"
+   ],
+   "samples": [
+    "Senior Product Manager – Retail Media Data, Measurement & Auction Strategy (m/f/d)",
+    "Financial Accountant - General Ledger (m/f/d)",
+    "Senior Data Product Manager - Marketing (m/f/d)",
+    "Senior Engineer, Retail Media / AdTech Solutions (m/f/d)"
+   ],
+   "locations": [
+    "Berlin de",
+    "Cologne de",
+    "Duisburg de",
+    "Düsseldorf de",
+    "Eindhoven nl",
+    "Ennevelin fr"
+   ],
+   "company": "Redcare Pharmacy",
+   "total": 243
+  },
+  {
+   "candidate": "Conclusion",
+   "ats": "recruitee",
+   "slug": "conclusion",
+   "jobs": 143,
+   "d365_jobs": 1,
+   "benelux_jobs": 143,
+   "d365_samples": [
+    "Sales Executive"
+   ],
+   "samples": [
+    "Senior Business Consultant Service Design",
+    "QA Test Engineer",
+    "Afstudeerstage Commerciële Strategie",
+    "Digital Marketing Specialist"
+   ],
+   "locations": [
+    "Amsterdam, Noord-Holland, Nederland Nederland",
+    "Apeldoorn, Gelderland, Nederland Nederland",
+    "Breda, Noord-Brabant, Nederland Nederland",
+    "Capelle aan den IJssel, Utrecht, Nederland Nederland",
+    "Driebergen, Utrecht, Nederland Nederland",
+    "Geertruidenberg, Noord-Brabant, Nederland Nederland"
+   ],
+   "company": "Conclusion Services B.V."
+  },
+  {
+   "candidate": "E-mergo",
+   "ats": "recruitee",
+   "slug": "emergo",
+   "jobs": 6,
+   "d365_jobs": 1,
+   "benelux_jobs": 6,
+   "d365_samples": [
+    "Power Platform Developer"
+   ],
+   "samples": [
+    "Senior Data Engineer Azure / Microsoft Fabric 32/40 uur",
+    "Mendix Developer",
+    "Power Platform Developer",
+    "Senior Data Engineer (Backend developer)"
+   ],
+   "locations": [
+    "Delft, Zuid-Holland, Nederland Nederland"
+   ],
+   "company": "E-mergo"
+  },
+  {
+   "candidate": "Everience",
+   "ats": "smartrecruiters",
+   "slug": "everience",
+   "jobs": 100,
+   "d365_jobs": 1,
+   "benelux_jobs": 21,
+   "d365_samples": [
+    "Senior Microsoft Dynamics 365 Developer (m/w/d)"
+   ],
+   "samples": [
+    "Technicien support Applicatif N2 H/F",
+    "Ingénieur.e modern workplace",
+    "Directeur d'Agence - Région Rhône-Alpes H/F",
+    "Ingénieur de production / Référent Applicatif H/F"
+   ],
+   "locations": [
+    "Alanno it",
+    "Amersfoort nl",
+    "Amsterdam nl",
+    "Angers fr",
+    "Annecy fr",
+    "Biot fr"
+   ],
+   "company": "EVERIENCE",
+   "total": 386
+  },
+  {
+   "candidate": "Forvis Mazars",
+   "ats": "greenhouse",
+   "slug": "forvismazars",
+   "jobs": 126,
+   "d365_jobs": 1,
+   "benelux_jobs": 0,
+   "d365_samples": [
+    "Senior Accountant/Buchhalter (all genders)"
+   ],
+   "samples": [
+    "Associate Wirtschaftsforensik: Investigation & Prävention (all genders)",
+    "Bilanzbuchhalter (all genders)",
+    "Bilanzbuchhalter USGAAP/IFRS (all genders)",
+    "Buchhalter / Accountant (all genders)"
+   ],
+   "locations": [
+    "Berlin",
+    "Berlin; Dresden; Düsseldorf; Frankfurt am Main; Greifswald; Hamburg; Köln; Leipzig; Mannheim; München; Nürnberg; Potsdam; Stuttgart",
+    "Berlin; Dresden; Düsseldorf; Frankfurt am Main; Hamburg; Köln; Leipzig; Mannheim; München; Nürnberg; Stuttgart",
+    "Berlin; Dresden; Düsseldorf; Frankfurt am Main; Hamburg; Köln; Leipzig; München; Nürnberg; Stuttgart",
+    "Berlin; Dresden; Düsseldorf; Frankfurt am Main; Hamburg; Köln; Leipzig; München; Stuttgart",
+    "Berlin; Dresden; Düsseldorf; Frankfurt am Main; Hamburg; Köln; Mannheim; München; Nürnberg; Stuttgart"
+   ]
+  },
+  {
+   "candidate": "HSO",
+   "ats": "lever",
+   "slug": "hso",
+   "jobs": 5,
+   "d365_jobs": 1,
+   "benelux_jobs": 0,
+   "d365_samples": [
+    "Data Engineer - Global Services"
+   ],
+   "samples": [
+    "Account Manager",
+    "Data Engineer - Global Services",
+    "Financial Analyst",
+    "Marketing Analyst"
+   ],
+   "locations": [
+    "San Francisco, CA",
+    "Skopje"
+   ]
+  },
+  {
+   "candidate": "Arcus",
+   "ats": "recruitee",
+   "slug": "arcus",
+   "jobs": 20,
+   "d365_jobs": 0,
+   "benelux_jobs": 0,
+   "d365_samples": [],
+   "samples": [
+    "Bilanzbuchhalter (m/w/d)",
+    "Projektingenieur (w/m/d) in der Anwendungsforschung",
+    "Werkstudent (w/m/d) Gebäudetechnik / TGA",
+    "Werkstudent im Bereich Projektakquise und Vertragsmanagement"
+   ],
+   "locations": [
+    "Berlin, Berlin, Deutschland Deutschland",
+    "Cottbus, Brandenburg, Deutschland Deutschland",
+    "Dresden, Sachsen, Deutschland Deutschland"
+   ],
+   "company": "ARCUS Planung + Beratung Bauplanungsgesellschaft mbH"
+  },
+  {
+   "candidate": "Arcus",
+   "ats": "personio",
+   "slug": "arcus",
+   "jobs": 12,
+   "d365_jobs": 0,
+   "benelux_jobs": 0,
+   "d365_samples": [],
+   "samples": [
+    "2027 Ausbildung Kaufmann*frau fÃ¼r GroÃ- und AuÃenhandelsmanagement",
+    "Wir suchen Dich!",
+    "Deine TÃ¤tigkeiten bei arcus",
+    "Warum wir?"
+   ],
+   "locations": [
+    "Seevetal"
+   ]
+  },
+  {
+   "candidate": "Arcus",
+   "ats": "personio-com",
+   "slug": "arcus",
+   "jobs": 12,
+   "d365_jobs": 0,
+   "benelux_jobs": 0,
+   "d365_samples": [],
+   "samples": [
+    "2027 Ausbildung Kaufmann*frau fÃ¼r GroÃ- und AuÃenhandelsmanagement",
+    "Wir suchen Dich!",
+    "Deine TÃ¤tigkeiten bei arcus",
+    "Warum wir?"
+   ],
+   "locations": [
+    "Seevetal"
+   ]
+  },
+  {
+   "candidate": "Baker Tilly",
+   "ats": "recruitee",
+   "slug": "bakertilly",
+   "jobs": 140,
+   "d365_jobs": 0,
+   "benelux_jobs": 140,
+   "d365_samples": [],
+   "samples": [
+    "Manager Public Advisory",
+    "Supervisor MKB Accountancy",
+    "Director MKB Accountancy",
+    "Werkstudent Tax Advisory"
+   ],
+   "locations": [
+    "Almelo, Overijssel, Nederland Nederland",
+    "Amsterdam, Noord-Holland, Nederland Nederland",
+    "Breda, Noord-Brabant, Nederland Nederland",
+    "Den Bosch, Noord-Brabant, Nederland Nederland",
+    "Den Haag, Zuid-Holland, Nederland Nederland",
+    "Eindhoven, Noord-Brabant, Nederland Nederland"
+   ],
+   "company": "Baker Tilly (Netherlands) B.V."
+  },
+  {
+   "candidate": "Centric",
+   "ats": "recruitee",
+   "slug": "centric",
+   "jobs": 56,
+   "d365_jobs": 0,
+   "benelux_jobs": 56,
+   "d365_samples": [],
+   "samples": [
+    "Client Service Director",
+    "Marketing & Communicatie Manager",
+    "Stage: Software Developer",
+    "Sales Consultant New Business"
+   ],
+   "locations": [
+    "Almere, Flevoland, Nederland Nederland",
+    "Amsterdam, Noord-Holland, Nederland Nederland",
+    "Gouda, Zuid-Holland, Nederland Nederland",
+    "Groningen, Groningen, Nederland Nederland",
+    "Hoogeveen, Drenthe, Nederland Nederland",
+    "Maarsbergen, Utrecht, Nederland Nederland"
+   ],
+   "company": "Centric"
+  },
+  {
+   "candidate": "Coolblue",
+   "ats": "smartrecruiters",
+   "slug": "coolblue",
+   "jobs": 100,
+   "d365_jobs": 0,
+   "benelux_jobs": 65,
+   "d365_samples": [],
+   "samples": [
+    "Parttime Fietskoerier Den Haag",
+    "Chef d'équipe logistique bilingue (FR/NL) ",
+    "Recruiter CoolblueBezorgt",
+    "Assistent Store Manager Brugge"
+   ],
+   "locations": [
+    "Alkmaar nl",
+    "Almere nl",
+    "Amsterdam nl",
+    "Antwerpen be",
+    "Arnhem nl",
+    "Brugge be"
+   ],
+   "company": "Coolblue",
+   "total": 400
+  },
+  {
+   "candidate": "Deloitte",
+   "ats": "smartrecruiters",
+   "slug": "deloittenl",
+   "jobs": 7,
+   "d365_jobs": 0,
+   "benelux_jobs": 7,
+   "d365_samples": [],
+   "samples": [
+    "Chief of Bullshitbingo Jobtitles",
+    "Hackertje",
+    "Test vacature",
+    "Recruiter"
+   ],
+   "locations": [
+    "Amsterdam nl",
+    "Breda nl"
+   ],
+   "company": "Deloitte NL",
+   "total": 7
+  },
+  {
+   "candidate": "EY",
+   "ats": "recruitee",
+   "slug": "ey",
+   "jobs": 3,
+   "d365_jobs": 0,
+   "benelux_jobs": 3,
+   "d365_samples": [],
+   "samples": [
+    "Software developer",
+    "Software Developer",
+    "Senior Marketer (Sample)"
+   ],
+   "locations": [
+    "Amsterdam, Noord-Holland, Netherlands Netherlands",
+    "Remote job Netherlands"
+   ],
+   "company": "EY"
+  },
+  {
+   "candidate": "Everience",
+   "ats": "personio",
+   "slug": "everience",
+   "jobs": 28,
+   "d365_jobs": 0,
+   "benelux_jobs": 0,
+   "d365_samples": [],
+   "samples": [
+    "(Senior) IT Support Specialist (m/w/d) - Kaufering",
+    "Ihre Aufgaben",
+    "Ihr Profil",
+    "Warum wir?"
+   ],
+   "locations": [
+    "Darmstadt",
+    "Frankfurt",
+    "Hamburg",
+    "Kaufering",
+    "KÃ¶ln",
+    "Mainz"
+   ]
+  },
+  {
+   "candidate": "Everience",
+   "ats": "personio-com",
+   "slug": "everience",
+   "jobs": 28,
+   "d365_jobs": 0,
+   "benelux_jobs": 0,
+   "d365_samples": [],
+   "samples": [
+    "(Senior) IT Support Specialist (m/w/d) - Kaufering",
+    "Ihre Aufgaben",
+    "Ihr Profil",
+    "Warum wir?"
+   ],
+   "locations": [
+    "Darmstadt",
+    "Frankfurt",
+    "Hamburg",
+    "Kaufering",
+    "KÃ¶ln",
+    "Mainz"
+   ]
+  },
+  {
+   "candidate": "KPMG",
+   "ats": "smartrecruiters",
+   "slug": "kpmgnl",
+   "jobs": 7,
+   "d365_jobs": 0,
+   "benelux_jobs": 0,
+   "d365_samples": [],
+   "samples": [
+    "Software Engineer",
+    "Registered Nurse",
+    "Executive",
+    "Retail Sales Associate"
+   ],
+   "locations": [
+    "Belfast gb",
+    "Edinburgh gb",
+    "London gb"
+   ],
+   "company": "KPMG NL",
+   "total": 7
+  },
+  {
+   "candidate": "Macaw",
+   "ats": "personio",
+   "slug": "macaw",
+   "jobs": 14,
+   "d365_jobs": 0,
+   "benelux_jobs": 7,
+   "d365_samples": [],
+   "samples": [
+    "AI Developer (Microsoft Stack)",
+    "AI Expert Initiativbewerbung (m/w/d)",
+    "Data Architect Microsoft Fabric",
+    "Data Engineer"
+   ],
+   "locations": [
+    "Hoofddorp NL",
+    "Vilnius LT",
+    "Wuppertal"
+   ]
+  },
+  {
+   "candidate": "Macaw",
+   "ats": "personio-com",
+   "slug": "macaw",
+   "jobs": 14,
+   "d365_jobs": 0,
+   "benelux_jobs": 7,
+   "d365_samples": [],
+   "samples": [
+    "AI Developer (Microsoft Stack)",
+    "AI Expert Initiativbewerbung (m/w/d)",
+    "Data Architect Microsoft Fabric",
+    "Data Engineer"
+   ],
+   "locations": [
+    "Hoofddorp NL",
+    "Vilnius LT",
+    "Wuppertal"
+   ]
+  },
+  {
+   "candidate": "Mazars",
+   "ats": "smartrecruiters",
+   "slug": "mazars",
+   "jobs": 100,
+   "d365_jobs": 0,
+   "benelux_jobs": 0,
+   "d365_samples": [],
+   "samples": [
+    "Consultant Senior Consolidation Assurance - Paris 2026-27 H/F",
+    "Manager / Senior Manager - Conseil transformation fonction finance - Lyon - Décembre 2026 - H/F",
+    "Collaborateur comptable junior SEM - Reims - 2026 (H/F)",
+    "Assistant.e Administratif.ive Experimenté.e - Lyon - Fin 2026 / Début 2027 - F/H"
+   ],
+   "locations": [
+    "Besançon fr",
+    "Bezannes fr",
+    "Bordeaux fr",
+    "Bretteville-sur-Odon fr",
+    "Casablanca ma",
+    "Champagnole fr"
+   ],
+   "company": "MAZARS",
+   "total": 200
+  },
+  {
+   "candidate": "Pulse",
+   "ats": "greenhouse",
+   "slug": "pulse",
+   "jobs": 2770,
+   "d365_jobs": 0,
+   "benelux_jobs": 0,
+   "d365_samples": [],
+   "samples": [
+    "2 x Dietitian - Band 6 - Manchester",
+    "2 x Paediatric Audiologist - Band 6 - North West London",
+    "Accident & Emergency (A&E) East Cheshire",
+    "Accident & Emergency ( A&E) Nurses, Harrogate "
+   ],
+   "locations": [
+    " BURTON",
+    " Brighton, East Sussex ",
+    " East London ",
+    " Epsom, Surrey",
+    " Gloucester, Gloucestershire",
+    " Grimsby"
+   ]
+  },
+  {
+   "candidate": "Redcare Pharmacy",
+   "ats": "smartrecruiters",
+   "slug": "redcarepharmacy",
+   "jobs": 16,
+   "d365_jobs": 0,
+   "benelux_jobs": 7,
+   "d365_samples": [],
+   "samples": [
+    "Participant in the SmartRecruiters Training (m/f/d)",
+    "Test Hire Sync",
+    "Test Logistik 14.06.",
+    "Job for HM Testing 3 (pharma)"
+   ],
+   "locations": [
+    "Berlin de",
+    "Cologne de",
+    "Köln de",
+    "Mönchengladbach de",
+    "Sevenum nl"
+   ],
+   "company": "Redcare Pharmacy - Sandbox",
+   "total": 16
+  },
+  {
+   "candidate": "Sana Commerce",
+   "ats": "smartrecruiters",
+   "slug": "sanacommerce",
+   "jobs": 12,
+   "d365_jobs": 0,
+   "benelux_jobs": 7,
+   "d365_samples": [],
+   "samples": [
+    "Finance Working Student (16 hours p/w) - Rotterdam ",
+    "Full-Stack Developer",
+    "Online Marketing Manager (24 - 32 uur) voor inBrain & Insight",
+    "Teamlead Research and Design (Agentic AI)"
+   ],
+   "locations": [
+    "Alexandria eg",
+    "De Meern nl",
+    "Dubai ae",
+    "Rotterdam nl",
+    "Utrecht nl"
+   ],
+   "company": "Sana Commerce",
+   "total": 12
+  },
+  {
+   "candidate": "Valtech",
+   "ats": "greenhouse",
+   "slug": "valtech",
+   "jobs": 128,
+   "d365_jobs": 0,
+   "benelux_jobs": 3,
+   "d365_samples": [],
+   "samples": [
+    "AEM - Developer / Senior Developer",
+    "AEM Tech Lead ",
+    "AI Enablement Lead",
+    "AI Tech Lead"
+   ],
+   "locations": [
+    "Argentina - Remote",
+    "Bengaluru",
+    "Brazil - Remote",
+    "Bristol",
+    "Buenos Aires",
+    "Bulgaria - Remote"
+   ]
+  },
+  {
+   "candidate": "Wortell",
+   "ats": "recruitee",
+   "slug": "wortell",
+   "jobs": 18,
+   "d365_jobs": 0,
+   "benelux_jobs": 18,
+   "d365_samples": [],
+   "samples": [
+    "Architect",
+    "New Business Sales - Debble",
+    "Directeur Sales Secure",
+    "Security Analist (Medior)"
+   ],
+   "locations": [
+    "Gent, Vlaams Gewest, België België",
+    "Lijnden, Noord-Holland, Nederland Nederland"
+   ],
+   "company": "Wortell"
+  }
+ ]
+}
