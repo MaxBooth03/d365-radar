@@ -426,8 +426,7 @@ def fetch_jooble():
                 if not jobs or fetched >= int(data.get("totalCount") or 0):
                     break
                 if page >= cfg.get("max_pages", 10):
-                    complete = False
-                    break
+                    break   # Jooble matches loosely; relevant roles rank in the top pages
                 page += 1
                 time.sleep(0.5)
         done[cc] = complete
@@ -633,7 +632,9 @@ def merge(store, fresh):
 def apply_sweeps(store, sweeps):
     """sweeps: {origin: set(keys seen in a complete listing)}. A role missing from a complete
     listing gets a strike; after N strikes on every sweepable source it is marked closed."""
-    need = CONFIG.get("close_after_missed_sweeps", 2)
+    default_need = CONFIG.get("close_after_missed_sweeps", 2)
+    per_source = CONFIG.get("close_after_missed_sweeps_by_source", {})
+    need_for = lambda o: next((n for prefix, n in per_source.items() if o.startswith(prefix)), default_need)
     closed = 0
     for j in store["jobs"]:
         if j["status"] != "open":
@@ -642,7 +643,7 @@ def apply_sweeps(store, sweeps):
             if origin in j["origins"] and j["key"] not in seen:
                 j["miss"][origin] = j["miss"].get(origin, 0) + 1
         checkable = [o for o in j["origins"] if o.startswith(SWEEPABLE)]
-        if checkable and all(j["miss"].get(o, 0) >= need for o in checkable):
+        if checkable and all(j["miss"].get(o, 0) >= need_for(o) for o in checkable):
             j["status"], j["closed_at"] = "closed", iso(NOW)
             closed += 1
     return closed

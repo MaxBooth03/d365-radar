@@ -5,6 +5,9 @@
   ],
   "include_power_platform": true,
   "close_after_missed_sweeps": 2,
+  "close_after_missed_sweeps_by_source": {
+    "jooble": 3
+  },
   "closed_keep_days": 30,
   "adzuna": {
     "enabled": true,
@@ -51,7 +54,8 @@
       "business central",
       "power platform",
       "dynamics crm"
-    ]
+    ],
+    "per_page": 100
   },
   "careerjet": {
     "enabled": false,
