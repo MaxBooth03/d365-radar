@@ -1,14 +1,91 @@
 {
- "generated_at": "2026-10-29T09:29:46Z",
+ "generated_at": "2026-10-29T09:30:55Z",
  "last_runs": {
-  "Adzuna": "2026-10-29T09:21:45Z"
+  "Adzuna": "2026-10-29T09:30:55Z"
  },
  "source_stats": {
   "Adzuna": {
    "matched": 0,
-   "at": "2026-10-29T09:21:45Z"
+   "at": "2026-10-29T09:30:55Z"
   }
  },
  "jobs": [],
- "stale_after_days": 3
+ "stale_after_days": 3,
+ "diagnostics": {
+  "at": "2026-10-29T09:30:55Z",
+  "raw_fetched": 0,
+  "http": [
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
+    "query": "dynamics 365",
+    "status": 401,
+    "results": null,
+    "note": "{\"__CLASS__\":\"Adzuna::API::Response::Exception\",\"exception\":\"AUTH_FAIL\",\"doc\":\"https://api.adzuna.com/v1/doc\",\"display\":\"Authorisation failed\"}"
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
+    "query": "d365",
+    "status": 401,
+    "results": null,
+    "note": "{\"doc\":\"https://api.adzuna.com/v1/doc\",\"display\":\"Authorisation failed\",\"__CLASS__\":\"Adzuna::API::Response::Exception\",\"exception\":\"AUTH_FAIL\"}"
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
+    "query": "business central",
+    "status": 401,
+    "results": null,
+    "note": "{\"doc\":\"https://api.adzuna.com/v1/doc\",\"exception\":\"AUTH_FAIL\",\"__CLASS__\":\"Adzuna::API::Response::Exception\",\"display\":\"Authorisation failed\"}"
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
+    "query": "dynamics crm",
+    "status": 401,
+    "results": null,
+    "note": "{\"doc\":\"https://api.adzuna.com/v1/doc\",\"display\":\"Authorisation failed\",\"__CLASS__\":\"Adzuna::API::Response::Exception\",\"exception\":\"AUTH_FAIL\"}"
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
+    "query": "power platform",
+    "status": 401,
+    "results": null,
+    "note": "{\"exception\":\"AUTH_FAIL\",\"doc\":\"https://api.adzuna.com/v1/doc\",\"__CLASS__\":\"Adzuna::API::Response::Exception\",\"display\":\"Authorisation failed\"}"
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
+    "query": "dynamics 365",
+    "status": 401,
+    "results": null,
+    "note": "{\"__CLASS__\":\"Adzuna::API::Response::Exception\",\"display\":\"Authorisation failed\",\"exception\":\"AUTH_FAIL\",\"doc\":\"https://api.adzuna.com/v1/doc\"}"
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
+    "query": "d365",
+    "status": 401,
+    "results": null,
+    "note": "{\"display\":\"Authorisation failed\",\"__CLASS__\":\"Adzuna::API::Response::Exception\",\"exception\":\"AUTH_FAIL\",\"doc\":\"https://api.adzuna.com/v1/doc\"}"
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
+    "query": "business central",
+    "status": 401,
+    "results": null,
+    "note": "{\"exception\":\"AUTH_FAIL\",\"__CLASS__\":\"Adzuna::API::Response::Exception\",\"doc\":\"https://api.adzuna.com/v1/doc\",\"display\":\"Authorisation failed\"}"
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
+    "query": "dynamics crm",
+    "status": 401,
+    "results": null,
+    "note": "{\"doc\":\"https://api.adzuna.com/v1/doc\",\"exception\":\"AUTH_FAIL\",\"__CLASS__\":\"Adzuna::API::Response::Exception\",\"display\":\"Authorisation failed\"}"
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
+    "query": "power platform",
+    "status": 401,
+    "results": null,
+    "note": "{\"display\":\"Authorisation failed\",\"__CLASS__\":\"Adzuna::API::Response::Exception\",\"exception\":\"AUTH_FAIL\",\"doc\":\"https://api.adzuna.com/v1/doc\"}"
+   }
+  ],
+  "rejected": {}
+ }
 }
