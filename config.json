@@ -20,6 +20,17 @@
       "d365",
       "business central",
       "dynamics crm",
+      "power platform",
+      "navision",
+      "dynamics nav",
+      "dynamics ax",
+      "power apps",
+      "dataverse"
+    ],
+    "incremental_queries": [
+      "dynamics 365",
+      "d365",
+      "business central",
       "power platform"
     ]
   },

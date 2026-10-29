@@ -133,6 +133,9 @@ ROLE_RULES = [
     ("Support / Admin", re.compile(r"support|beheer|administrator|\badmin\b|application\s+manager", re.I)),
 ]
 
+EXCLUDE_RX = re.compile(
+    r"afstudeer|stagiair|\bstage\b|meewerkstage|internship|\bintern\b|werkstudent|working\s+student|"
+    r"bijbaan|student\s+job|stagiaire|alternance|\bjobstudent", re.I)
 PERM_RX = re.compile(
     r"vast\s+(contract|dienstverband)|vaste\s+baan|\bpermanent\b|onbepaalde\s+tijd|\bCDI\b|"
     r"durée\s+indéterminée|in\s+loondienst", re.I)
@@ -246,6 +249,8 @@ def make_job(source, source_id, title, company, url, location, posted, descripti
     # Career-page roles can match on description if the title looks like a D365-type role.
     if not in_title and not (direct and in_desc and family != "Other"):
         return _reject("not D365", title)
+    if EXCLUDE_RX.search(title):
+        return _reject("internship / student", title)
 
     country = detect_country(location, country_code, default_country)
     if country not in CONFIG["countries"]:
@@ -339,8 +344,9 @@ def fetch_adzuna(store, full):
         return None, False
     days = ADZ.get("lookback_days", 90) if full else ADZ.get("incremental_days", 3)
     out, complete, calls_before = [], True, usage(store)["month_calls"]
+    queries = ADZ["queries"] if full else ADZ.get("incremental_queries", ADZ["queries"])
     for cc in CONFIG["countries"]:
-        for q in ADZ["queries"]:
+        for q in queries:
             page = 1
             while True:
                 data, ok = adzuna_call(store, cc, page, q, days)

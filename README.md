@@ -53,6 +53,18 @@ Each run:
 
 From then on it runs automatically every 30 minutes.
 
+## Working your leads
+
+The dashboard has five views:
+
+- **All open:** every live role.
+- **New:** posted in the last 24 hours, or found since your last visit.
+- **To chase:** still live after 21+ days and not yet contacted. These are usually clients struggling to fill the role.
+- **My leads:** roles you marked.
+- **Hidden:** roles you marked as not relevant.
+
+Each role has **Contacted**, **Follow up** and **Hide** buttons. Marks are saved in your browser, so use the same browser each day. The marks are included when you export to CSV.
+
 ## Optional extras
 
 ### Add target companies (the real edge)

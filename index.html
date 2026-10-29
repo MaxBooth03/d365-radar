@@ -84,6 +84,18 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
 @media (max-width:1100px){ .kpis{grid-template-columns:repeat(3,1fr)} .kpis .top{grid-column:1/-1} }
 @media (max-width:560px){ .kpis{grid-template-columns:repeat(2,1fr)} }
 .row.closed{opacity:.62}
+.views{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.view{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:999px;padding:6px 14px;font:inherit;font-size:13px;font-weight:500;cursor:pointer}
+.view b{color:var(--ink);font-weight:600;margin-left:4px;font-variant-numeric:tabular-nums}
+.view.on{background:var(--ink);border-color:var(--ink);color:var(--panel)}
+.view.on b{color:var(--panel)}
+.view-hint{color:var(--muted);font-size:12.5px;margin:-4px 0 12px}
+.acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.act{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:6px;padding:2px 8px;font:inherit;font-size:12px;cursor:pointer}
+.act:hover{border-color:var(--accent);color:var(--accent)}
+.act.on{background:var(--accent-soft);border-color:var(--accent-soft);color:var(--accent);font-weight:600}
+.tag.mine{background:var(--accent-soft);color:var(--accent)}
+.tag.age{background:var(--warn-soft);color:var(--warn)}
 .row.closed .lead a{text-decoration:line-through}
 @media (max-width:820px){
   .head{display:none}
@@ -121,6 +133,8 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
     <div class="card top"><div class="k-label">Most active hirers, 90 days (click to filter)</div><ol id="top"></ol></div>
   </section>
 
+  <div class="views" id="views"></div>
+  <div class="view-hint" id="hint"></div>
   <div class="filters">
     <input type="search" id="q" placeholder="Search company, role or city">
     <select id="country"><option value="all">NL + BE</option><option value="NL">Netherlands</option><option value="BE">Belgium</option></select>
@@ -128,7 +142,6 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
     <select id="type"><option value="all">Perm + contract</option><option>Perm</option><option>Contract</option><option>Unspecified</option></select>
     <select id="win"><option value="1">Last 24 hours</option><option value="3">Last 3 days</option><option value="7">Last 7 days</option><option value="30">Last 30 days</option><option value="90" selected>Last 3 months</option></select>
     <label class="toggle"><input type="checkbox" id="hideAg" checked> Hide agencies</label>
-    <label class="toggle"><input type="checkbox" id="newOnly"> New since last visit</label>
     <label class="toggle"><input type="checkbox" id="showClosed"> Show taken down</label>
     <span class="count" id="count"></span>
   </div>
@@ -150,7 +163,26 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
     const t = dark ? 'light' : 'dark'; document.documentElement.dataset.theme = t; store.set('radar_theme', t);
   };
 
-  let jobs = [], missNeed = 2, sortKey = 'posted', sortDir = -1, companyFilter = null;
+  let jobs = [], missNeed = 2, sortKey = 'posted', sortDir = -1, companyFilter = null, view = store.get('radar_view') || 'all';
+  const CHASE_DAYS = 21;
+  let marks = {}; try { marks = JSON.parse(store.get('radar_marks') || '{}') || {}; } catch(e) { marks = {}; }
+  const jid = j => j.id || j.key || (j.company + '|' + j.title);
+  const mark = j => marks[jid(j)];
+  const setMark = (j, s) => { const k = jid(j);
+    if (marks[k] && marks[k].s === s) delete marks[k]; else marks[k] = {s, at: Date.now()};
+    store.set('radar_marks', JSON.stringify(marks)); render(); };
+  const VIEWS = {
+    all:    {label: 'All open', hint: 'Every live role in the window you picked.',
+             test: j => j.status !== 'closed' && !(mark(j) && mark(j).s === 'hidden')},
+    new:    {label: 'New', hint: 'Posted in the last 24 hours, or found since your last visit.',
+             test: j => j.status !== 'closed' && !(mark(j) && mark(j).s === 'hidden') && (now - when(j) < D || Date.parse(j.first_seen) > lastVisit)},
+    chase:  {label: 'To chase', hint: `Still live after ${CHASE_DAYS}+ days and not contacted yet. A client still hiring after three weeks usually needs help.`,
+             test: j => j.status !== 'closed' && !mark(j) && now - when(j) >= CHASE_DAYS * D},
+    mine:   {label: 'My leads', hint: 'Roles you marked Contacted or Follow up, including any since taken down. Marks are saved in this browser.',
+             test: j => mark(j) && mark(j).s !== 'hidden'},
+    hidden: {label: 'Hidden', hint: 'Roles you marked as not relevant.',
+             test: j => mark(j) && mark(j).s === 'hidden'},
+  };
   const lastVisit = Number(store.get('radar_last_visit') || 0);
   let now = Date.now(), loadedOnce = false, loading = false, lastLoad = 0, knownKeys = null, noticeTimer;
   const H = 3600e3, D = 24*H;
@@ -161,19 +193,41 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
     if (d < D) return Math.round(d/H) + 'h ago'; const n = Math.round(d/D); return n + (n===1?' day':' days') + ' ago'; };
   const fmt = t => new Date(t).toLocaleDateString('en-GB', {day:'numeric', month:'short'});
 
-  function filtered(){
-    const q = $('q').value.trim().toLowerCase(), c = $('country').value, p = $('product').value,
-          ty = $('type').value, win = Number($('win').value) * D, hideAg = $('hideAg').checked, newOnly = $('newOnly').checked,
-          showClosed = $('showClosed').checked;
+  // filters shared by every view (used for the counts on the view tabs too)
+  function base(){
+    const c = $('country').value, p = $('product').value, ty = $('type').value, hideAg = $('hideAg').checked;
     return jobs.filter(j =>
-      (showClosed || j.status !== 'closed') &&
       (c === 'all' || j.country === c) &&
       (p === 'all' || (j.products||[]).includes(p)) &&
       (ty === 'all' || j.contract === ty) &&
-      (now - when(j) <= win) &&
       (!hideAg || !j.agency) &&
-      (!newOnly || Date.parse(j.first_seen) > lastVisit) &&
-      (!companyFilter || j.company === companyFilter) &&
+      (!companyFilter || j.company === companyFilter));
+  }
+
+  function renderViews(){
+    const b = base(), win = Number($('win').value) * D;
+    $('views').innerHTML = Object.entries(VIEWS).map(([k, v]) => {
+      const n = b.filter(j => v.test(j) && (k === 'mine' || now - when(j) <= win)).length;
+      return `<button class="view${k === view ? ' on' : ''}" data-v="${k}">${v.label}<b>${n}</b></button>`;
+    }).join('');
+    $('hint').textContent = (VIEWS[view] || VIEWS.all).hint;
+    $('views').querySelectorAll('[data-v]').forEach(b => b.onclick = () => {
+      view = b.dataset.v; store.set('radar_view', view);
+      if (view === 'chase' && Number($('win').value) < 30) $('win').value = '90';
+      render(); });
+  }
+
+  function filtered(){
+    const q = $('q').value.trim().toLowerCase(), c = $('country').value, p = $('product').value,
+          ty = $('type').value, win = Number($('win').value) * D, hideAg = $('hideAg').checked,
+          showClosed = $('showClosed').checked;
+    const v = VIEWS[view] || VIEWS.all;
+    const inView = j => v.test(j) || (showClosed && view === 'all' && j.status === 'closed');
+    return base().filter(j => inView(j) &&
+      (c === 'all' || j.country === c) &&
+      (p === 'all' || (j.products||[]).includes(p)) &&
+      (ty === 'all' || j.contract === ty) &&
+      (view === 'mine' || now - when(j) <= win) &&
       (!q || `${j.company} ${j.title} ${j.location} ${j.role}`.toLowerCase().includes(q))
     ).sort((a,b) => {
       const v = { posted: [when(a), when(b)], company: [a.company.toLowerCase(), b.company.toLowerCase()],
@@ -204,6 +258,7 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
   }
 
   function render(){
+    renderViews();
     const rows = filtered();
     $('count').innerHTML = `${rows.length} role${rows.length===1?'':'s'}` +
       (companyFilter ? ` at <b>${esc(companyFilter)}</b> <a href="#" id="clr">clear</a>` : '');
@@ -218,19 +273,25 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
       const closed = j.status === 'closed';
       const stale = !closed && Object.values(j.miss || {}).some(m => m > 0);
       const live = closed ? Math.round((Date.parse(j.closed_at) - t) / D) : null;
+      const m = mark(j), age = Math.round((now - t) / D);
+      const mtag = m && m.s !== 'hidden' ? ` <span class="tag mine">${m.s === 'contacted' ? 'Contacted' : 'Follow up'} ${fmt(m.at)}</span>` : '';
+      const btn = (s, label) => `<button class="act${m && m.s === s ? ' on' : ''}" data-id="${esc(jid(j))}" data-s="${s}">${label}</button>`;
       h += `<div class="row${closed ? ' closed' : ''}">
         <div class="posted"><b>${rel(t)}</b><small>${fmt(t)}${j.posted_at ? '' : ' (found)'}</small></div>
         <div class="company"><span class="lbl">Company</span>${esc(j.company)}
           ${j.agency ? '<div><span class="tag ag">Agency</span></div>' : ''}</div>
         <div class="lead"><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a>
-          ${isNew && !closed ? ' <span class="tag new">NEW</span>' : ''}${stale ? ' <span class="tag stale">Possibly closed</span>' : ''}${closed ? ` <span class="tag stale">Taken down ${fmt(Date.parse(j.closed_at))}${live >= 0 ? `, live ${live}d` : ''}</span>` : ''}${j.relisted && !closed ? ' <span class="tag ag">Re-listed</span>' : ''}
-          <div class="chips">${(j.products||[]).map(p => `<span class="chip p">${esc(p)}</span>`).join('')}<span class="chip">${esc(j.role)}</span></div></div>
+          ${isNew && !closed ? ' <span class="tag new">NEW</span>' : ''}${stale ? ' <span class="tag stale">Possibly closed</span>' : ''}${closed ? ` <span class="tag stale">Taken down ${fmt(Date.parse(j.closed_at))}${live >= 0 ? `, live ${live}d` : ''}</span>` : ''}${j.relisted && !closed ? ' <span class="tag ag">Re-listed</span>' : ''}${!closed && age >= CHASE_DAYS ? ` <span class="tag age">Open ${age}d</span>` : ''}${mtag}
+          <div class="chips">${(j.products||[]).map(p => `<span class="chip p">${esc(p)}</span>`).join('')}<span class="chip">${esc(j.role)}</span></div>
+          <div class="acts">${btn('contacted','Contacted')}${btn('follow','Follow up')}${btn('hidden', m && m.s === 'hidden' ? 'Unhide' : 'Hide')}</div></div>
         <div class="muted"><span class="lbl">Location</span>${esc(j.location)} · ${esc(j.country)}</div>
         <div class="type-${esc(j.contract)}"><span class="lbl">Type</span>${esc(j.contract)}</div>
         <div class="muted"><span class="lbl">Source</span>${(j.sources||[]).map(esc).join(', ')}${j.direct ? '<div><span class="tag direct">Direct</span></div>' : ''}</div>
       </div>`;
     }
     $('table').innerHTML = h;
+    const byId = Object.fromEntries(jobs.map(j => [jid(j), j]));
+    $('table').querySelectorAll('.act').forEach(b => b.onclick = () => setMark(byId[b.dataset.id], b.dataset.s));
     $('table').querySelectorAll('.head [data-k]').forEach(s => s.onclick = () => {
       if (sortKey === s.dataset.k) sortDir *= -1; else { sortKey = s.dataset.k; sortDir = s.dataset.k === 'posted' ? -1 : 1; }
       render(); });
@@ -239,13 +300,14 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
   $('csv').onclick = () => {
     const cols = ['posted_at','first_seen','status','closed_at','company','title','location','country','products','role','contract','agency','sources','url'];
     const cell = v => '"' + String(Array.isArray(v) ? v.join('; ') : (v ?? '')).replace(/"/g,'""') + '"';
-    const csv = [cols.join(',')].concat(filtered().map(j => cols.map(c => cell(j[c])).join(','))).join('\n');
+    const label = j => { const m = mark(j); return m ? `${{contacted:'Contacted',follow:'Follow up',hidden:'Hidden'}[m.s]} ${new Date(m.at).toISOString().slice(0,10)}` : ''; };
+    const csv = [cols.concat('my_status').join(',')].concat(filtered().map(j => cols.map(c => cell(j[c])).concat(cell(label(j))).join(','))).join('\n');
     const a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
     a.download = `d365-radar-${new Date().toISOString().slice(0,10)}.csv`; a.click();
   };
 
-  ['q','country','product','type','win','hideAg','newOnly','showClosed'].forEach(id => $(id).addEventListener('input', render));
+  ['q','country','product','type','win','hideAg','showClosed'].forEach(id => $(id).addEventListener('input', render));
 
   function demo(){
     const mk = (hAgo, company, title, location, country, products, role, contract, sources, extra={}) => {

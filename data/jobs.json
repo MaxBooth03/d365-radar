@@ -2,7 +2,6 @@
  "generated_at": "2026-10-29T09:47:17Z",
  "last_runs": {
   "Adzuna": "2026-10-29T09:36:53Z",
-  "Adzuna full sweep": "2026-10-29T09:43:04Z",
   "Adzuna new-role check": "2026-10-29T09:47:17Z"
  },
  "source_stats": {
@@ -1075,37 +1074,6 @@
    }
   },
   {
-   "id": "0ae91dc48c10",
-   "key": "avanade|graduationinternshipincustomerengagementaipoweredpowerplatformsolutiongovernance|BE",
-   "company": "Avanade",
-   "title": "Graduation Internship in Customer Engagement: AI Powered Power Platform Solution Governance",
-   "url": "https://www.adzuna.be/details/5922281258?utm_medium=api&utm_source=532caebe",
-   "location": "België",
-   "country": "BE",
-   "posted_at": "2026-10-10T17:12:21Z",
-   "products": [
-    "CE",
-    "Power Platform"
-   ],
-   "role": "Other",
-   "contract": "Unspecified",
-   "agency": false,
-   "direct": false,
-   "sources": [
-    "Adzuna"
-   ],
-   "origins": [
-    "adzuna"
-   ],
-   "snippet": "Description We are looking for a graduating intern to design and build an AI powered governance agent for Microsoft Power Platform. The solution will analyze Dataverse solutions, tables, columns, relationships, flows, and apps to validate naming conventions, solution design standards, ALM best pract",
-   "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-10-29T09:43:04Z",
-   "status": "open",
-   "miss": {
-    "adzuna": 0
-   }
-  },
-  {
    "id": "621e3290a7c5",
    "key": "plcbanen|seniorpowerplatformautomationengineerdenbosch|NL",
    "company": "PLC Banen",
@@ -1128,67 +1096,6 @@
     "adzuna"
    ],
    "snippet": "Over de functie Bij een netbeheerder in Den Bosch bouw je automatiseringen die collega’s helpen het werk rond de energietransitie slimmer te organiseren. Als Senior Power Platform Automation Engineer realiseer je Power Apps en versterk je de ontwikkelstandaarden van het automationteam. Het gaat om e",
-   "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-10-29T09:43:04Z",
-   "status": "open",
-   "miss": {
-    "adzuna": 0
-   }
-  },
-  {
-   "id": "a42531bd531f",
-   "key": "avanade|graduationinternshipinerpfunctionalconsultingaipowereddynamics365erp|BE",
-   "company": "Avanade Inc.",
-   "title": "Graduation Internship in ERP Functional Consulting: AI Powered Dynamics 365 ERP",
-   "url": "https://www.adzuna.be/details/5922936589?utm_medium=api&utm_source=532caebe",
-   "location": "België",
-   "country": "BE",
-   "posted_at": "2026-10-09T17:12:24Z",
-   "products": [
-    "D365 general"
-   ],
-   "role": "Functional Consultant",
-   "contract": "Unspecified",
-   "agency": false,
-   "direct": false,
-   "sources": [
-    "Adzuna"
-   ],
-   "origins": [
-    "adzuna"
-   ],
-   "snippet": "DescriptionWe are looking for a motivated intern to explore how AI can support the work of a Microsoft Dynamics 365 ERP functional consultant. AI is increasingly shaping how Business Applications projects are delivered, and within Avanade, DnA (Deliver & Accelerate) provides the delivery framework f",
-   "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-10-29T09:43:04Z",
-   "status": "open",
-   "miss": {
-    "adzuna": 0
-   }
-  },
-  {
-   "id": "4373a4387561",
-   "key": "avanade|graduationinternshipindynamics365contactcenterandpowerplatform|BE",
-   "company": "Avanade Inc.",
-   "title": "Graduation Internship in Dynamics 365 Contact Center and Power Platform",
-   "url": "https://www.adzuna.be/details/5922936587?utm_medium=api&utm_source=532caebe",
-   "location": "België",
-   "country": "BE",
-   "posted_at": "2026-10-09T17:12:21Z",
-   "products": [
-    "CE",
-    "Power Platform"
-   ],
-   "role": "Other",
-   "contract": "Unspecified",
-   "agency": false,
-   "direct": false,
-   "sources": [
-    "Adzuna"
-   ],
-   "origins": [
-    "adzuna"
-   ],
-   "snippet": "Description We are looking for a motivated technical intern to help build a modern customer service platform using Dynamics 365 Contact Center, Customer Service, Power Pages, and Copilot capabilities. During the internship, you will work on an end to end customer support solution where customers can",
    "first_seen": "2026-10-29T09:43:04Z",
    "last_seen": "2026-10-29T09:43:04Z",
    "status": "open",
@@ -1309,36 +1216,6 @@
     "adzuna"
    ],
    "snippet": "Jij overziet het speelveld. Wij geven je de ruimte. Met ons Microsoft-team bouwen we geen demo s, maar oplossingen die draaien. Op schaal. In productie. We werken met de nieuwste Microsoft-technologie n en zitten er dicht op dankzij onze strategische samenwerking met Microsoft. Geen omwegen, geen ve",
-   "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-10-29T09:43:04Z",
-   "status": "open",
-   "miss": {
-    "adzuna": 0
-   }
-  },
-  {
-   "id": "4bd4aaa21702",
-   "key": "avanade|afstudeerstageaiindynamics365customerengagement|NL",
-   "company": "Avanade Inc.",
-   "title": "Afstudeerstage AI in Dynamics365 Customer Engagement",
-   "url": "https://www.adzuna.nl/details/5911179557?utm_medium=api&utm_source=532caebe",
-   "location": "Amsterdam, Noord-Holland",
-   "country": "NL",
-   "posted_at": "2026-10-03T18:40:28Z",
-   "products": [
-    "CE"
-   ],
-   "role": "Other",
-   "contract": "Unspecified",
-   "agency": false,
-   "direct": false,
-   "sources": [
-    "Adzuna"
-   ],
-   "origins": [
-    "adzuna"
-   ],
-   "snippet": "Binnen Avanade ontwerpen en implementeren we complexe Dynamics 365 CE oplossingen voor organisaties met uiteenlopende eisen op het gebied van performance en gebruikerservaring. Naarmate CE omgevingen groeien en AI een grotere rol krijgt wordt performance een cruciaal kwaliteitsaspect.Binnen deze afs",
    "first_seen": "2026-10-29T09:43:04Z",
    "last_seen": "2026-10-29T09:43:04Z",
    "status": "open",
