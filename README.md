@@ -1,0 +1,86 @@
+# D365 Radar
+
+Scans for new Microsoft Dynamics 365 roles in the Netherlands and Belgium 24/7, and shows them on a dashboard: company, role (the lead), when it was posted, product (F&O, CE, BC, Power Platform), contract or perm, and whether the poster is an agency.
+
+Everything runs on free tiers: GitHub Actions does the scanning, and GitHub Pages hosts the dashboard.
+
+## How it works
+
+| Source | What it covers | How often |
+|---|---|---|
+| Adzuna API | Aggregates hundreds of NL and BE job boards | Every 4 hours (free tier: 2,500 calls/month) |
+| Jooble API (optional) | A second aggregator for extra coverage | Every 4 hours |
+| Company career pages | Recruitee, Greenhouse, Lever and Workable feeds of the companies you add | Every 30 minutes |
+
+Each run removes duplicates (the same role found on three boards shows once, and the direct careers link wins), tags the role, and saves everything to `data/jobs.json`. The dashboard reads that file.
+
+## Setup (about 15 minutes)
+
+### 1. Create the repo
+1. On GitHub, create a new **public** repository called `d365-radar`. Free GitHub Pages needs a public repo; see the privacy note below.
+2. Upload every file from this folder, keeping the folder structure.
+   - The `.github` folder is hidden on Mac and Windows. If it doesn't upload, use **Add file > Create new file**, type `.github/workflows/scan.yml` as the name, and paste in the contents of that file.
+
+### 2. Get your free Adzuna key
+1. Register at https://developer.adzuna.com and create an app.
+2. In your repo, go to **Settings > Secrets and variables > Actions > New repository secret** and add:
+   - `ADZUNA_APP_ID`
+   - `ADZUNA_APP_KEY`
+
+### 3. Turn on the dashboard
+1. Go to **Settings > Pages**.
+2. Set the source to **Deploy from a branch**, then choose branch `main`, folder `/ (root)`.
+3. Your dashboard will be at `https://YOUR-USERNAME.github.io/d365-radar/`.
+
+### 4. Start the scanner
+1. Open the **Actions** tab and enable workflows if GitHub asks.
+2. Click **D365 Radar scan > Run workflow**.
+
+From then on it runs automatically every 30 minutes.
+
+## Optional extras
+
+### Add target companies (the real edge)
+Roles on a company's own careers page often appear before they reach the job boards, and before agencies get briefed. To track a company:
+
+1. Find its careers page.
+   - If the URL looks like `name.recruitee.com`, `boards.greenhouse.io/name`, `jobs.lever.co/name` or `apply.workable.com/name`, then `name` is the slug.
+2. Add the company to a repo secret called `ATS_TARGETS`. A secret keeps your target-account list private. For example:
+
+```json
+[
+  {"type": "recruitee", "slug": "companyname", "company": "Company Name", "default_country": "NL"},
+  {"type": "lever", "slug": "othercompany", "company": "Other Co", "default_country": "BE", "region": "eu"}
+]
+```
+
+You can also list companies under `ats_targets` in `config.json`, but anyone can see that file because the repo is public.
+
+### Alerts to your phone or Teams
+New roles can also be pushed to you as they're found. Add any of these as repo secrets:
+
+- **Teams:** in a Teams channel, open **Workflows** and choose "Post to a channel when a webhook request is received". Copy the URL it gives you into a secret called `TEAMS_WEBHOOK_URL`.
+- **Telegram:** create a bot with @BotFather, then add two secrets: `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`.
+
+To add an "Open dashboard" button to alerts, add a repository **variable** (not a secret) called `DASHBOARD_URL` set to your Pages link.
+
+Alerts skip agency postings and the first-run backlog.
+
+### More coverage
+Get a free Jooble key at https://jooble.org/api/about and add it as a secret called `JOOBLE_API_KEY`.
+
+## Tuning
+All tuning happens in `config.json`:
+
+- search queries
+- agency list (add competitors here)
+- how long roles are kept
+- whether Power Platform-only roles count
+
+## Privacy note
+With a public repo, the job data and `config.json` are public. These are public job ads anyway, but keep your target-company list in the `ATS_TARGETS` secret.
+
+## Why not LinkedIn or Indeed directly?
+Both block automated scraping, and scraping them breaks their terms. Adzuna and Jooble already pull from most of the same NL and BE boards.
+
+For LinkedIn, set up LinkedIn's own job alerts to your email instead.

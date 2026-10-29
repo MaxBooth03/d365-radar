@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D365 Radar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f6f8; --panel:#ffffff; --ink:#14161a; --muted:#646a76; --line:#e3e6eb;
+  --accent:#0b6bcb; --accent-soft:#e6f0fb; --new:#0f8a5f; --new-soft:#e3f5ec;
+  --warn:#a15c00; --warn-soft:#fbf0de; --chip:#eef0f3; --row-hover:#f8f9fb;
+  --shadow:0 1px 2px rgba(16,24,40,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1115; --panel:#171a20; --ink:#e8eaee; --muted:#9097a3; --line:#272b33;
+    --accent:#5aa6f0; --accent-soft:#16283c; --new:#45c08f; --new-soft:#12291f;
+    --warn:#e0a24a; --warn-soft:#2b2214; --chip:#222630; --row-hover:#1c2028; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1115; --panel:#171a20; --ink:#e8eaee; --muted:#9097a3; --line:#272b33;
+  --accent:#5aa6f0; --accent-soft:#16283c; --new:#45c08f; --new-soft:#12291f;
+  --warn:#e0a24a; --warn-soft:#2b2214; --chip:#222630; --row-hover:#1c2028; --shadow:none;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:14px/1.45 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:24px 16px 48px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:20px}
+h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.pulse{width:10px;height:10px;border-radius:50%;background:var(--new);box-shadow:0 0 0 0 var(--new);animation:p 2.2s infinite}
+@keyframes p{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--new) 60%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.sub{color:var(--muted);font-size:13px;margin-top:4px}
+.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:7px 12px;font:inherit;font-size:13px;cursor:pointer}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.banner{background:var(--warn-soft);color:var(--warn);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:13px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr) 1.6fr;gap:12px;margin-bottom:16px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+.k-label{color:var(--muted);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.04em}
+.k-val{font-size:28px;font-weight:700;margin-top:4px;font-variant-numeric:tabular-nums}
+.k-val small{font-size:13px;font-weight:500;color:var(--muted);margin-left:4px}
+.top ol{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:4px}
+.top li{display:flex;justify-content:space-between;gap:8px;cursor:pointer;border-radius:6px;padding:2px 6px;margin:0 -6px}
+.top li:hover{background:var(--row-hover);color:var(--accent)}
+.top li span:last-child{color:var(--muted);font-variant-numeric:tabular-nums}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.filters input[type=search]{flex:1 1 240px;min-width:0;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:8px 12px;font:inherit}
+.filters select{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:7px 8px;font:inherit;font-size:13px}
+.toggle{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);user-select:none;cursor:pointer;white-space:nowrap}
+.count{color:var(--muted);font-size:13px;margin-left:auto}
+.table{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.row{display:grid;grid-template-columns:118px 1.1fr 2fr 1fr 96px 110px;gap:14px;padding:12px 16px;border-top:1px solid var(--line);align-items:start}
+.row:first-child{border-top:0}
+.row:not(.head):hover{background:var(--row-hover)}
+.head{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;background:var(--panel);position:sticky;top:0}
+.head span{cursor:pointer;user-select:none}
+.head span:hover{color:var(--ink)}
+.posted{font-variant-numeric:tabular-nums}
+.posted b{display:block;font-weight:600}
+.posted small{color:var(--muted)}
+.company{font-weight:600;word-break:break-word}
+.company .tag{margin-top:4px}
+.lead a{color:var(--ink);font-weight:500;text-decoration:none}
+.lead a:hover{color:var(--accent);text-decoration:underline}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.chip{background:var(--chip);border-radius:999px;padding:1px 8px;font-size:11.5px;color:var(--muted);white-space:nowrap}
+.chip.p{background:var(--accent-soft);color:var(--accent);font-weight:500}
+.tag{display:inline-block;border-radius:6px;padding:1px 6px;font-size:11px;font-weight:600}
+.tag.new{background:var(--new-soft);color:var(--new)}
+.tag.ag{background:var(--warn-soft);color:var(--warn)}
+.tag.stale{background:var(--chip);color:var(--muted)}
+.tag.direct{background:var(--accent-soft);color:var(--accent)}
+.muted{color:var(--muted);font-size:13px}
+.type-Contract{color:var(--warn);font-weight:600}
+.type-Perm{color:var(--new);font-weight:600}
+.empty{padding:48px 16px;text-align:center;color:var(--muted)}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px}
+.lbl{display:none}
+@media (max-width:980px){ .kpis{grid-template-columns:repeat(2,1fr)} .kpis .top{grid-column:1/-1} }
+@media (max-width:820px){
+  .head{display:none}
+  .row{grid-template-columns:1fr auto;gap:4px 12px}
+  .row > div{grid-column:1/-1}
+  .row .posted{grid-column:2;grid-row:1;text-align:right}
+  .row .company{grid-column:1;grid-row:1}
+  .lbl{display:inline;color:var(--muted);font-size:12px;margin-right:4px}
+  .count{margin-left:0;width:100%}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1><span class="pulse" aria-hidden="true"></span>D365 Radar</h1>
+      <div class="sub" id="sub">Dynamics 365 roles across the Netherlands and Belgium</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn" id="csv">Export CSV</button>
+      <button class="btn" id="theme" aria-label="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <div class="banner" id="banner" hidden></div>
+
+  <section class="kpis">
+    <div class="card"><div class="k-label">New today</div><div class="k-val" id="k1">0</div></div>
+    <div class="card"><div class="k-label">Last 7 days</div><div class="k-val" id="k2">0</div></div>
+    <div class="card"><div class="k-label">Contract share</div><div class="k-val" id="k3">0%</div></div>
+    <div class="card"><div class="k-label">Since your last visit</div><div class="k-val" id="k4">0</div></div>
+    <div class="card top"><div class="k-label">Most active hirers, 30 days (click to filter)</div><ol id="top"></ol></div>
+  </section>
+
+  <div class="filters">
+    <input type="search" id="q" placeholder="Search company, role or city">
+    <select id="country"><option value="all">NL + BE</option><option value="NL">Netherlands</option><option value="BE">Belgium</option></select>
+    <select id="product"><option value="all">All products</option><option>F&amp;O</option><option>CE</option><option>BC</option><option>Power Platform</option><option>D365 general</option></select>
+    <select id="type"><option value="all">Perm + contract</option><option>Perm</option><option>Contract</option><option>Unspecified</option></select>
+    <select id="win"><option value="1">Last 24 hours</option><option value="3">Last 3 days</option><option value="7" selected>Last 7 days</option><option value="30">Last 30 days</option><option value="9999">Everything</option></select>
+    <label class="toggle"><input type="checkbox" id="hideAg" checked> Hide agencies</label>
+    <label class="toggle"><input type="checkbox" id="newOnly"> New since last visit</label>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="table" id="table"></div>
+</div>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const store = {
+    get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+    set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+  };
+  const theme = store.get('radar_theme'); if (theme) document.documentElement.dataset.theme = theme;
+  $('theme').onclick = () => {
+    const dark = document.documentElement.dataset.theme ? document.documentElement.dataset.theme === 'dark'
+      : matchMedia('(prefers-color-scheme: dark)').matches;
+    const t = dark ? 'light' : 'dark'; document.documentElement.dataset.theme = t; store.set('radar_theme', t);
+  };
+
+  let jobs = [], staleDays = 3, sortKey = 'posted', sortDir = -1, companyFilter = null;
+  const lastVisit = Number(store.get('radar_last_visit') || 0);
+  const now = Date.now(), H = 3600e3, D = 24*H;
+
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const when = j => Date.parse(j.posted_at || j.first_seen) || now;
+  const rel = t => { const d = now - t; if (d < H) return Math.max(1, Math.round(d/60e3)) + 'm ago';
+    if (d < D) return Math.round(d/H) + 'h ago'; const n = Math.round(d/D); return n + (n===1?' day':' days') + ' ago'; };
+  const fmt = t => new Date(t).toLocaleDateString('en-GB', {day:'numeric', month:'short'});
+
+  function filtered(){
+    const q = $('q').value.trim().toLowerCase(), c = $('country').value, p = $('product').value,
+          ty = $('type').value, win = Number($('win').value) * D, hideAg = $('hideAg').checked, newOnly = $('newOnly').checked;
+    return jobs.filter(j =>
+      (c === 'all' || j.country === c) &&
+      (p === 'all' || (j.products||[]).includes(p)) &&
+      (ty === 'all' || j.contract === ty) &&
+      (now - when(j) <= win) &&
+      (!hideAg || !j.agency) &&
+      (!newOnly || Date.parse(j.first_seen) > lastVisit) &&
+      (!companyFilter || j.company === companyFilter) &&
+      (!q || `${j.company} ${j.title} ${j.location} ${j.role}`.toLowerCase().includes(q))
+    ).sort((a,b) => {
+      const v = { posted: [when(a), when(b)], company: [a.company.toLowerCase(), b.company.toLowerCase()],
+                  lead: [a.title.toLowerCase(), b.title.toLowerCase()], location: [a.location, b.location],
+                  type: [a.contract, b.contract] }[sortKey] || [when(a), when(b)];
+      return v[0] < v[1] ? -sortDir : v[0] > v[1] ? sortDir : 0;
+    });
+  }
+
+  function kpis(){
+    const direct = jobs.filter(j => !j.agency);
+    $('k1').textContent = direct.filter(j => now - when(j) < D).length;
+    const wk = direct.filter(j => now - when(j) < 7*D);
+    $('k2').textContent = wk.length;
+    const known = wk.filter(j => j.contract !== 'Unspecified');
+    $('k3').innerHTML = known.length ? Math.round(100 * known.filter(j => j.contract === 'Contract').length / known.length) + '%<small>of ' + known.length + '</small>' : 'n/a';
+    $('k4').textContent = lastVisit ? direct.filter(j => Date.parse(j.first_seen) > lastVisit).length : direct.length;
+    const counts = {};
+    direct.filter(j => now - when(j) < 30*D).forEach(j => counts[j.company] = (counts[j.company]||0) + 1);
+    const top = Object.entries(counts).sort((a,b) => b[1]-a[1]).slice(0,5);
+    $('top').innerHTML = top.length ? top.map(([c,n]) =>
+      `<li data-c="${esc(c)}"><span>${esc(c)}</span><span>${n} role${n>1?'s':''}</span></li>`).join('')
+      : '<li class="muted">No data yet</li>';
+    $('top').querySelectorAll('li[data-c]').forEach(li => li.onclick = () => {
+      companyFilter = companyFilter === li.dataset.c ? null : li.dataset.c; $('win').value = '30'; render(); });
+  }
+
+  function render(){
+    const rows = filtered();
+    $('count').innerHTML = `${rows.length} role${rows.length===1?'':'s'}` +
+      (companyFilter ? ` at <b>${esc(companyFilter)}</b> <a href="#" id="clr">clear</a>` : '');
+    if (companyFilter) $('clr').onclick = e => { e.preventDefault(); companyFilter = null; render(); };
+    const arrow = k => sortKey === k ? (sortDir < 0 ? ' ↓' : ' ↑') : '';
+    let h = `<div class="row head"><span data-k="posted">Posted${arrow('posted')}</span><span data-k="company">Company${arrow('company')}</span>
+      <span data-k="lead">Lead (role)${arrow('lead')}</span><span data-k="location">Location${arrow('location')}</span>
+      <span data-k="type">Type${arrow('type')}</span><span>Source</span></div>`;
+    if (!rows.length) h += `<div class="empty">No roles match these filters. Try a wider time window.</div>`;
+    for (const j of rows) {
+      const t = when(j), isNew = now - t < D;
+      const stale = j.last_seen && now - Date.parse(j.last_seen) > staleDays * D;
+      h += `<div class="row">
+        <div class="posted"><b>${rel(t)}</b><small>${fmt(t)}${j.posted_at ? '' : ' (found)'}</small></div>
+        <div class="company"><span class="lbl">Company</span>${esc(j.company)}
+          ${j.agency ? '<div><span class="tag ag">Agency</span></div>' : ''}</div>
+        <div class="lead"><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a>
+          ${isNew ? ' <span class="tag new">NEW</span>' : ''}${stale ? ' <span class="tag stale">Possibly closed</span>' : ''}
+          <div class="chips">${(j.products||[]).map(p => `<span class="chip p">${esc(p)}</span>`).join('')}<span class="chip">${esc(j.role)}</span></div></div>
+        <div class="muted"><span class="lbl">Location</span>${esc(j.location)} · ${esc(j.country)}</div>
+        <div class="type-${esc(j.contract)}"><span class="lbl">Type</span>${esc(j.contract)}</div>
+        <div class="muted"><span class="lbl">Source</span>${(j.sources||[]).map(esc).join(', ')}${j.direct ? '<div><span class="tag direct">Direct</span></div>' : ''}</div>
+      </div>`;
+    }
+    $('table').innerHTML = h;
+    $('table').querySelectorAll('.head [data-k]').forEach(s => s.onclick = () => {
+      if (sortKey === s.dataset.k) sortDir *= -1; else { sortKey = s.dataset.k; sortDir = s.dataset.k === 'posted' ? -1 : 1; }
+      render(); });
+  }
+
+  $('csv').onclick = () => {
+    const cols = ['posted_at','first_seen','company','title','location','country','products','role','contract','agency','sources','url'];
+    const cell = v => '"' + String(Array.isArray(v) ? v.join('; ') : (v ?? '')).replace(/"/g,'""') + '"';
+    const csv = [cols.join(',')].concat(filtered().map(j => cols.map(c => cell(j[c])).join(','))).join('\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
+    a.download = `d365-radar-${new Date().toISOString().slice(0,10)}.csv`; a.click();
+  };
+
+  ['q','country','product','type','win','hideAg','newOnly'].forEach(id => $(id).addEventListener('input', render));
+
+  function demo(){
+    const mk = (hAgo, company, title, location, country, products, role, contract, sources, extra={}) => {
+      const t = new Date(now - hAgo*H).toISOString();
+      return Object.assign({company, title, location, country, products, role, contract, sources, url:'#',
+        posted_at:t, first_seen:t, last_seen:new Date(now).toISOString(), agency:false, direct:sources.includes('Careers page')}, extra);
+    };
+    return { generated_at: new Date(now - 12*60e3).toISOString(), jobs: [
+      mk(2,'Contoso','Senior D365 F&O Technical Consultant','Utrecht','NL',['F&O'],'Technical Consultant','Contract',['Careers page','Adzuna']),
+      mk(5,'Northwind Traders','Dynamics 365 CE Solution Architect','Brussels','BE',['CE'],'Architect','Perm',['Adzuna']),
+      mk(9,'Fabrikam','Business Central Developer (AL)','Eindhoven','NL',['BC'],'Developer','Perm',['Careers page']),
+      mk(20,'Example Recruitment Agency','D365 Finance Functional Consultant','Amsterdam','NL',['F&O'],'Functional Consultant','Contract',['Jooble'],{agency:true}),
+      mk(28,'Adventure Works','Power Platform Developer','Antwerpen','BE',['Power Platform'],'Developer','Unspecified',['Adzuna']),
+      mk(40,'Contoso','D365 SCM Functional Consultant','Utrecht','NL',['F&O'],'Functional Consultant','Perm',['Careers page']),
+      mk(55,'Tailspin Toys','Dynamics 365 Sales Consultant','Gent','BE',['CE'],'Functional Consultant','Perm',['Adzuna']),
+      mk(76,'Wide World Importers','Project Manager D365 Implementation','Rotterdam','NL',['D365 general'],'Project / Delivery','Contract',['Adzuna','Jooble']),
+      mk(100,'Litware','Business Central Consultant','Hasselt','BE',['BC'],'Functional Consultant','Perm',['Adzuna']),
+      mk(130,'Contoso','D365 F&O Developer (X++)','Utrecht','NL',['F&O'],'Developer','Perm',['Careers page']),
+      mk(160,'Proseware','Dynamics 365 Field Service Consultant','Den Bosch','NL',['CE'],'Functional Consultant','Contract',['Adzuna'],{last_seen:new Date(now-5*D).toISOString()}),
+    ]};
+  }
+
+  async function load(){
+    let data, isDemo = false;
+    try {
+      const r = await fetch('data/jobs.json?ts=' + Date.now(), {cache:'no-store'});
+      if (!r.ok) throw new Error(r.status);
+      data = await r.json();
+      if (!data.jobs || !data.jobs.length) {
+        $('banner').hidden = false;
+        $('banner').textContent = data.generated_at ? 'Scanner is running but has not found matching roles yet. Check back after the next scan.'
+          : 'Waiting for the first scan. Run the workflow from the Actions tab to start.';
+      }
+    } catch(e) { data = demo(); isDemo = true; }
+    if (isDemo) { $('banner').hidden = false; $('banner').textContent = 'Demo data with fictional companies. Your live roles appear here once the scanner has run on GitHub.'; }
+    jobs = data.jobs || []; staleDays = data.stale_after_days || 3;
+    if (data.generated_at) $('sub').textContent = `Dynamics 365 roles across the Netherlands and Belgium · last scan ${rel(Date.parse(data.generated_at))}`;
+    kpis(); render();
+    if (!isDemo) store.set('radar_last_visit', String(now));
+  }
+  load();
+})();
+</script>
+</body>
+</html>
