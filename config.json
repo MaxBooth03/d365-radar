@@ -54,7 +54,7 @@
     ]
   },
   "careerjet": {
-    "enabled": true,
+    "enabled": false,
     "every_hours": 6,
     "locales": {
       "NL": [

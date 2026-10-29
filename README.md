@@ -10,7 +10,7 @@ Everything runs on free tiers: GitHub Actions does the scanning, and GitHub Page
 |---|---|---|
 | Adzuna API | Aggregates hundreds of NL and BE job boards | Full 3-month sweep twice a day, plus a quick check for brand-new roles every 6 hours |
 | Jooble API | A second aggregator, with separate NL and BE sites | Every 6 hours (needs the `JOOBLE_API_KEY` secret) |
-| Careerjet API | A third aggregator (careerjet.nl and careerjet.be) | Every 6 hours (needs the `CAREERJET_API_KEY` secret) |
+| Careerjet API | A third aggregator (careerjet.nl and careerjet.be) | Switched off: Careerjet locks keys to fixed IP addresses, and GitHub scans run from changing ones |
 | Employer careers feeds | D365 partners, ISVs and employers in NL and BE that publish their jobs through Recruitee, Greenhouse, Lever, Workable, SmartRecruiters or Personio | Every 30 minutes |
 
 The dashboard refreshes itself every 5 minutes and whenever you return to the tab. There is also a Refresh button.
