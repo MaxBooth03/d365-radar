@@ -3,6 +3,9 @@ name: D365 Radar scan
 on:
   schedule:
     - cron: "7,37 * * * *"   # every 30 minutes, all day, every day (UTC)
+  push:
+    branches: [main]
+    paths: [".github/workflows/scan.yml", "scanner/**", "config.json"]
   workflow_dispatch:
     inputs:
       force_all:
@@ -22,9 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -53,6 +56,6 @@ jobs:
             echo "No changes"
           else
             git commit -m "Radar update $(date -u +'%Y-%m-%d %H:%M') UTC"
-            git pull --rebase --quiet
-            git push
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
