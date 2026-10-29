@@ -394,6 +394,7 @@ def fetch_jooble():
         log("Jooble: no API keys set, skipping")
         return None, False
     out, complete = [], True
+    log(f"  Jooble keys found for: {', '.join(countries)}")
     for cc in countries:
         key = jooble_key(cc)
         hosts = [cfg.get("hosts", {}).get(cc), "jooble.org"]
