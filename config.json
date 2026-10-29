@@ -9,7 +9,7 @@
   "adzuna": {
     "enabled": true,
     "lookback_days": 90,
-    "sweep_every_hours": 24,
+    "sweep_every_hours": 12,
     "incremental_every_hours": 6,
     "incremental_days": 3,
     "max_pages": 20,
@@ -95,7 +95,9 @@
     "nationale vacaturebank",
     "stepstone",
     "personeel",
-    "uitzend"
+    "uitzend",
+    "dynamic people",
+    "stafide"
   ],
   "alerts": {
     "include_agencies": false,

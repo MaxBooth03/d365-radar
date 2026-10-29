@@ -36,6 +36,8 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
 .sub{color:var(--muted);font-size:13px;margin-top:4px}
 .btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:7px 12px;font:inherit;font-size:13px;cursor:pointer}
 .btn:hover{border-color:var(--accent);color:var(--accent)}
+.notice{display:inline-block;margin-left:8px;background:var(--new-soft);color:var(--new);border-radius:6px;padding:1px 8px;font-size:12px;font-weight:600}
+.btn:disabled{opacity:.6;cursor:default}
 .banner{background:var(--warn-soft);color:var(--warn);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:13px}
 .kpis{display:grid;grid-template-columns:repeat(5,1fr) 1.6fr;gap:12px;margin-bottom:16px;align-items:start}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
@@ -102,6 +104,7 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
       <div class="sub" id="sub">Dynamics 365 roles across the Netherlands and Belgium</div>
     </div>
     <div style="display:flex;gap:8px">
+      <button class="btn" id="refresh" title="Check for new roles now">Refresh</button>
       <button class="btn" id="csv">Export CSV</button>
       <button class="btn" id="theme" aria-label="Toggle theme">Theme</button>
     </div>
@@ -149,7 +152,8 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
 
   let jobs = [], missNeed = 2, sortKey = 'posted', sortDir = -1, companyFilter = null;
   const lastVisit = Number(store.get('radar_last_visit') || 0);
-  const now = Date.now(), H = 3600e3, D = 24*H;
+  let now = Date.now(), loadedOnce = false, loading = false, lastLoad = 0, knownKeys = null, noticeTimer;
+  const H = 3600e3, D = 24*H;
 
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const when = j => Date.parse(j.posted_at || j.first_seen) || now;
@@ -265,8 +269,12 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
     ]};
   }
 
-  async function load(){
+  async function load(manual){
+    if (loading) return;
+    loading = true; lastLoad = Date.now(); now = Date.now();
+    if (manual) { $('refresh').disabled = true; $('refresh').textContent = 'Refreshing…'; }
     let data, isDemo = false;
+    $('banner').hidden = true;
     try {
       const r = await fetch('data/jobs.json?ts=' + Date.now(), {cache:'no-store'});
       if (!r.ok) throw new Error(r.status);
@@ -279,11 +287,28 @@ h1{font-size:22px;margin:0;letter-spacing:-.01em;display:flex;align-items:center
     } catch(e) { data = demo(); isDemo = true; }
     if (isDemo) { $('banner').hidden = false; $('banner').textContent = 'Demo data with fictional companies. Your live roles appear here once the scanner has run on GitHub.'; }
     jobs = data.jobs || []; missNeed = data.close_after_missed_sweeps || 2;
-    if (data.generated_at) $('sub').textContent = `Dynamics 365 roles across the Netherlands and Belgium · last scan ${rel(Date.parse(data.generated_at))}`;
+    const keys = new Set(jobs.filter(j => j.status !== 'closed').map(j => j.key || j.title + j.company));
+    const added = knownKeys ? [...keys].filter(k => !knownKeys.has(k)).length : 0;
+    knownKeys = keys;
+    let sub = 'Dynamics 365 roles across the Netherlands and Belgium';
+    if (data.generated_at) sub += ` · last scan ${rel(Date.parse(data.generated_at))}`;
+    $('sub').textContent = sub;
+    if (loadedOnce && (manual || added)) {
+      const n = document.createElement('span'); n.className = 'notice';
+      n.textContent = added ? `${added} new role${added > 1 ? 's' : ''} just added` : 'Up to date';
+      $('sub').appendChild(n); clearTimeout(noticeTimer); noticeTimer = setTimeout(() => n.remove(), 15000);
+    }
     kpis(); render();
-    if (!isDemo) store.set('radar_last_visit', String(now));
+    if (!isDemo && !loadedOnce) store.set('radar_last_visit', String(now));
+    loadedOnce = true; loading = false;
+    $('refresh').disabled = false; $('refresh').textContent = 'Refresh';
   }
-  load();
+  $('refresh').onclick = () => load(true);
+  setInterval(() => load(false), 5 * 60e3);                       // auto-refresh every 5 minutes
+  document.addEventListener('visibilitychange', () => {           // and when you come back to the tab
+    if (!document.hidden && Date.now() - lastLoad > 60e3) load(false);
+  });
+  load(false);
 })();
 </script>
 </body>

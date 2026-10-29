@@ -8,9 +8,11 @@ Everything runs on free tiers: GitHub Actions does the scanning, and GitHub Page
 
 | Source | What it covers | How often |
 |---|---|---|
-| Adzuna API | Aggregates hundreds of NL and BE job boards | Full 3-month sweep once a day, plus a quick check for brand-new roles every 6 hours |
+| Adzuna API | Aggregates hundreds of NL and BE job boards | Full 3-month sweep twice a day, plus a quick check for brand-new roles every 6 hours |
 | Jooble API (optional) | A second aggregator for extra coverage | Every 6 hours |
 | Company career pages | Recruitee, Greenhouse, Lever and Workable feeds of the companies you add | Every 30 minutes |
+
+The dashboard refreshes itself every 5 minutes and whenever you return to the tab. There is also a Refresh button.
 
 Each run:
 
