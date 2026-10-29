@@ -116,7 +116,7 @@ PRODUCT_RULES = [
         r"(dynamics\s*365|\bd365)\s+(finance|supply\s+chain|scm|commerce|project\s+operations)\b", re.I)),
     ("CE", re.compile(
         r"customer\s+engagement|dynamics\s+crm|(dynamics\s*365|\bd365)\s*\(?ce\b|\bms\s?crm\b|\bcrm\b|"
-        r"dynamics\s*365\s+(sales|customer\s+service|field\s+service|marketing|customer\s+insights|contact\s+center)", re.I)),
+        r"(dynamics\s*365|\bd365)\s+(sales|customer\s+service|field\s+service|marketing|customer\s+insights|contact\s+center)|\(ce\)", re.I)),
     ("BC", re.compile(r"business\s+central|navision|dynamics\s+nav\b|\bd365\s?bc\b|\bal\s+develop", re.I)),
     ("Power Platform", RELEVANT_PP),
 ]
@@ -180,7 +180,7 @@ def detect_country(location, code=None, default=None):
 def tag_products(title, desc):
     tags = [name for name, rx in PRODUCT_RULES if rx.search(title)]
     if not tags:
-        tags = [name for name, rx in PRODUCT_RULES if name != "CE" and rx.search(desc)]
+        tags = [name for name, rx in PRODUCT_RULES if name in ("F&O", "BC") and rx.search(desc)]
         if not tags and re.search(r"customer\s+engagement|dynamics\s+crm|(dynamics\s*365|\bd365)\s*\(?ce\b", desc, re.I):
             tags = ["CE"]
     return tags or ["D365 general"]
@@ -242,8 +242,9 @@ def make_job(source, source_id, title, company, url, location, posted, descripti
     in_title = RELEVANT_CORE.search(title) or (CONFIG.get("include_power_platform", True) and RELEVANT_PP.search(title))
     in_desc = RELEVANT_CORE.search(desc) or (CONFIG.get("include_power_platform", True) and RELEVANT_PP.search(desc))
     family = role_family(title)
-    # Description-only matches must at least look like a D365-type role (drops "Office Manager at a D365 partner")
-    if not in_title and not (in_desc and family != "Other"):
+    # Job-board roles must name D365 in the title (descriptions are noisy).
+    # Career-page roles can match on description if the title looks like a D365-type role.
+    if not in_title and not (direct and in_desc and family != "Other"):
         return _reject("not D365", title)
 
     country = detect_country(location, country_code, default_country)

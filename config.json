@@ -1,24 +1,36 @@
 {
-  "countries": ["NL", "BE"],
+  "countries": [
+    "NL",
+    "BE"
+  ],
   "include_power_platform": true,
   "retention_days": 45,
   "stale_after_days": 3,
-
   "adzuna": {
     "enabled": true,
     "every_hours": 4,
     "max_days_old": 7,
-    "queries": ["dynamics 365", "d365", "business central", "dynamics crm", "power platform"]
+    "queries": [
+      "dynamics 365",
+      "d365",
+      "business central",
+      "dynamics crm",
+      "power platform"
+    ]
   },
-
   "jooble": {
     "enabled": true,
     "every_hours": 4,
     "endpoint": "https://jooble.org/api/",
-    "locations": { "NL": "Netherlands", "BE": "Belgium" },
-    "queries": ["dynamics 365", "business central"]
+    "locations": {
+      "NL": "Netherlands",
+      "BE": "Belgium"
+    },
+    "queries": [
+      "dynamics 365",
+      "business central"
+    ]
   },
-
   "ats_targets": [
     {
       "enabled": false,
@@ -29,16 +41,55 @@
       "_help": "type is recruitee | greenhouse | lever | workable. slug is the bit in their careers URL, e.g. examplecompany.recruitee.com. For Lever EU add \"region\": \"eu\". Set enabled to true."
     }
   ],
-
   "agency_keywords": [
-    "recruit", "staffing", "werving", "detachering", "executive search", "headhunt",
-    "hays", "randstad", "adecco", "harvey nash", "michael page", "page personnel",
-    "robert walters", "robert half", "computer futures", "huxley", "tenth revolution",
-    "nigel frank", "jefferson frank", "mason frank", "frank group", "brunel", "yacht",
-    "undutchables", "hunter selection", "talentsearch", "talent search", "r2 global",
-    "spring professional", "experis", "manpower", "kelly services", "cpl", "darwin"
+    "recruit",
+    "staffing",
+    "werving",
+    "detachering",
+    "executive search",
+    "headhunt",
+    "hays",
+    "randstad",
+    "adecco",
+    "harvey nash",
+    "michael page",
+    "page personnel",
+    "robert walters",
+    "robert half",
+    "computer futures",
+    "huxley",
+    "tenth revolution",
+    "nigel frank",
+    "jefferson frank",
+    "mason frank",
+    "frank group",
+    "brunel",
+    "yacht",
+    "undutchables",
+    "hunter selection",
+    "talentsearch",
+    "talent search",
+    "r2 global",
+    "spring professional",
+    "experis",
+    "manpower",
+    "kelly services",
+    "cpl",
+    "darwin",
+    "professionals",
+    "solliciteren",
+    "vacature",
+    "collective.work",
+    "yadimen",
+    "freelance.nl",
+    "striive",
+    "headfirst",
+    "werkzoeken",
+    "jobat",
+    "indeed",
+    "nationale vacaturebank",
+    "stepstone"
   ],
-
   "alerts": {
     "include_agencies": false,
     "only_posted_within_days": 3,
