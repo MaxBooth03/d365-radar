@@ -532,7 +532,7 @@
    ],
    "role": "Other",
    "contract": "Unspecified",
-   "agency": false,
+   "agency": true,
    "direct": false,
    "sources": [
     "Adzuna"

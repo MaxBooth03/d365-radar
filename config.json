@@ -88,7 +88,9 @@
     "jobat",
     "indeed",
     "nationale vacaturebank",
-    "stepstone"
+    "stepstone",
+    "personeel",
+    "uitzend"
   ],
   "alerts": {
     "include_agencies": false,
