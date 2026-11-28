@@ -1,22 +1,22 @@
 {
- "generated_at": "2026-11-27T23:42:57Z",
+ "generated_at": "2026-11-28T07:37:02Z",
  "last_runs": {
   "Adzuna": "2026-10-29T09:36:53Z",
   "Adzuna new-role check": "2026-11-27T23:42:57Z",
-  "Adzuna full sweep": "2026-11-27T15:31:50Z",
-  "Jooble": "2026-11-27T23:42:57Z",
-  "Careers: HSO": "2026-11-27T23:42:57Z",
-  "Careers: 4PS": "2026-11-27T23:42:57Z",
-  "Careers: Xylos": "2026-11-27T23:42:57Z",
-  "Careers: Wortell": "2026-11-27T23:42:57Z",
-  "Careers: Conclusion": "2026-11-27T23:42:57Z",
-  "Careers: Centric": "2026-11-27T23:42:57Z",
-  "Careers: E-mergo": "2026-11-27T23:42:57Z",
-  "Careers: Baker Tilly": "2026-11-27T23:42:57Z",
-  "Careers: Macaw": "2026-11-27T23:42:57Z",
-  "Careers: Sana Commerce": "2026-11-27T23:42:57Z",
-  "Careers: Everience": "2026-11-27T23:42:57Z",
-  "Careers: Redcare Pharmacy": "2026-11-27T23:42:57Z",
+  "Adzuna full sweep": "2026-11-28T07:37:02Z",
+  "Jooble": "2026-11-28T07:37:02Z",
+  "Careers: HSO": "2026-11-28T07:37:02Z",
+  "Careers: 4PS": "2026-11-28T07:37:02Z",
+  "Careers: Xylos": "2026-11-28T07:37:02Z",
+  "Careers: Wortell": "2026-11-28T07:37:02Z",
+  "Careers: Conclusion": "2026-11-28T07:37:02Z",
+  "Careers: Centric": "2026-11-28T07:37:02Z",
+  "Careers: E-mergo": "2026-11-28T07:37:02Z",
+  "Careers: Baker Tilly": "2026-11-28T07:37:02Z",
+  "Careers: Macaw": "2026-11-28T07:37:02Z",
+  "Careers: Sana Commerce": "2026-11-28T07:37:02Z",
+  "Careers: Everience": "2026-11-28T07:37:02Z",
+  "Careers: Redcare Pharmacy": "2026-11-28T07:37:02Z",
   "Careerjet": "2026-10-29T10:34:44Z"
  },
  "source_stats": {
@@ -25,8 +25,8 @@
    "at": "2026-10-29T09:36:53Z"
   },
   "Adzuna full sweep": {
-   "matched": 181,
-   "at": "2026-11-27T15:31:50Z",
+   "matched": 163,
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Adzuna new-role check": {
@@ -34,68 +34,68 @@
    "at": "2026-11-27T23:42:57Z"
   },
   "Jooble": {
-   "matched": 56,
-   "at": "2026-11-27T23:42:57Z",
-   "complete": false
+   "matched": 170,
+   "at": "2026-11-28T07:37:02Z",
+   "complete": true
   },
   "Careers: HSO": {
    "matched": 39,
-   "at": "2026-11-27T23:42:57Z",
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Careers: 4PS": {
    "matched": 10,
-   "at": "2026-11-27T23:42:57Z",
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Careers: Xylos": {
    "matched": 2,
-   "at": "2026-11-27T23:42:57Z",
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Careers: Wortell": {
    "matched": 0,
-   "at": "2026-11-27T23:42:57Z",
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Careers: Conclusion": {
    "matched": 0,
-   "at": "2026-11-27T23:42:57Z",
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Careers: Centric": {
    "matched": 0,
-   "at": "2026-11-27T23:42:57Z",
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Careers: E-mergo": {
    "matched": 1,
-   "at": "2026-11-27T23:42:57Z",
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Careers: Baker Tilly": {
    "matched": 0,
-   "at": "2026-11-27T23:42:57Z",
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Careers: Macaw": {
    "matched": 0,
-   "at": "2026-11-27T23:42:57Z",
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Careers: Sana Commerce": {
    "matched": 0,
-   "at": "2026-11-27T23:42:57Z",
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Careers: Everience": {
    "matched": 0,
-   "at": "2026-11-27T23:42:57Z",
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Careers: Redcare Pharmacy": {
    "matched": 1,
-   "at": "2026-11-27T23:42:57Z",
+   "at": "2026-11-28T07:37:02Z",
    "complete": true
   },
   "Careerjet": {
@@ -129,7 +129,7 @@
    ],
    "snippet": "...activities through customer workshops, demonstrations, and solution envisioning sessions . ~ Over three years of Microsoft Dynamics 365 Supply Chain Management implementation experience ~ Extensive experience working in core logistical business processes such...",
    "first_seen": "2026-11-27T23:42:57Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -159,10 +159,40 @@
    ],
    "snippet": "...a D365 Technical Architect you will play a crucial role in designing, implementing, and managing solutions leveraging Microsoft Dynamics 365 , Power Platform and (Azure) Cloud components. What you will do: Own and evolve technical solution design in partnership...",
    "first_seen": "2026-11-27T23:42:57Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
+   }
+  },
+  {
+   "id": "4e60b23141a4",
+   "key": "partenaprofessional|aiengineerpythonpowerautomate|BE",
+   "company": "Partena Professional",
+   "title": "AI Engineer - Python & Power Automate",
+   "url": "https://www.adzuna.be/details/5980574918?utm_medium=api&utm_source=532caebe",
+   "location": "Brussel, Brussel Hoofdstad",
+   "country": "BE",
+   "posted_at": "2026-11-27T11:04:14Z",
+   "products": [
+    "Power Platform"
+   ],
+   "role": "Developer",
+   "contract": "Contract",
+   "agency": false,
+   "direct": false,
+   "sources": [
+    "Adzuna"
+   ],
+   "origins": [
+    "adzuna"
+   ],
+   "snippet": "Partena Professional, toonaangevend expert in human resources en ondernemerschap, is een van de grootste Belgische organisaties die werkt volgens een collaboratief governance­model. Autonomie en verantwoordelijkheid, wendbaarheid en innovatie vormen de pijlers van onze manier van werken. Om ons GEN ",
+   "first_seen": "2026-11-28T07:37:02Z",
+   "last_seen": "2026-11-28T07:37:02Z",
+   "status": "open",
+   "miss": {
+    "adzuna": 0
    }
   },
   {
@@ -189,10 +219,40 @@
    ],
    "snippet": "AI is vandaag overal, maar oplossingen die veilig, betrouwbaar en schaalbaar in productie draaien, zijn een stuk zeldzamer. Daarom zoeken we een AI Engineer die verder kijkt dan de demo. Iemand met veel #Goesting om te experimenteren, kritisch na te denken en oplossingen te bouwen die ook op lange t",
    "first_seen": "2026-11-27T15:31:50Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:recruitee:xylos": 0
+   }
+  },
+  {
+   "id": "177a30712a69",
+   "key": "feadship|functioneelbeheerdermicrosoftdynamics365businesscentralkaag|NL",
+   "company": "Feadship",
+   "title": "Functioneel Beheerder Microsoft Dynamics 365 Business Central Kaag",
+   "url": "https://nl.jooble.org/desc/5237410627285969693?ckey=dynamics+365&rgn=-1&pos=13&groupId=0&elckey=-7309069322195966279&p=1&aq=4222967656015391531&cid=191&jobAge=32&brelb=100&bscr=1038.705&scr=1038.705",
+   "location": "Kaag",
+   "country": "NL",
+   "posted_at": "2026-11-27T00:00:00Z",
+   "products": [
+    "BC"
+   ],
+   "role": "Functional Consultant",
+   "contract": "Unspecified",
+   "agency": false,
+   "direct": false,
+   "sources": [
+    "Jooble"
+   ],
+   "origins": [
+    "jooble:NL"
+   ],
+   "snippet": "...bijzondere jachten, maar werken we ook continu aan de digitale ondersteuning van onze organisatie. Daarom zoeken we een Microsoft Dynamics 365 Business Central Application Manager die gebruikers verder helpt, bedrijfsprocessen begrijpt en ervoor zorgt dat onze...",
+   "first_seen": "2026-11-28T07:37:02Z",
+   "last_seen": "2026-11-28T07:37:02Z",
+   "status": "open",
+   "miss": {
+    "jooble:NL": 0
    }
   },
   {
@@ -221,7 +281,7 @@
    ],
    "snippet": "You'll lead the business side of our Microsoft Dynamics 365 landscape. Right now that means running two major implementations, and you'll also be the main Dynamics 365 contact for colleagues at our Dutch head office. You'll work with the IT Manager Europe and our existing Business Process Analysts, ",
    "first_seen": "2026-11-27T05:18:44Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0,
@@ -252,7 +312,7 @@
    ],
    "snippet": "Smals réalise des projets ICT innovants dans l'e-gouvernement et l'e-santé pour les institutions de la sécurité sociale et des soins de santé. Pour Smals, \"ICT for society\" n'est pas qu'un slogan : tous nos projets profitent à la société. Smals contribue au portail de la sécurité sociale et à la pla",
    "first_seen": "2026-11-27T05:18:44Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -282,7 +342,7 @@
    ],
    "snippet": "...Smals mee aan het portaal van de sociale zekerheid en het eHealth- platform. Grensverleggende projecten zijn ons werkterrein: ****@*****.***,... ...doorstroming van testresultaten naar je huisarts... Als Power Platform Expert speel je binnen het IT-infrastructuurteam een duidelijke...",
    "first_seen": "2026-11-26T14:22:10Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -312,7 +372,7 @@
    ],
    "snippet": "...traject rond vragen, meldingen en klachten analyseer, specificeer en begeleid je de integratie tussen de oplossing en Microsoft Dynamics 365 en Power Platform. Je ondersteunt de operationele en organisatorische implementatie van de oplossing. Je brengt processen...",
    "first_seen": "2026-11-27T15:31:50Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -344,7 +404,7 @@
    ],
    "snippet": "Vacatureomschrijving Je wordt onderdeel van het Microsoft Consulting & Innovation (Platforms) team, dat organisaties helpt versnellen met digitale transformatie binnen het volledige Microsoft-ecosysteem. We combineren technische expertise met domeinkennis om veilige, schaalbare en toekomstbestendige",
    "first_seen": "2026-11-26T04:20:17Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0,
@@ -375,7 +435,7 @@
    ],
    "snippet": "...team drives innovation at every turn. Join the STAEDEAN Services team and help our customers get the most out of our Microsoft Dynamics 365 solutions. We offer a dynamic environment where you’ll work on real customer implementations, learn from experienced colleagues...",
    "first_seen": "2026-11-24T18:49:52Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -408,7 +468,7 @@
    "last_seen": "2026-11-27T23:42:57Z",
    "status": "open",
    "miss": {
-    "jooble:NL": 0
+    "jooble:NL": 1
    }
   },
   {
@@ -438,7 +498,7 @@
    "last_seen": "2026-11-27T15:31:50Z",
    "status": "open",
    "miss": {
-    "jooble:NL": 0
+    "jooble:NL": 1
    }
   },
   {
@@ -468,7 +528,7 @@
    "last_seen": "2026-11-27T15:31:50Z",
    "status": "open",
    "miss": {
-    "jooble:NL": 0
+    "jooble:NL": 1
    }
   },
   {
@@ -562,7 +622,7 @@
    ],
    "snippet": "Voor Ministerie van VWS zoeken wij een Technical Dynamics 365 Consultant. Bij het agentschap CBG werk je binnen het Programma Beschikbaarheid Geneesmiddelen aan actuele medicijntekorten en kwaliteitsdefecten. Je draagt ook bij aan maatregelen om tekorten in de toekomst...",
    "first_seen": "2026-11-24T18:49:52Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0,
@@ -593,7 +653,7 @@
    ],
    "snippet": "...agents, apps and automated workflows, integrate them with Microsoft 365 and Azure services and help organizations adopt scalable, secure... ...the Power Platform and Copilot Studio with Microsoft 365, Dynamics 365, Azure services and third-party systems. Consulting and governance...",
    "first_seen": "2026-11-25T12:41:21Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -654,7 +714,7 @@
    ],
    "snippet": "Van klantcontact tot internationale handel: binnen Goudwisselkantoor vertrouwen we dagelijks op goed werkende applicaties. Als Applicatie Specialist Microsoft Dynamics 365 in Klaaswaal zorg jij dat onze bedrijfskritische systemen beschikbaar en betrouwbaar zijn en steeds beter worden. Met jouw proac",
    "first_seen": "2026-11-23T11:15:17Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -684,7 +744,7 @@
    ],
    "snippet": "Over de werkgever: WR zoekt een vaste medewerker voor de volgende werkgever, je treedt gelijk in dienst bij deze werkgever: Let op: Nederlands is de voertaal. Geen vloeiend Nederlands, niet solliciteren. Wil jij werken als partner voor Dynamics 365-projecten? Ben jij een medior D365 F&O consultant? ",
    "first_seen": "2026-11-23T22:53:45Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -810,7 +870,7 @@
    ],
    "snippet": "Role: Lead Consultant/Technology Architect Location: Amsterdam, Netherlands Technology Required: Dynamics 365 Customer Engagement Architect Job Description Senior D365 CE Architect responsible for shaping enterprise-scale CRM solution architecture, leading technical design, governing delivery qualit",
    "first_seen": "2026-11-19T18:10:56Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -1004,7 +1064,7 @@
    ],
    "snippet": "Analyse current financial processes and propose optimisations within D365 Finance Design and configure core finance: general ledger (multiple charts of accounts), accounts payable and receivable, fixed assets, and bank and cash management Set up multi-entity structures: intercompany, multiple curren",
    "first_seen": "2026-11-17T19:23:06Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0,
@@ -1100,7 +1160,7 @@
    "last_seen": "2026-11-27T05:18:44Z",
    "status": "open",
    "miss": {
-    "jooble:NL": 1
+    "jooble:NL": 2
    },
    "closed_at": null,
    "relisted": true
@@ -1130,11 +1190,11 @@
    "snippet": "...of the Enterprise Delivery team under the direction of the Director of Dynamics Application Development. The position relies on experience and judgment to build, enhance, and support Dynamics 365 solutions for multiple areas of the business, requiring a broad degree of...",
    "first_seen": "2026-11-18T10:02:31Z",
    "last_seen": "2026-11-26T14:22:10Z",
-   "status": "open",
+   "status": "closed",
    "miss": {
-    "jooble:BE": 2
+    "jooble:BE": 3
    },
-   "closed_at": null,
+   "closed_at": "2026-11-28T07:37:02Z",
    "relisted": true
   },
   {
@@ -1163,11 +1223,11 @@
    ],
    "snippet": "We ontwerpen en implementeren ICT, telecom en audiovisuele oplossingen. Dit omvat zowel software als hardware. Onze oplossingen zijn altijd in co-creatie met onze klanten. We inspireren hen graag met innovatieve technologieën, net zoveel als wij er zelf door ge nspireerd worden. Axians is een merk v",
    "first_seen": "2026-11-13T22:08:09Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0,
-    "jooble:BE": 7
+    "jooble:BE": 8
    }
   },
   {
@@ -1194,7 +1254,7 @@
    ],
    "snippet": "Job Description & Summary At PwC, our people in business application consulting specialise in consulting services for a variety of business applications, helping clients optimise operational efficiency. These individuals analyse client needs, implement software solutions, and provide training and su",
    "first_seen": "2026-11-14T10:11:42Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -1224,7 +1284,7 @@
    ],
    "snippet": "Job Description & Summary At PwC, our people in business application consulting specialise in consulting services for a variety of business applications, helping clients optimise operational efficiency. These individuals analyse client needs, implement software solutions, and provide training and su",
    "first_seen": "2026-11-13T22:08:09Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -1257,7 +1317,7 @@
    ],
    "snippet": "...AI. Organisaties willen klantgericht werken. Maar zitten vast in systemen. Processen. Ruis. Jij brengt structuur. Met Dynamics 365 CE . En met Copilot Studio maak jij AI praktisch, toepasbaar en waardevol. Bij adesso Netherlands werk je niet aan demo...",
    "first_seen": "2026-11-26T14:22:10Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0,
@@ -1288,7 +1348,7 @@
    ],
    "snippet": "...sectoren zoals distributie, productie en zorg hun processen slimmer en efficiënter kunnen organiseren? Dan is de rol van Junior Business Central Consultant bij Axians misschien iets voor jou! Jouw rol: Je bent de schakel tussen onze klanten, softwareleveranciers...",
    "first_seen": "2026-11-14T10:11:42Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -1349,7 +1409,7 @@
    ],
    "snippet": "Microsoft Dynamics Sr/Lead Consultant Business Central 32 – 40 uur | Project Services Neem de regie over Microsoft Dynamics 365 Business Central-trajecten en help klanten écht vooruit. Als Sr/Lead Consultant bij Prodware ben je de inhoudelijk expert en vertrouwde adviseur van onze klanten. Je neemt ",
    "first_seen": "2026-11-13T07:50:16Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -1379,7 +1439,7 @@
    ],
    "snippet": "...Over de functie Als Power Platform Engineer ben je verantwoordelijk voor het ontwikkelen, onderhouden en verbeteren van low-codeapplicaties en automatiseringsoplossingen binnen het Microsoft Power Platform. Je helpt de organisatie om bedrijfsprocessen efficiënter...",
    "first_seen": "2026-11-13T16:12:11Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -1409,7 +1469,7 @@
    ],
    "snippet": "...clients to achieve their strategic objectives. As a Microsoft Dynamics generalist at PwC, you will possess a broad range of consulting... ...and international ERP transformations using Microsoft Dynamics 365 Supply Chain Management. Complex operational challenges call for...",
    "first_seen": "2026-11-27T23:42:57Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -1439,7 +1499,7 @@
    ],
    "snippet": "Traineeship Microsoft Dynamics 365 Bij Enshore zijn we op zoek naar een Trainee Microsoft Dynamics 365 om ons team te komen versterken. Locatie: Groningen (hybride) | Uren: 32–40 | Salaris: vanaf €2.800 Wil jij bedrijven in binnen- én buitenland helpen hun processen te optimaliseren? Lijkt het jouw ",
    "first_seen": "2026-11-11T22:14:25Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -1469,7 +1529,7 @@
    ],
    "snippet": "Microsoft Dynamics Consultant Bij Enshore zijn we op zoek naar een Microsoft Dynamics Consultant om ons team te komen versterken. Locatie: Groningen | Uren: 32 - 40 | Salaris: €3.000 - €5.650 Ben jij een gepassioneerde professional met een scherp oog voor detail en een hart voor technologie? En wil ",
    "first_seen": "2026-11-11T22:14:25Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -1499,7 +1559,7 @@
    ],
    "snippet": "We Are Teva We're Teva, a leading innovative biopharmaceutical company, enabled by a world-class generics business. Whether it's innovating in the fields of neuroscience and immunology or delivering high-quality medicine worldwide, we're dedicated to addressing patients' needs now and in the future.",
    "first_seen": "2026-11-12T11:46:15Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -1529,7 +1589,7 @@
    ],
    "snippet": "...uitvoeringsorganisaties – bij digitale transformaties en data-gedreven werken, met behulp van genAI/Agentic AI en Microsoft-technologieën zoals Dynamics 365 (o.a. Customer Service en Contact Center), Power Platform en Copilot (Studio). Dit ga je doen Het Technology Application...",
    "first_seen": "2026-11-27T23:42:57Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -1561,7 +1621,7 @@
    ],
    "snippet": "ATC is a global logistics, white-glove, and technical services specialist for data centers. For over 45 years, we’ve helped deliver Europe’s data centers safely, securely, and right the first time. Our work includes specialist IT transport and relocations, as well as full data center commissioning a",
    "first_seen": "2026-11-11T07:06:20Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0,
@@ -1785,7 +1845,7 @@
    ],
    "snippet": "Vacatures Microsoft Dynamics 365 CE Engineer (Customer Combine Dynamics Engineering with Azure Development Work across Dataverse, C#/.NET, custom APIs, Azure Functions, and event-driven integrations. You'll have the opportunity to solve complex engineering challenges across a modern CRM ecosystem. S",
    "first_seen": "2026-11-08T18:28:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -1815,7 +1875,7 @@
    ],
    "snippet": "Summary Passionate about leading ERP transformation programs in complex delivery environments? Join our team as an ERP Dynamics 365 Delivery Lead and help shape, govern, and deliver large-scale ERP engagements that address our clients’ most critical business challenges. In this role, you will lead m",
    "first_seen": "2026-11-08T18:28:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -1845,7 +1905,7 @@
    ],
    "snippet": "...werkgever Let op: Nederlands is de voertaal. Geen vloeiend Nederlands, niet solliciteren. Wil jij werken als partner voor Dynamics 365 -projecten? Ben jij een medior D365 F&O consultant? Heb jij ervaring in finance of supply chain? Vaste baan: Medior D365 F&...",
    "first_seen": "2026-11-08T05:52:26Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -1877,7 +1937,7 @@
    ],
    "snippet": "Vacatures Senior Manager Delivery & Billing - Microsoft D365 F&O Senior Manager Delivery & Billing - Microsoft D365 F&O Ga terug Voornaam Achternaam E-mailadres TelefoonnummerUpload your CVChoose fileUpload your motivation (optioneel)Choose file I accept the Privacy statement Were you referred by an",
    "first_seen": "2026-11-08T05:52:26Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -1907,7 +1967,7 @@
    ],
    "snippet": "Over de werkgever: WR zoekt een vaste medewerker voor de volgende werkgever, je treedt gelijk in dienst bij deze werkgever: Let op: Nederlands is de voertaal. Geen vloeiend Nederlands, niet solliciteren. Wil jij werken als partner voor Dynamics 365-projecten? Ben jij een medior D365 F&O consultant? ",
    "first_seen": "2026-11-06T22:21:09Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -1939,7 +1999,7 @@
    ],
    "snippet": "Over de werkgever: WR zoekt een vaste medewerker voor de volgende werkgever, je treedt gelijk in dienst bij deze werkgever: Let op: Nederlands is de voertaal. Geen vloeiend Nederlands, niet solliciteren. Wil jij werken als partner voor Dynamics 365-projecten? Ben jij een medior D365 F&O consultant? ",
    "first_seen": "2026-11-08T18:28:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -2128,7 +2188,7 @@
    ],
    "snippet": "...het bedrijf Let op: Nederlands is de voertaal. Geen vloeiend Nederlands, niet solliciteren. Wil jij werken als partner voor Dynamics 365 -projecten? Ben jij een medior D365 F&O consultant? Heb jij ervaring in finance of supply chain? Vaste baan: Medior D365 F&...",
    "first_seen": "2026-11-06T17:25:41Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -2160,10 +2220,40 @@
    ],
    "snippet": "...Passionate about implementing CRM in the Dynamics 365 ecosystem? Join our team as a Solution Architect and participate in the creation and implementation of innovative Dynamics 365 Customer Engagement solutions to address our customers' business challenges. Come...",
    "first_seen": "2026-11-27T23:42:57Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
+   }
+  },
+  {
+   "id": "71faa002548d",
+   "key": "avanadebgcompany|dynamics365deliveryleadbelgium|BE",
+   "company": "Avanade BG SRL/BV Company",
+   "title": "Dynamics 365 - Delivery Lead Belgium",
+   "url": "https://be.jooble.org/desc/8373499952067469629?ckey=dynamics+365&rgn=-1&pos=2&groupId=0&elckey=-7309069322195966279&p=1&aq=-1825998795028467362&cid=84&jobAge=536&relb=100&brelb=100&bscr=6703.0913&scr=6703.0913",
+   "location": "Bruxelles",
+   "country": "BE",
+   "posted_at": "2026-11-06T00:00:00Z",
+   "products": [
+    "D365 general"
+   ],
+   "role": "Project / Delivery",
+   "contract": "Unspecified",
+   "agency": false,
+   "direct": false,
+   "sources": [
+    "Jooble"
+   ],
+   "origins": [
+    "jooble:BE"
+   ],
+   "snippet": "...Summary Passionate about leading ERP transformation programs in complex delivery environments? Join our team as an ERP Dynamics 365 Delivery Lead and help shape, govern, and deliver large-scale ERP engagements that address our clients’ most critical business challenges...",
+   "first_seen": "2026-11-28T07:37:02Z",
+   "last_seen": "2026-11-28T07:37:02Z",
+   "status": "open",
+   "miss": {
+    "jooble:BE": 0
    }
   },
   {
@@ -2255,7 +2345,7 @@
    ],
    "snippet": "...Senior Power Platform Consultant Bij Sogeti werk je als Senior Power Platform Consultant in een omgeving waar technologie, samenwerking en innovatie centraal staan. Onze cultuur is informeel, met minimale hiërarchie en veel ruimte voor eigen initiatief. Je maakt deel...",
    "first_seen": "2026-11-05T15:46:35Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -2285,7 +2375,7 @@
    ],
    "snippet": "...Microsoft Dynamics 365 CRM en ligt jouw zwaartepunt bijvoorbeeld bij C#/.NET-development, Azure-integraties of juist bij Dynamics en Power Platform? Dan zoeken we jou. Voor een klant in de financiële sector in Amsterdam zoeken we een medior of senior professional die...",
    "first_seen": "2026-11-08T05:52:26Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -2410,7 +2500,7 @@
    ],
    "snippet": "...Duur: 30-11-2026 - 30-11-2027 Optie tot verlenging: Ja Reageren voor: 03-11-2026 Als Senior Applicatiebeheerder Microsoft Power Platform – RUN & Governance maak je deel uit van het Power Platform-team binnen UWV. Het team is end-to-end verantwoordelijk voor het stabiel...",
    "first_seen": "2026-11-02T19:44:38Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -2472,7 +2562,7 @@
    ],
    "snippet": "Bedrijfsomschrijving Een positieve toekomst voor iedereen daar werken we bij Sopra Steria aan. Met meer dan 56.000 collega's in 30 landen zijn we Europa's toonaangevende leverancier van digitale oplossingen. Wij weten als geen ander dat het niet alleen technologie is die...",
    "first_seen": "2026-11-02T19:44:38Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -2506,7 +2596,7 @@
    ],
    "snippet": "Position: Dynamics 365 F&O Finance Lead Consultant Department: Dynamics 365 F&O UO Visa Sponsorship: You must have legal working rights in the country of your residence within the European region. Sponsorship is only available within the Netherlands . About HSO HSO is a global business transformatio",
    "first_seen": "2026-11-02T19:44:38Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -2640,7 +2730,7 @@
    "last_seen": "2026-11-27T15:31:50Z",
    "status": "open",
    "miss": {
-    "adzuna": 0
+    "adzuna": 1
    }
   },
   {
@@ -2667,7 +2757,7 @@
    ],
    "snippet": "The opportunity To support the Azelis’ growth strategy we have a unique opportunity within our ERP team. We are looking for a proactive ERP functional expert with strong analytical and communication skills. This is an in-house opportunity at Azelis for an ambitious personality to play an active role",
    "first_seen": "2026-10-31T20:16:23Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -2762,7 +2852,7 @@
    ],
    "snippet": "Ben jij een IT-professional met sterke kennis van Microsoft Dynamics 365 Business Central en heb je een brede kennis is IT? Voor Andocor en Romed zijn we op zoek naar een veelzijdige IT & Business Central Application Specialist die het beheer, de ondersteuning en de verdere optimalisatie van onze IT",
    "first_seen": "2026-10-31T05:26:51Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -2829,7 +2919,7 @@
    "last_seen": "2026-11-27T15:31:50Z",
    "status": "open",
    "miss": {
-    "adzuna": 0
+    "adzuna": 1
    }
   },
   {
@@ -2858,11 +2948,11 @@
    ],
    "snippet": "...verzorgd door ervaren collega’s en zijn afgestemd op jouw kennisniveau en ontwikkelbehoeften. Vacatureomschrijving Als MS Dynamics 365 Developer werk je aan de ontwikkeling, configuratie en implementatie van Dynamics 365- en Power Platform-oplossingen voor onze...",
    "first_seen": "2026-10-29T21:23:58Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0,
-    "adzuna": 0
+    "adzuna": 1
    }
   },
   {
@@ -2982,7 +3072,7 @@
    ],
    "snippet": "...Alexander beantwoordt ze graag. Je bereikt hem via ****@*****.*** of 06 16 10 06 18 Dit ga je doen Als Power Platform Consultant word je onderdeel van ons Customer Success Team binnen de CE business line. Vanuit dit team werken we voor bestaande...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -3114,7 +3204,7 @@
    ],
    "snippet": "Wat als IT-support geen ticketfabriek was, maar een job waarin je je collega’s bij naam kent? Voor onze klant Delen Private Bank in Antwerpen zoeken we een Service Desk Engineer die het eerste aanspreekpunt wil zijn voor meer dan duizend collega’s. Iemand die vragen niet doorschuift, maar oplost. Ge",
    "first_seen": "2026-10-29T10:25:53Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:recruitee:xylos": 0
@@ -3144,7 +3234,7 @@
    ],
    "snippet": "...Heb jij een passie voor Dynamics 365 Customer Engagement (CE) een maak je graag slimme oplossingen die écht werken voor de klant? Dan hebben wij de perfecte rol voor jou. Jouw rol in het kort Als Dynamics 365 CE Engineer bij VTM richt jij je op de technische realisatie...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -3174,7 +3264,7 @@
    ],
    "snippet": "...Ben jij een kei in het bouwen van oplossingen met het Microsoft Power Platform? En krijg je energie van het helpen van klanten met slimme, werkende toepassingen? Dan hebben wij de perfecte uitdaging voor jou! Wij zijn namelijk op zoek naar een Power Platform Engineer....",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -3266,7 +3356,7 @@
    ],
    "snippet": "...Jouw rol Als Power Platform Consultant ben je vanaf het begin betrokken bij projecten. Je verdiept je in bedrijfsprocessen, helpt organisaties hun vraag te concretiseren, vertaalt behoeften naar een passende oplossing én realiseert deze zelfstandig of samen met je collega...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -3329,10 +3419,10 @@
    ],
    "snippet": "Voor een familiaal productiebedrijf in de regio Waregem ben ik op zoek naar een Microsoft 365 Specialist met interesse in digitale werkplekken, procesoptimalisatie en automatisering. Je komt terecht in een financieel gezonde onderneming die actief is binnen de bouwsector...",
    "first_seen": "2026-10-29T21:23:58Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
-    "jooble:BE": 2,
+    "jooble:BE": 3,
     "adzuna": 0
    }
   },
@@ -3359,15 +3449,16 @@
    "snippet": "VACANCY 1: Senior Dynamics 365 Customer Service / CE Functional Consultant Must-have experience Deep Dynamics 365 Customer Service expertise: Strong experience with Cases, Customer Service Workspace, Queues, Routing, Activities, Email Management, SLAs, Entitlements, Knowledge Management and Operatio",
    "first_seen": "2026-10-29T09:35:59Z",
    "last_seen": "2026-11-26T23:15:23Z",
-   "status": "open",
+   "status": "closed",
    "origins": [
     "adzuna",
     "jooble:BE"
    ],
    "miss": {
-    "adzuna": 1,
-    "jooble:BE": 4
-   }
+    "adzuna": 2,
+    "jooble:BE": 5
+   },
+   "closed_at": "2026-11-28T07:37:02Z"
   },
   {
    "id": "3f645192af39",
@@ -3391,13 +3482,14 @@
    "snippet": "Dynamics 365 Finance and Operations Techno-functional Consultant (m/v/x), freelance (ZZP or own company), Netherlands Engagement: Day rate contract. Minimum 5 years. Start: November 2026 Location: Hybrid, Amsterdam, Netherlands. Days on site agreed for each assignment. Day rate: EUR 400 a day. Langu",
    "first_seen": "2026-10-29T09:35:59Z",
    "last_seen": "2026-11-26T23:15:23Z",
-   "status": "open",
+   "status": "closed",
    "origins": [
     "adzuna"
    ],
    "miss": {
-    "adzuna": 1
-   }
+    "adzuna": 2
+   },
+   "closed_at": "2026-11-28T07:37:02Z"
   },
   {
    "id": "efc486c16aaf",
@@ -3421,14 +3513,14 @@
    ],
    "snippet": "Vacatureomschrijving Als Microsoft Power Platform Engineer binnen het team van Netcompany werk je aan het beheer, onderhoud en de doorontwikkeling van oplossingen die dagelijks door meerdere gebruikers worden gebruikt. Je helpt ervoor te zorgen dat Power Platform-omgevingen betrouwbaar, veilig en to",
    "first_seen": "2026-10-29T09:35:59Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "origins": [
     "adzuna",
     "jooble:NL"
    ],
    "miss": {
-    "adzuna": 4,
+    "adzuna": 5,
     "jooble:NL": 0
    }
   },
@@ -3456,7 +3548,7 @@
    ],
    "snippet": "Microsoft Dynamics 365 Business Central, DE ERP-oplossing voor KMO’s, is een van de sterkst groeiende producten binnen het Microsoft portfolio. Bijgevolg is ook onze afdeling verantwoordelijk voor de implementatie en service van Business Central, sterk groeiende en in...",
    "first_seen": "2026-10-29T10:45:36Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -3491,8 +3583,8 @@
     "jooble:NL"
    ],
    "miss": {
-    "adzuna": 0,
-    "jooble:NL": 3
+    "adzuna": 1,
+    "jooble:NL": 4
    }
   },
   {
@@ -3517,14 +3609,14 @@
    ],
    "snippet": "Dynamics 365 Finance and Operations Technical Consultant (m/v/x), freelance (ZZP or own company), Netherlands Engagement: Day rate contract. Minimum 5 years. Start: November 2026 Location: Hybrid, Amsterdam, Netherlands. Days on site agreed for each assignment. Day rate: EUR 350 a day. Language: Eng",
    "first_seen": "2026-10-29T09:35:59Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "origins": [
     "adzuna",
     "jooble:NL"
    ],
    "miss": {
-    "adzuna": 0,
+    "adzuna": 1,
     "jooble:NL": 0
    }
   },
@@ -3550,14 +3642,14 @@
    ],
    "snippet": "Power Platform Technical Consultant (m/v/x), freelance (ZZP or own company), Netherlands Engagement: Day rate contract. Minimum 5 years. Start: November 2026 Location: Hybrid, Amsterdam, Netherlands. Days on site agreed for each assignment. Day rate: EUR 350 a day. Language: English. We are seeking ",
    "first_seen": "2026-10-29T09:35:59Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "origins": [
     "adzuna",
     "jooble:NL"
    ],
    "miss": {
-    "adzuna": 0,
+    "adzuna": 1,
     "jooble:NL": 0
    }
   },
@@ -3583,14 +3675,14 @@
    ],
    "snippet": "Dynamics 365 Finance and Operations Technical Architect (m/v/x), freelance (ZZP or own company), Netherlands Engagement: Day rate contract. Minimum 5 years. Start: November 2026 Location: Hybrid, Amsterdam, Netherlands. Days on site agreed for each assignment. Day rate: EUR 450 a day. Language: Engl",
    "first_seen": "2026-10-29T09:35:59Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "origins": [
     "adzuna",
     "jooble:NL"
    ],
    "miss": {
-    "adzuna": 1,
+    "adzuna": 2,
     "jooble:NL": 0
    }
   },
@@ -3616,14 +3708,14 @@
    ],
    "snippet": "Senior Dynamics 365 Finance and Operations Developer (m/v/x), freelance (ZZP or own company), Netherlands Engagement: Day rate contract. Minimum 5 years. Start: November 2026 Location: Hybrid, Amsterdam, Netherlands. Days on site agreed for each assignment. Day rate: EUR 350 a day. Language: English",
    "first_seen": "2026-10-29T09:35:59Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "origins": [
     "adzuna",
     "jooble:NL"
    ],
    "miss": {
-    "adzuna": 0,
+    "adzuna": 1,
     "jooble:NL": 0
    }
   },
@@ -3656,8 +3748,8 @@
     "jooble:NL"
    ],
    "miss": {
-    "adzuna": 1,
-    "jooble:NL": 0
+    "adzuna": 2,
+    "jooble:NL": 1
    }
   },
   {
@@ -3815,7 +3907,7 @@
    ],
    "snippet": "Job Description About your tasks: Design and build Microsoft Dynamics 365 Warehouse Management (WMS) solutions that support high-volume warehouse operations across inbound logistics, inventory management and outbound fulfilment. Develop custom X solutions, integrations, Data Entities, APIs, workflow",
    "first_seen": "2026-10-29T09:35:59Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "origins": [
     "adzuna",
@@ -3823,9 +3915,9 @@
     "ats:smartrecruiters:redcare-pharmacy"
    ],
    "miss": {
-    "adzuna": 6,
+    "adzuna": 7,
     "ats:smartrecruiters:redcare-pharmacy": 0,
-    "jooble:NL": 7
+    "jooble:NL": 8
    }
   },
   {
@@ -3852,7 +3944,7 @@
    ],
    "snippet": "...entreprise investit dans la digitalisation de ses processus comptables et vient notamment de migrer vers Microsoft Dynamics 365 Business Central . Plusieurs automatisations sont actuellement en cours de développement afin de réduire progressivement les tâches d'encodage...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -3880,14 +3972,14 @@
    ],
    "snippet": "Senior Dynamics 365 CE Developer (m/v/x), freelance (ZZP or own company), Netherlands Engagement: Day rate contract. Minimum 5 years. Start: November 2026 Location: Hybrid, Amsterdam, Netherlands. Days on site agreed for each assignment. Day rate: EUR 350 a day. Language: English. We are seeking a S",
    "first_seen": "2026-10-29T09:35:59Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "origins": [
     "adzuna",
     "jooble:NL"
    ],
    "miss": {
-    "adzuna": 1,
+    "adzuna": 2,
     "jooble:NL": 0
    }
   },
@@ -3920,8 +4012,8 @@
     "jooble:NL"
    ],
    "miss": {
-    "adzuna": 1,
-    "jooble:NL": 0
+    "adzuna": 2,
+    "jooble:NL": 1
    }
   },
   {
@@ -3946,15 +4038,15 @@
    ],
    "snippet": "Power Platform Technical Architect (m/v/x), freelance (ZZP or own company), Netherlands Engagement: Day rate contract. Minimum 5 years. Start: November 2026 Location: Hybrid, Amsterdam, Netherlands. Days on site agreed for each assignment. Day rate: EUR 450 a day. Language: English. We are seeking a",
    "first_seen": "2026-10-29T09:35:59Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "origins": [
     "adzuna",
     "jooble:NL"
    ],
    "miss": {
-    "adzuna": 0,
-    "jooble:NL": 14
+    "adzuna": 1,
+    "jooble:NL": 0
    }
   },
   {
@@ -3980,14 +4072,14 @@
    ],
    "snippet": "Dynamics 365 CE and Power Platform Technical Consultant (m/v/x), freelance (ZZP or own company), Netherlands Engagement: Day rate contract. Minimum 5 years. Start: November 2026 Location: Hybrid, Amsterdam, Netherlands. Days on site agreed for each assignment. Day rate: EUR 350 a day. Language: Engl",
    "first_seen": "2026-10-29T09:35:59Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "origins": [
     "adzuna",
     "jooble:NL"
    ],
    "miss": {
-    "adzuna": 1,
+    "adzuna": 2,
     "jooble:NL": 0
    }
   },
@@ -4014,14 +4106,14 @@
    ],
    "snippet": "Dynamics 365 CE and Power Platform Technical Architect (m/v/x), freelance (ZZP or own company), Netherlands Engagement: Day rate contract. Minimum 5 years. Start: November 2026 Location: Hybrid, Amsterdam, Netherlands. Days on site agreed for each assignment. Day rate: EUR 450 a day. Language: Engli",
    "first_seen": "2026-10-29T09:35:59Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "origins": [
     "adzuna",
     "jooble:NL"
    ],
    "miss": {
-    "adzuna": 1,
+    "adzuna": 2,
     "jooble:NL": 0
    }
   },
@@ -4113,10 +4205,10 @@
    ],
    "snippet": "Passionate about implementing CRM in the Dynamics 365 ecosystem? Join our team as a Solution Architect and participate in the creation and implementation of innovative Dynamics 365 Customer Engagement solutions to address our customers' business challenges.Come join us:...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
-    "jooble:NL": 44,
+    "jooble:NL": 45,
     "adzuna": 0
    },
    "closed_at": null,
@@ -4301,7 +4393,7 @@
    ],
    "snippet": "...course, the adessi community in Belgium. To strengthen our company growth, we are looking for a Senior Functional Consultant MS Dynamics 365 ERP Your role You will lead end-to-end Dynamics 365 F&O implementations (Finance, Supply Chain Management, and Commerce),...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -4362,7 +4454,7 @@
    ],
    "snippet": "...proposals, preparing demos and presentations, estimating project scopes and convincingly showing the value of Dynamics 365 Finance and Power Platform to prospective customers. You will collaborate with technical teams to ensure Dynamics 365 Finance works seamlessly within...",
    "first_seen": "2026-10-29T10:45:36Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -4614,7 +4706,7 @@
    "last_seen": "2026-11-27T23:42:57Z",
    "status": "open",
    "miss": {
-    "jooble:NL": 0
+    "jooble:NL": 1
    }
   },
   {
@@ -4643,7 +4735,7 @@
    ],
    "snippet": "Functioneel Consultant Dynamics 365 F&O (SCM) - Managed Services Binnen HSO Managed Services ondersteunen we klanten nadat hun Microsoft Dynamics omgeving is geïmplementeerd. We zorgen dat de applicatie goed blijft functioneren én helpen klanten hun processen verder te verbeteren en meer waarde uit ",
    "first_seen": "2026-10-29T10:25:53Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -4737,14 +4829,14 @@
    ],
    "snippet": "About the Opportunity At Alsena, we specialise in connecting experienced IT professionals with leading companies and international organisations. We are currently looking for an experienced Microsoft Power Platform / Dataverse Administrator to join an IT infrastructure project within a European inst",
    "first_seen": "2026-10-29T09:35:59Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "origins": [
     "adzuna",
     "jooble:BE"
    ],
    "miss": {
-    "adzuna": 6,
+    "adzuna": 7,
     "jooble:BE": 0
    }
   },
@@ -4772,7 +4864,7 @@
    ],
    "snippet": "...The Microsoft Dynamics 365 Finance team grew from 11 to 30 people the past 5 years and our aim is to grow even further. This we do by being a true innovator of Dynamics 365 FSCM and by constantly challenging ourselves and our customers in doing more with the latest...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -4802,7 +4894,7 @@
    ],
    "snippet": "...walk around with your head in the clouds? Probably not many, but we’re one of them! The cloud is where our delaware Microsoft Dynamics 365 Business Central consultants feel most at home, and rightly so. Nevertheless, we also have our feet planted firmly on the ground...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -4832,7 +4924,7 @@
    ],
    "snippet": "...our Managed Services team is where long-term customer partnerships truly come to life. As a Managed Services Consultant for Dynamics 365 Finance, you become the trusted advisor for a portfolio of Dynamics 365 Finance customers . You combine deep functional expertise...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -4862,7 +4954,7 @@
    ],
    "snippet": "...Are you passionate about turning customer data into actionable insights? Do you have hands-on experience with Microsoft Dynamics 365 Customer Insights and a solid understanding of marketing processes? At delaware, we’re looking for a Customer Insights Specialist to...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -4892,7 +4984,7 @@
    ],
    "snippet": "...You have plenty of experience writing code for CRM solutions , and can prove your coding skills for Microsoft Dynamics 365 Customer Engagement solution. You have the commercial insight to put yourself in the shoes of the customer, understand their reality and...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -4923,7 +5015,7 @@
    ],
    "snippet": "...experience in object-oriented programming (X++, Java, .NET, etc.); Have have notions of one or more technologies within the Dynamics 365 ecosystem (FSCM, BC, CE, Navision, AX, Power Platform, etc.); Have a clear understanding of business process concepts coupled...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -4953,7 +5045,7 @@
    ],
    "snippet": "...solutions push finance and operations business processes to the next level. Sounds good, right? We also closely follow Microsoft Dynamics 365 evolutions. That’s why we’re an industry-leading Microsoft Solutions Partner for Business Applications (and we wear that badge...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -4983,7 +5075,7 @@
    ],
    "snippet": "...You like talking to customers, understanding how their project and service organisations really work, and translating that into a Dynamics 365 solution that actually helps them move forward. You have experience with Microsoft Dynamics 365, ideally in FSCM or Project...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -5013,7 +5105,7 @@
    ],
    "snippet": "...out of untangling a customer's supply chain, from procurement to warehousing and logistics, and turning it into a smooth-running Dynamics 365 setup. You read a business situation fast and translate it into solutions that actually work, and you feel just as at home with...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -5043,7 +5135,7 @@
    ],
    "snippet": "...walk around with your head in the clouds? Probably not many – but we’re one of them! The cloud is where our delaware Microsoft Business Central consultants feel most at home, and rightly so. Nevertheless, we also have our feet planted firmly on the ground. Do you...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -5073,7 +5165,7 @@
    ],
    "snippet": "...You like to design and build technical solutions within Microsoft Business Central and are not afraid to go beyond ERP software customizations. How many companies can you think of where you’re actually encouraged to walk around with your head in the clouds? Probably...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -5197,7 +5289,7 @@
    ],
    "snippet": "Help our clients transform their finance processes with Dynamics 365 FinanceAre you passionate about finance and technology? Do you want to work in a team of Microsoft professionals on innovative solutions for large companies in various industries? Do you have experience in implementing Dynamics 365",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -5227,7 +5319,7 @@
    ],
    "snippet": "Are you passionate about helping clients in the professional services industries implement their Microsoft Dynamics 365 platform solutions? We are seeking a skilled and experienced Dynamics 365 Professional Services Solution Architect to join our Belgian Business Applications team! If you're passion",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -5257,7 +5349,7 @@
    ],
    "snippet": "...helikopterzicht). Je denkt mee in de transitie van businessprocessen en zet deze om naar de uitgebreide standaardoplossing Microsoft Dynamics 365 Business Central en de unieke astena-oplossingen voor de installatiesector. Je kan zelfstandig werken, initiatieven nemen...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -5352,7 +5444,67 @@
    ],
    "snippet": "...technieken en construct. Deze activiteiten voeren we uit met meer dan 2300 medewerkers binnen de BENELUX en Duitsland. Als Microsoft Dynamics F&O Product Specialist ben je verantwoordelijk voor het beheren en optimaliseren van de Dynamics F&O-oplossingen binnen onze...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
+   "status": "open",
+   "miss": {
+    "jooble:BE": 0
+   }
+  },
+  {
+   "id": "80af8f52c451",
+   "key": "avanadebgcompany|erpdynamics365financeconsultant|BE",
+   "company": "Avanade BG SRL/BV Company",
+   "title": "ERP Dynamics 365 Finance Consultant",
+   "url": "https://be.jooble.org/desc/-3854065315563908512?ckey=dynamics+365&rgn=-1&pos=4&groupId=0&elckey=-7309069322195966279&p=1&aq=-1825998795028467362&cid=84&jobAge=968&relb=100&brelb=100&bscr=5769.8496&scr=5769.8496",
+   "location": "Gand",
+   "country": "BE",
+   "posted_at": "2026-10-19T00:00:00Z",
+   "products": [
+    "F&O"
+   ],
+   "role": "Functional Consultant",
+   "contract": "Unspecified",
+   "agency": false,
+   "direct": false,
+   "sources": [
+    "Jooble"
+   ],
+   "origins": [
+    "jooble:BE"
+   ],
+   "snippet": "...Help our clients transform their finance processes with Dynamics 365 Finance Are you passionate about finance and technology? Do you want to work in a team of Microsoft professionals on innovative solutions for large companies in various industries? Do you have...",
+   "first_seen": "2026-11-28T07:37:02Z",
+   "last_seen": "2026-11-28T07:37:02Z",
+   "status": "open",
+   "miss": {
+    "jooble:BE": 0
+   }
+  },
+  {
+   "id": "46ec018bb03e",
+   "key": "avanadebgcompany|d365professionalservicessolutionarchitectbelgium|BE",
+   "company": "Avanade BG SRL/BV Company",
+   "title": "D365 Professional Services Solution Architect - Belgium",
+   "url": "https://be.jooble.org/desc/-8020356885459425503?ckey=dynamics+365&rgn=-1&pos=134&groupId=0&elckey=-7309069322195966279&p=2&aq=-8510007707383305289&cid=84&jobAge=968&relb=100&brelb=100&bscr=621.87866&scr=621.87866",
+   "location": "Gand",
+   "country": "BE",
+   "posted_at": "2026-10-19T00:00:00Z",
+   "products": [
+    "D365 general"
+   ],
+   "role": "Architect",
+   "contract": "Unspecified",
+   "agency": false,
+   "direct": false,
+   "sources": [
+    "Jooble"
+   ],
+   "origins": [
+    "jooble:BE"
+   ],
+   "snippet": "...Are you passionate about helping clients in the professional services industries implement their Microsoft Dynamics 365 platform solutions? We are seeking a skilled and experienced Dynamics 365 Professional Services Solution Architect to join our Belgian Business Applications...",
+   "first_seen": "2026-11-28T07:37:02Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -5382,7 +5534,7 @@
    ],
    "snippet": "...bedrijfsprocessen naar functionele PowerApps-applicaties. Met jouw kennis en expertise speel jij een belangrijke rol in hoe klanten het Power Platform moeten gebruiken. Daarnaast ben je verantwoordelijk voor het onderhouden en upgraden van bestaande PowerApps-oplossingen en het...",
    "first_seen": "2026-11-18T10:02:31Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -5446,7 +5598,7 @@
    ],
    "snippet": "...voor jou is? Neem contact met ons op! Dit bedrijf bouwt applicaties en koppelingen op basis van Low-code. Of eigenlijk, jij als Power Platform Consultant doet dit. Jij weet precies wat de klant nodig heeft, houdt de processen in de gaten en bedenkt oplossingen die je...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -5476,7 +5628,7 @@
    ],
    "snippet": "Maak het verschil als Financieel Consultant bij 4PS Als Financieel Consultant binnen onze business unit Bouw ben jij de expert die klanten helpt hun financiële bedrijfsprocessen optimaal in te richten. Jij combineert jouw kennis van cijfers en processen met onze ERP-oplossing 4PS Construct, gebaseer",
    "first_seen": "2026-10-29T10:25:53Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:4psnl": 0
@@ -5602,7 +5754,7 @@
    ],
    "snippet": "Als Senior ben je eindverantwoordelijk voor de functionele strategie en architectuur binnen implementaties van Microsoft Dynamics 365. Je bent trusted advisor voor het directieniveau en vertaalt bedrijfsstrategie naar innovatieve, schaalbare oplossingen. Daarnaast speel...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -5632,7 +5784,7 @@
    ],
    "snippet": "Bij Thryve bouwen we slimme Dynamics 365- oplossingen die organisaties helpen efficiënter te werken en zich voor te bereiden op de toekomst. We zijn geen typisch IT-consultancybedrijf. Samenwerking staat centraal in onze manier van werken en als developer maak je onderdeel...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -5662,7 +5814,7 @@
    ],
    "snippet": "We zijn op zoek naar een klantgerichte Functioneel Consultant met hands-on ervaring met Dynamics 365 Customer Engagement. Daarnaast: Je hebt ervaring met implementaties van Dynamics 365 Sales, Marketing, Customer Service, Contact Center en/of Field Service Je beschikt...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -5755,7 +5907,7 @@
    ],
    "snippet": "What will you do as a Architect at 4PS? As a Architect at 4PS, you will help define the technological direction and architecture of 4PS Construct. You will make key technical decisions, contribute to managing the product backlog with a focus on architectural enablers, and ensure that new features al",
    "first_seen": "2026-10-29T10:25:53Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:4psnl": 0
@@ -5783,7 +5935,7 @@
    ],
    "snippet": "Marketing draait allang niet meer om campagnes. Het draait om data. Om timing. Om relevant zijn. En om technologie die dat mogelijk maakt. Bij adesso Nederland zoeken we een Dynamics 365 CE Consultant die snapt hoe Customer Insights: Data & Journeys samenkomen. Iemand die marketing, data en technolo",
    "first_seen": "2026-10-29T09:35:59Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "origins": [
     "adzuna",
@@ -5821,7 +5973,7 @@
    ],
    "snippet": "Low-code betekent niet low-impact. Bij adesso help je klanten slimmer werken met Power Platform, Dataverse en Customer Engagement. Geen losse demo-apps of tijdelijke workarounds, maar oplossingen die processen vereenvoudigen, gebruikers verder helpen en organisaties schaalbaar ondersteunen. Je luist",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0,
@@ -5852,7 +6004,7 @@
    ],
    "snippet": "...Ze worden gebouwd. Door mensen die snappen hoe business, data en technologie samenkomen. Bij adesso Nederland werk je als Dynamics 365 Developer aan oplossingen die gebruikt worden. In productie. Door echte organisaties. Geen demo-omgevingen. Geen half werk....",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -5882,7 +6034,7 @@
    ],
    "snippet": "...Ben jij thuis in het Microsoft Power Platform én wil je AI niet uitleggen, maar toepassen ? Bij adesso bouw je met Copilot Studio, AI Builder en Power Platform oplossingen die direct waarde leveren. Geen experimenten om het experiment, maar slimme apps die gebruikt...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -5914,7 +6066,7 @@
    ],
    "snippet": "Bij Dynamic People krijg je de kans om een echte impact te maken in een innovatieve, klantgerichte organisatie die de nieuwste technologie n inzet om de wereld van commodity traders te vereenvoudigen. Als Microsoft Solutions Partner bieden wij Dynamics 365, Power Platform en AI als krachtige oplossi",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0,
@@ -5947,7 +6099,7 @@
    ],
    "snippet": "Bij Dynamic People krijg je de kans om een echte impact te maken in een innovatieve, klantgerichte organisatie die de nieuwste technologie n inzet om de wereld van commodity traders te vereenvoudigen. Als Microsoft Solutions Partner bieden wij Dynamics 365, Power Platform en AI als krachtige oplossi",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0,
@@ -5978,7 +6130,7 @@
    ],
    "snippet": "Over de functie Bij een netbeheerder in Den Bosch bouw je automatiseringen die collega’s helpen het werk rond de energietransitie slimmer te organiseren. Als Senior Power Platform Automation Engineer realiseer je Power Apps en versterk je de ontwikkelstandaarden van het automationteam. Het gaat om e",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -6008,7 +6160,7 @@
    ],
    "snippet": "Do you want to shape the technical direction of mobile solutions used daily by professionals, within a team of experienced and highly skilled developers? Do you take ownership of complex applications, architectural decisions, and team development, and enjoy collaborating and sparring at a senior lev",
    "first_seen": "2026-10-29T10:25:53Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:4psnl": 0
@@ -6041,7 +6193,7 @@
    "last_seen": "2026-11-27T05:18:44Z",
    "status": "open",
    "miss": {
-    "jooble:NL": 1
+    "jooble:NL": 2
    },
    "closed_at": null,
    "relisted": true
@@ -6070,7 +6222,7 @@
    ],
    "snippet": "...Robert Half is op zoek naar Microsoft Power Platform Developer (M/V/X) - Regio Geel Onze klant is een innovatieve en discreet opererende organisatie die sterk inzet op digitale transformatie en procesoptimalisatie. Volgende taken behoren tot jouw pakket als Microsoft...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -6102,12 +6254,12 @@
    ],
    "snippet": "... Power Platform Consultant Wil jij niet alleen Power Platform-oplossingen bouwen, maar ook klanten adviseren over hoe zij slimmer kunnen werken met data, automatisering en AI? Voor Trafix in Schiphol-Rijk zoeken we een Power Platform Consultant met 3 tot 5 jaar...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-26T04:20:17Z",
-   "status": "closed",
+   "last_seen": "2026-11-28T07:37:02Z",
+   "status": "open",
    "miss": {
-    "jooble:NL": 3
+    "jooble:NL": 0
    },
-   "closed_at": "2026-11-27T15:31:50Z",
+   "closed_at": null,
    "relisted": true
   },
   {
@@ -6196,7 +6348,7 @@
    ],
    "snippet": "...oplossingen. Samenwerking is essentieel, zowel binnen je eigen organisatie als met klanten. Je hebt ervaring met PowerApps en Microsoft 365 , en kennis van Python of R en SQL. Kortom, als PowerApps Consultant ben je een bruggenbouwer tussen technologie en bedrijfsprocessen...",
    "first_seen": "2026-10-29T10:45:36Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -6262,7 +6414,7 @@
    ],
    "snippet": "Jij overziet het speelveld. Wij geven je de ruimte. Met ons Microsoft-team bouwen we geen demo s, maar oplossingen die draaien. Op schaal. In productie. We werken met de nieuwste Microsoft-technologie n en zitten er dicht op dankzij onze strategische samenwerking met Microsoft. Geen omwegen, geen ve",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0,
@@ -6293,7 +6445,7 @@
    ],
    "snippet": "Are you passionate about digital transformation and helping organizations optimize their business processes? Do you enjoy translating business needs into smart ERP solutions and working closely with clients to create sustainable impact? Within our Digital Advisory practice, we help organizations acc",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -6323,7 +6475,7 @@
    ],
    "snippet": "Power platform lead consultant Dit ga jij doen Would you like to play a key role in the digital transformation of Tata Steel Netherlands? And do you enjoy working at the intersection of business, technology and innovation? As a Power Platform Consultant within the Acquire to Decommission (A2D) value",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -6384,7 +6536,7 @@
    ],
    "snippet": "Bij DAS houden we het recht toegankelijk voor iedereen. Bouw mee aan het platform waarmee we bij DAS werk slimmer maken. Bij DAS zetten we Microsoft Power Platform, Microsoft 365 en Copilot steeds breder in. Van het automatiseren van processen tot apps, workflows en agents die collega's ondersteunen",
    "first_seen": "2026-10-31T05:26:51Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -6414,7 +6566,7 @@
    ],
    "snippet": "Job Description & Summary Technologie en data zijn niet meer weg te denken uit onze maatschappij. Bij PwC help jij toonaangevende klanten in de publieke sector bij complexe vraagstukken waarmee we samen écht maatschappelijke impact realiseren. Nationale en mondiale crises vragen om innovatieve oplos",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -6446,11 +6598,11 @@
    ],
    "snippet": "De afgelopen jaren hebben we op het gebied van automatisering en app-ontwikkeling mooie stappen gemaakt; van handmatige processen naar geautomatiseerde workflows, van losse applicaties naar geïntegreerde oplossingen. We bouwen voort op ons fundament en zetten slimme technologie en AI in waar het pro",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0,
-    "jooble:NL": 0
+    "jooble:NL": 1
    },
    "closed_at": null,
    "relisted": true
@@ -6479,7 +6631,7 @@
    ],
    "snippet": "...jij een creatieve programmeur die houdt van afwisseling en graag werkt voor klanten uit verschillende sectoren? Dan ben jij de Dynamics 365 Developer die we zoeken bij Dynamate Passendale! Wat ga je doen? Als Dynamics 365 Developer werk je samen met onze consultants...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -6509,7 +6661,7 @@
    ],
    "snippet": "...Ben jij een nieuwsgierige problem solver met een passie voor technologie én een talent voor klantcontact? Heb je interesse in Dynamics 365 Business Central? Dan hebben wij de perfecte uitdaging voor jou als Dynamics 365 Consultant bij Dynamate Passendale! Wat doe...",
    "first_seen": "2026-10-29T10:43:13Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:BE": 0
@@ -6539,7 +6691,7 @@
    ],
    "snippet": "We zoeken een consultant met ervaring. Met je productkennis en ervaring met bedrijfsprocessen adviseer je bedrijven in de installatiesector en dienst naverkoop (HVAC-R, electriciteit en groene energie, sanitair, ) naar een nieuwe softwareomgeving (ERP en AI). Als vaste ‘sparringpartner' voor onze kl",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -6637,7 +6789,7 @@
    ],
    "snippet": "...groep met zes gespecialiseerde IT-ondernemingen, bieden we een breed scala aan expertise aan onze partners. De functie: Als Power Platform Consultant binnen onze start-up bevind je je in een dynamische omgeving waarbij de klant altijd centraal staat. Je wordt onderdeel...",
    "first_seen": "2026-11-03T09:59:44Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -6698,7 +6850,7 @@
    ],
    "snippet": "What will you do? As a Cloud Platform Architect at 4PS, you will define and drive the strategic direction of our cloud platform and software delivery architecture. You will establish architectural standards, technology roadmaps, and best practices that ensure our platforms, infrastructure, integrati",
    "first_seen": "2026-10-29T10:25:53Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:4psnl": 0
@@ -6951,7 +7103,7 @@
    ],
    "snippet": "Relocation to the United States — Norfolk, Virginia. We provide the NATO-5 visa for you and your family. This post is a full employment contract with our delivery partner, with the benefits that go with it — not a contractor or B2B arrangement. Agreeing to be employed is the first condition of the r",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -6981,7 +7133,7 @@
    ],
    "snippet": "Relocation to the United States — Norfolk, Virginia. We provide the NATO-5 visa for you and your family. This post is a full employment contract with our delivery partner, with the benefits that go with it — not a contractor or B2B arrangement. Agreeing to be employed is the first condition of the r",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0
@@ -7073,7 +7225,7 @@
    ],
    "snippet": "Voor mijn klant zoek ik een Power Platform Consultant die graag werkt aan praktische oplossingen die organisaties verder helpen. Deze organisatie is gespecialiseerd in Microsoft-technologie en ondersteunt bedrijven bij het verbeteren en automatiseren van hun processen....",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -7199,7 +7351,7 @@
    ],
    "snippet": "Voor mijn klant ben ik op zoek naar een Power Platform Developer die energie krijgt van slimme oplossingen en impact wil maken bij diverse opdrachtgevers. Deze organisatie is dé sparringpartner voor bedrijven die hun processen willen optimaliseren met behulp van Microsoft...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -7231,7 +7383,7 @@
    ],
    "snippet": "Description Business Productivity AI Governance Resource As a Business Productivity AI Governance Resource within ETS, you enable the responsible adoption and governance of Microsoft Copilot, AI Builder, and AI-enabled Power Platform solutions across DLL. You help ensure these technologies are used ",
    "first_seen": "2026-10-29T09:43:04Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "adzuna": 0,
@@ -7264,7 +7416,7 @@
    ],
    "snippet": "Voor mijn klant, een snelgroeiende IT-implementatiepartner gespecialiseerd in Microsoft-oplossingen, zoek ik een enthousiaste Power Platform Developer. Deze organisatie richt zich op het optimaliseren en standaardiseren van bedrijfsprocessen voor diverse klanten, waarbij...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -7294,7 +7446,7 @@
    ],
    "snippet": "...vaardigheden en ervaring met programmeren (bijv. CSS, JavaScript, Java of HTML). Kent de Microsoft omgeving zoals Azure, SQL en Microsoft 365 . Heeft werkervaring met Power Apps (Power Automate is een pré). Arbeidsvoorwaarden: Bij ons wordt hard werken beloond: ~ Een...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -7324,7 +7476,7 @@
    ],
    "snippet": "Voor mijn klant ben ik op zoek naar een Business Central Consultant die gespecialiseerd is in logistieke processen. De organisatie is een vooruitstrevende Microsoft-partner die zich richt op het automatiseren en optimaliseren van bedrijfsprocessen. Zij staan bekend om...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -7354,7 +7506,7 @@
    ],
    "snippet": "...mijn klant, een vooraanstaande IT-implementatiepartner gespecialiseerd in Microsoft-oplossingen, ben ik op zoek naar een ervaren Power Platform Developer. Deze organisatie richt zich op het standaardiseren en optimaliseren van bedrijfsprocessen en biedt innovatieve...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -7415,7 +7567,7 @@
    ],
    "snippet": "Mijn klant is op zoek naar een Microsoft Power Apps developer. Op het gebied van digitale transformatie en IT-consultancy heeft ze een... ...in het adviseren van klanten over het gebruik van het Power Platform. Je zult nauw samenwerken met klanten, hun zakelijke behoeften...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -7445,7 +7597,7 @@
    ],
    "snippet": "...speel jij een cruciale rol bij de ontwikkeling, ondersteuning en implementatie van de verschillende oplossingen met behulp van het Power Platform. Dit platform omvat Power Apps, Power BI, Power Automate, Power Virtual Agent en Azure Logic Apps. Het Power Platform biedt je...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -7475,7 +7627,7 @@
    ],
    "snippet": "Mijn klant is op zoek naar een Microsoft Power Apps developer. Op het gebied van digitale transformatie en IT-consultancy heeft ze een... ...adviseren van klanten over het optimaal benutten van het Power Platform. Je gaat nauw samenwerken met klanten, waarbij je hun zakelijke...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -7505,7 +7657,7 @@
    ],
    "snippet": "Voor mijn klant zoek ik een Microsoft Power Platform Consultant die goede ervaring heeft met dit platform. Ze is een vooraanstaand IT-bedrijf binnen de sector van digitale transformatie. Haar missie is om organisaties, met name binnen de overheid en het onderwijs, te ondersteunen...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -7535,7 +7687,7 @@
    ],
    "snippet": "...applicatieontwikkeling vorm te geven en te beïnvloeden? Heb je een passie voor de nieuwste ontwikkelingen en producten van Microsoft en het Power Platform? Als je op zoek bent naar een baan waar je echte invloed kunt uitoefenen en technologie kunt gebruiken om het verschil te maken...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -7596,7 +7748,7 @@
    ],
    "snippet": "...Verder worden er regelmatig teamactiviteiten en maandborrels georganiseerd om het teamgevoel te versterken. De functie: Als Power Platform Consultant speel je een cruciale rol in de digitale transformatie van haar klanten. Je analyseert hun business processen, vertaalt...",
    "first_seen": "2026-10-29T10:24:48Z",
-   "last_seen": "2026-11-27T15:31:50Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "jooble:NL": 0
@@ -7719,7 +7871,7 @@
    ],
    "snippet": "Wat ga je doen? Wil je samen bouwen aan leuke projecten? Krijg je energie van het uitwerken van complexe vraagstukken en het adviseren van klanten in hun bedrijfsprocessen? Als senior Production consultant sleutel je in wisselende projectteams aan het ontwerp, de realisatie en implementatie van Micr",
    "first_seen": "2026-10-29T10:25:53Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -7749,7 +7901,7 @@
    ],
    "snippet": "Wil jij meewerken aan mobiele oplossingen die dagelijks door professionals worden gebruikt, in een team van ervaren en inhoudelijk sterke developers? Dan is deze rol als Mobile Apps Developer bij 4PS iets voor jou. Wie zijn wij? 4PS biedt een uitgebreid portfolio van ERP-oplossingen op basis van Mic",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:4psnl": 0
@@ -7779,7 +7931,7 @@
    ],
    "snippet": "Als Cloud Developer – Azure Integration Services bouw je moderne, schaalbare en veilige integratieoplossingen op het Microsoft Azure platform. Je werkt aan het ontsluiten en verbinden van bedrijfskritische applicaties via API’s, event‑gedreven integraties en geautomatiseerde workflows. Je combineert",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -7809,7 +7961,7 @@
    ],
    "snippet": "Senior Consultant Retail Hybrid · Consulting & Technology · Full time Veenendaal, Utrecht, Netherlands Description Jij hebt het! Dat waar wij niet zonder kunnen en onze klanten beter van worden. Jij bent in staat om in wisselende projectteams het beste uit elk team te halen en onmogelijke problemen ",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -7841,7 +7993,7 @@
    ],
    "snippet": "Stap aan boord Bij HSO geloven we dat technologie het verschil maakt. Als F&O Developer binnen onze UO & F&O-unit werk je aan slimme oplossingen in Microsoft Dynamics 365 Finance & Operations die echt impact hebben bij onze klanten. Sluit je aan bij ons team en draag bij aan uitdagende projecten die",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -7874,7 +8026,7 @@
    ],
    "snippet": "Als Technical Architect ben je eindverantwoordelijk voor de technische architectuur op de korte en lange termijn in projecten en salestrajecten. Je beschrijft en ontwikkelt de technische architectuur inclusief bijkomende integraties. Naast het ontwerpen van migratiescenario’s, onderhoud je contact m",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -7907,11 +8059,11 @@
    ],
    "snippet": "Als Solution Architect ben jij gedurende de klantreis het inhoudelijke geweten en help je organisaties hun doelstellingen te realiseren. Jij lost complexe business vraagstukken op door de juiste vertaling en inrichting te maken naar technologie. Sterker nog: met Dynamics 365 overtref je de verwachti",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
-    "adzuna": 0
+    "adzuna": 1
    }
   },
   {
@@ -7940,7 +8092,7 @@
    ],
    "snippet": "Digitale transformatie is pas echt succesvol wanneer strategie, technologie en mensen samenkomen. Als Senior Projectmanager bij HSO leid jij CRM-implementaties die organisaties helpen beter met hun klanten te werken. Je werkt met de nieuwste Microsoft Cloud-technologie en stuurt teams aan in uitdage",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -7971,7 +8123,7 @@
    ],
    "snippet": "Als functioneel CRM consultant ben je verantwoordelijk voor het leveren van hoogwaardige consultancydiensten op het gebied van met name Dynamics 365 Marketing, Sales en Customer Service (CRM). Je speelt een cruciale rol bij het onderhouden en optimaliseren van bedrijfsprocessen, met een focus op het",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -8003,11 +8155,11 @@
    ],
    "snippet": "Als Dynamics 365 Field Service / Project Operations Consultant implementeer en optimaliseer je Field Service en/of Project Operations. Je analyseert bedrijfsprocessen, vertaalt deze naar oplossingen in Dynamics 365, en begeleidt de klant tijdens implementatie en training. Met jouw kennis en expertis",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
-    "adzuna": 0
+    "adzuna": 1
    }
   },
   {
@@ -8034,7 +8186,7 @@
    ],
    "snippet": "Als Field Service & Project Operations consultant ben je verantwoordelijk voor het leveren van hoogwaardige consultancydiensten op het gebied van met name Dynamics 365 Field Service & Project Operations. Je speelt een cruciale rol bij het onderhouden en optimaliseren van bedrijfsprocessen, met een f",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -8066,7 +8218,7 @@
    ],
    "snippet": "Ben jij als Senior Consultant D365 CE klaar om jouw carrière naar het volgende niveau te tillen bij HSO, één van de grootste Microsoft Gold Partners ter wereld? Sluit je aan bij ons CE team en maak het verschil! Join the journey Wat ga je doen? Als D365 CE Senior Consultant werk je aan uitdagende pr",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -8097,7 +8249,7 @@
    ],
    "snippet": "Voor technische professionals die kiezen voor vakmanschap en echte verdieping Bij het Customization Center van 4PS creëren we maatwerkoplossingen die verder gaan dan standaardsoftware. We zoeken een ervaren Technisch Consultant die zelfstandig aan de slag gaat, zijn vak serieus neemt en technologie ",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:4psnl": 0
@@ -8127,7 +8279,7 @@
    ],
    "snippet": "Introductie Als Business Development Executive Bouw bij 4PS ben je verantwoordelijk voor het binnenhalen van nieuwe klanten binnen de Nederlandse bouwsector. Je richt je op middelgrote bouwbedrijven en begeleidt complexe ERP-salestrajecten van het eerste gesprek tot de handtekening. Je krijgt veel v",
    "first_seen": "2026-11-20T17:14:02Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:4psnl": 0
@@ -8157,7 +8309,7 @@
    ],
    "snippet": "Afgestudeerd? What’s next? Stap in bij het HSO Young Professional Program! Kickstart je IT-carrière ! Klaar voor de reis? Join the journey to explore! Start jouw carrière als Functioneel Consultant bij HSO en geef je toekomst een vliegende start op 1 maart 2027. In ons Young Professional Program ont",
    "first_seen": "2026-11-04T18:51:05Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -8187,7 +8339,7 @@
    ],
    "snippet": "Complexe projecten, volop mogelijkheden om te groeien en werken bij één van de top Microsoft system integrators van Nederland. Als Senior Project manager ben je verantwoordelijk voor de implementatie van Microsoft technologie en geef je leiding aan het projectteam van HSO. We bouwen steeds vaker opl",
    "first_seen": "2026-11-26T14:22:10Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -8219,7 +8371,7 @@
    ],
    "snippet": "Als Solution Architect ben jij gedurende de klantreis het inhoudelijke geweten en help je organisaties hun doelstellingen te realiseren. Jij lost complexe business vraagstukken op door de juiste vertaling en inrichting te maken naar technologie. Sterker nog: met Dynamics 365 overtref je de verwachti",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -8250,7 +8402,7 @@
    ],
    "snippet": "Ben jij de engineer die organisaties naar het volgende niveau tilt met de kracht van Microsoft Power Platform én AI? Join the journey! Wat ga je doen? Als AI Platform Engineer speel je een sleutelrol binnen het Microsoft Power Platform team van HSO: een snelgroeiende afdeling met een ondernemende mi",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -8282,7 +8434,7 @@
    ],
    "snippet": "Rol introductie Jij hebt het! Dat waar wij niet zonder kunnen en onze klanten beter van worden. Jij bent in staat om in wisselende projectteams het beste uit elk team te halen en onmogelijke problemen om te zetten in mogelijkheden. Als Solution Architect ben je functioneel verantwoordelijk voor een ",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -8317,11 +8469,11 @@
    ],
    "snippet": "Digitale transformatie is pas echt succesvol wanneer strategie, technologie en mensen samenkomen. Als Senior Projectmanager bij HSO leid jij CRM-implementaties die organisaties helpen beter met hun klanten te werken. Je werkt met de nieuwste Microsoft Cloud-technologie en stuurt teams aan in uitdage",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
-    "jooble:NL": 1,
+    "jooble:NL": 2,
     "adzuna": 0
    }
   },
@@ -8351,7 +8503,7 @@
    ],
    "snippet": "Als Team Lead & Technical Architect – Power Platform CE ben je verantwoordelijk voor het CE Architecten domein. Je combineert leiderschap met inhoudelijke technische verantwoordelijkheid en geeft leiding aan een team van Power Platform-specialisten, waaronder ontwikkelaars, consultants en architects",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -8384,7 +8536,7 @@
    ],
    "snippet": "Als Technical Architect ben je eindverantwoordelijk voor de technische architectuur op de korte en lange termijn in projecten en salestrajecten. Je beschrijft en ontwikkelt de technische architectuur inclusief bijkomende integraties. Naast het ontwerpen van migratiescenario’s, onderhoud je contact m",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -8417,7 +8569,7 @@
    ],
    "snippet": "Join us as a Senior Dynamics 365 Power Platform Developer! As a Senior Dynamics 365 Power Platform Developer, you'll chart your own career and personal growth path with the backing of our organization. Collaborating closely with clients, you'll make a tangible impact while immersing yourself in the ",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -8450,7 +8602,7 @@
    ],
    "snippet": "Supply chain begrijpen. Processen doorgronden. Technologie inzetten om ze slimmer te maken. Een goede Logistics Consultant kent Dynamics 365. Een uitstekende Logistics Consultant begrijpt vooral hoe goederen, informatie en beslissingen door een organisatie bewegen. Hoe zorg je dat voorraad beschikba",
    "first_seen": "2026-11-12T19:50:32Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -8483,11 +8635,11 @@
    ],
    "snippet": "Ben jij als Senior Consultant D365 CE klaar om jouw carrière naar het volgende niveau te tillen bij HSO, één van de grootste Microsoft Gold Partners ter wereld? Sluit je aan bij ons CE team en maak het verschil! Join the journey Wat ga je doen? Als D365 CE Senior Consultant werk je aan uitdagende pr",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
-    "adzuna": 0
+    "adzuna": 1
    }
   },
   {
@@ -8514,7 +8666,7 @@
    ],
    "snippet": "Als Pre Sales Consultant binnen het Business Applications-team van HSO ben jij de verbindende schakel tussen business, Microsoft Dynamics 365 en sales. Je helpt klanten en prospects om complexe bedrijfsvraagstukken te vertalen naar concrete, toekomstbestendige Microsoft-oplossingen. Daarbij kijk je ",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -8544,7 +8696,7 @@
    ],
    "snippet": "Als functioneel CRM consultant ben je verantwoordelijk voor het leveren van hoogwaardige consultancydiensten op het gebied van met name Dynamics 365 Marketing, Sales en Customer Service (CRM). Je speelt een cruciale rol bij het onderhouden en optimaliseren van bedrijfsprocessen, met een focus op het",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -8574,7 +8726,7 @@
    ],
    "snippet": "Als functioneel CRM consultant ben je verantwoordelijk voor het leveren van hoogwaardige consultancydiensten op het gebied van met name Dynamics 365 Marketing, Sales en Customer Service (CRM). Je speelt een cruciale rol bij het onderhouden en optimaliseren van bedrijfsprocessen, met een focus op het",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -8606,7 +8758,7 @@
    ],
    "snippet": "Als Dynamics 365 Field Service / Project Operations Consultant implementeer en optimaliseer je Field Service en/of Project Operations. Je analyseert bedrijfsprocessen, vertaalt deze naar oplossingen in Dynamics 365, en begeleidt de klant tijdens implementatie en training. Met jouw kennis en expertis",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -8637,7 +8789,7 @@
    ],
    "snippet": "Als Field Service & Project Operations consultant ben je verantwoordelijk voor het leveren van hoogwaardige consultancydiensten op het gebied van met name Dynamics 365 Field Service & Project Operations. Je speelt een cruciale rol bij het onderhouden en optimaliseren van bedrijfsprocessen, met een f",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -8667,7 +8819,7 @@
    ],
    "snippet": "Wat ga je doen? Als Lead Business Consultant bij HSO, word je verantwoordelijk voor het adviseren van klanten over verbeteringen en optimalisaties van hun bedrijfsprocessen met behulp van Microsoft technologieën. Je speelt een cruciale rol in het verhogen van klanttevredenheid en zakelijke groei doo",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0
@@ -8699,7 +8851,7 @@
    ],
    "snippet": "Finance begrijpen. Processen doorgronden. Technologie inzetten om ze slimmer te maken. Een goede Finance Consultant kent Dynamics 365. Een uitstekende Finance Consultant begrijpt vooral wat er áchter de cijfers gebeurt. Waarom duurt een maandafsluiting te lang? Hoe richt je Finance zo in dat een org",
    "first_seen": "2026-11-12T19:50:32Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:greenhouse:hsogroupbv": 0,
@@ -8734,20 +8886,21 @@
    ],
    "snippet": "...van het bouwen van slimme, toekomstbestendige applicaties? Dan hebben wij een mooie uitdaging voor jou. Bij E-mergo werk je als Power Platform Developer aan innovatieve oplossingen binnen het Microsoft Power Platform. Je helpt klanten bij hun digitale transformatie en...",
    "first_seen": "2026-10-29T10:28:43Z",
-   "last_seen": "2026-11-27T23:42:57Z",
+   "last_seen": "2026-11-28T07:37:02Z",
    "status": "open",
    "miss": {
     "ats:recruitee:emergo": 0,
     "jooble:NL": 0,
-    "adzuna": 7
+    "adzuna": 8
    }
   }
  ],
  "stale_after_days": 3,
  "diagnostics": {
-  "at": "2026-11-27T23:42:57Z",
-  "raw_fetched": 123,
+  "at": "2026-11-28T07:37:02Z",
+  "raw_fetched": 386,
   "swept": [
+   "adzuna",
    "ats:greenhouse:4psnl",
    "ats:greenhouse:hsogroupbv",
    "ats:personio:macaw",
@@ -8759,26 +8912,70 @@
    "ats:recruitee:xylos",
    "ats:smartrecruiters:everience",
    "ats:smartrecruiters:redcare-pharmacy",
-   "ats:smartrecruiters:sanacommerce"
+   "ats:smartrecruiters:sanacommerce",
+   "jooble:BE",
+   "jooble:NL"
   ],
   "http": [
    {
     "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
     "query": "dynamics 365",
     "status": 200,
-    "results": 37,
+    "results": 50,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/2",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 50,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/3",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 50,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/4",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 42,
     "note": ""
    },
    {
     "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
     "query": "d365",
     "status": 200,
-    "results": 11,
+    "results": 50,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/2",
+    "query": "d365",
+    "status": 200,
+    "results": 18,
     "note": ""
    },
    {
     "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
     "query": "business central",
+    "status": 200,
+    "results": 50,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/2",
+    "query": "business central",
+    "status": 200,
+    "results": 50,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
+    "query": "dynamics crm",
     "status": 200,
     "results": 11,
     "note": ""
@@ -8787,211 +8984,764 @@
     "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
     "query": "power platform",
     "status": 200,
-    "results": 12,
+    "results": 50,
     "note": ""
    },
    {
-    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
-    "query": "dynamics 365",
-    "status": 200,
-    "results": 21,
-    "note": ""
-   },
-   {
-    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
-    "query": "d365",
-    "status": 200,
-    "results": 3,
-    "note": ""
-   },
-   {
-    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
-    "query": "business central",
-    "status": 200,
-    "results": 10,
-    "note": ""
-   },
-   {
-    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/2",
     "query": "power platform",
-    "status": 200,
-    "results": 5,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "dynamics 365",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "dynamics 365",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "dynamics 365",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "dynamics 365",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "dynamics 365",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "dynamics 365",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "dynamics 365",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "dynamics 365",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "dynamics 365",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "dynamics 365",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "d365",
     "status": 200,
     "results": 23,
     "note": ""
    },
    {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "business central",
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
+    "query": "dynamics nav",
     "status": 200,
-    "results": 100,
+    "results": 10,
     "note": ""
    },
    {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "business central",
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
+    "query": "dynamics ax",
     "status": 200,
-    "results": 100,
+    "results": 38,
     "note": ""
    },
    {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "business central",
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
+    "query": "power apps",
     "status": 200,
-    "results": 100,
+    "results": 34,
     "note": ""
    },
    {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "business central",
+    "url": "https://api.adzuna.com/v1/api/jobs/nl/search/1",
+    "query": "dataverse",
     "status": 200,
-    "results": 100,
+    "results": 24,
     "note": ""
    },
    {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "business central",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "business central",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://nl.jooble.org/api/KEY",
-    "query": "business central",
-    "status": 200,
-    "results": 100,
-    "note": ""
-   },
-   {
-    "url": "https://jooble.org/api/KEY",
-    "query": "power platform",
-    "status": 403,
-    "results": null,
-    "note": "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<head>\n\t<title>Error 403</title>\n\t<meta name=\"robots\" content=\"noindex, nofollow\" />\n\t<"
-   },
-   {
-    "url": "https://jooble.org/api/KEY",
-    "query": "dynamics crm",
-    "status": 403,
-    "results": null,
-    "note": "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<head>\n\t<title>Error 403</title>\n\t<meta name=\"robots\" content=\"noindex, nofollow\" />\n\t<"
-   },
-   {
-    "url": "https://jooble.org/api/KEY",
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
     "query": "dynamics 365",
-    "status": 403,
-    "results": null,
-    "note": "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<head>\n\t<title>Error 403</title>\n\t<meta name=\"robots\" content=\"noindex, nofollow\" />\n\t<"
+    "status": 200,
+    "results": 50,
+    "note": ""
    },
    {
-    "url": "https://jooble.org/api/KEY",
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/2",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 50,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/3",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 6,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
     "query": "d365",
-    "status": 403,
-    "results": null,
-    "note": "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<head>\n\t<title>Error 403</title>\n\t<meta name=\"robots\" content=\"noindex, nofollow\" />\n\t<"
+    "status": 200,
+    "results": 18,
+    "note": ""
    },
    {
-    "url": "https://jooble.org/api/KEY",
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
     "query": "business central",
-    "status": 403,
-    "results": null,
-    "note": "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<head>\n\t<title>Error 403</title>\n\t<meta name=\"robots\" content=\"noindex, nofollow\" />\n\t<"
+    "status": 200,
+    "results": 50,
+    "note": ""
    },
    {
-    "url": "https://jooble.org/api/KEY",
-    "query": "power platform",
-    "status": 403,
-    "results": null,
-    "note": "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<head>\n\t<title>Error 403</title>\n\t<meta name=\"robots\" content=\"noindex, nofollow\" />\n\t<"
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/2",
+    "query": "business central",
+    "status": 200,
+    "results": 24,
+    "note": ""
    },
    {
-    "url": "https://jooble.org/api/KEY",
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
     "query": "dynamics crm",
-    "status": 403,
-    "results": null,
-    "note": "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\">\n<head>\n\t<title>Error 403</title>\n\t<meta name=\"robots\" content=\"noindex, nofollow\" />\n\t<"
+    "status": 200,
+    "results": 2,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
+    "query": "power platform",
+    "status": 200,
+    "results": 40,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
+    "query": "dynamics nav",
+    "status": 200,
+    "results": 2,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
+    "query": "dynamics ax",
+    "status": 200,
+    "results": 11,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
+    "query": "power apps",
+    "status": 200,
+    "results": 27,
+    "note": ""
+   },
+   {
+    "url": "https://api.adzuna.com/v1/api/jobs/be/search/1",
+    "query": "dataverse",
+    "status": 200,
+    "results": 14,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "d365",
+    "status": 200,
+    "results": 22,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://nl.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics 365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "d365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "d365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "d365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "d365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "d365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "d365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "d365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "d365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "d365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "d365",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "business central",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "power platform",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
+   },
+   {
+    "url": "https://be.jooble.org/api/KEY",
+    "query": "dynamics crm",
+    "status": 200,
+    "results": 100,
+    "note": ""
    },
    {
     "url": "https://boards-api.greenhouse.io/v1/boards/hsogroupbv/jobs",
@@ -9080,29 +9830,33 @@
   ],
   "rejected": {
    "not D365": {
-    "count": 2387,
+    "count": 10130,
     "samples": [
+     "IT Manager (Hands-on Technical Lead)",
      "Medewerker Sales Support",
      "1865. Commercieel Medewerker Binnendienst",
      "Supply Chain Specialist",
-     "Operational Buyer",
-     "Teamleider Supply Chain"
+     "Operational Buyer"
     ]
    },
    "internship / student": {
-    "count": 1,
+    "count": 26,
     "samples": [
-     "Afstudeerstage AI in Dynamics365 Customer Engagement"
+     "Afstudeerstage AI in Dynamics365 Customer Engagement",
+     "Afstudeerstage AI in Dynamics365 Customer Engagement",
+     "Afstudeerstage AI in Dynamics365 Customer Engagement",
+     "Afstudeerstage AI in Dynamics365 Customer Engagement",
+     "Graduation Internship in Dynamics 365 Contact Center and Power Platform"
     ]
    },
    "country None": {
-    "count": 77,
+    "count": 79,
     "samples": [
+     "CONSULTANT(E) TECHNI-FONCTIONNEL(LE) - MS Dynamics 365 Business Central & Navision (H/F) (Province de Luxembourg)",
+     "Senior Power Platform Entwickler (m/w/d) - Luxembourg (Province de Luxembourg)",
      "Azure Integration Developer (Contract) (North Macedonia)",
      "Azure Lead Technical Architect (North Macedonia)",
-     "Cloud Solution Architect (United Kingdom)",
-     "Consultant Enterprise Content Management (m/w/d) - bundesweit (Germany)",
-     "Consultant Finance Microsoft Dynamics 365 F&SCM (Winterthur )"
+     "Cloud Solution Architect (United Kingdom)"
     ]
    },
    "country DE": {
@@ -9114,16 +9868,23 @@
    }
   },
   "jooble_totals": {
-   "NL dynamics 365": 3445,
-   "NL d365": 23,
-   "NL business central": 2537
+   "NL dynamics 365": 3497,
+   "NL d365": 22,
+   "NL business central": 2572,
+   "NL power platform": 6698,
+   "NL dynamics crm": 2759,
+   "BE dynamics 365": 8262,
+   "BE d365": 89035,
+   "BE business central": 7336,
+   "BE power platform": 3224,
+   "BE dynamics crm": 8640
   }
  },
  "api_usage": {
   "month": "2026-11",
-  "month_calls": 1496,
-  "day": "2026-11-27",
-  "day_calls": 45
+  "month_calls": 1523,
+  "day": "2026-11-28",
+  "day_calls": 27
  },
  "close_after_missed_sweeps": 2
 }
